@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3383" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ContactItem" representedClassName="CGItem" syncable="YES">
+        <attribute name="contactName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contactNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupUUID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="GroupItem" representedClassName="GroupItem" syncable="YES">
+        <attribute name="blockTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupUUID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ContactItem" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="GroupItem" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
