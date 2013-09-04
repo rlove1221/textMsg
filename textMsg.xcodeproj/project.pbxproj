@@ -22,6 +22,11 @@
 		A30EF63317D231390089D859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A30EF63117D231390089D859 /* InfoPlist.strings */; };
 		A30EF63517D231390089D859 /* textMsgTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A30EF63417D231390089D859 /* textMsgTests.m */; };
 		A30EF63F17D234F70089D859 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30EF63E17D234F70089D859 /* MessageUI.framework */; };
+		A317B27E17D415FA00CF926A /* bckG.png in Resources */ = {isa = PBXBuildFile; fileRef = A317B27D17D415FA00CF926A /* bckG.png */; };
+		A317B28217D4C3F600CF926A /* bkG1.png in Resources */ = {isa = PBXBuildFile; fileRef = A317B28117D4C3F600CF926A /* bkG1.png */; };
+		A317B28417D4C3FC00CF926A /* sms.png in Resources */ = {isa = PBXBuildFile; fileRef = A317B28317D4C3FC00CF926A /* sms.png */; };
+		A317B28617D4C58F00CF926A /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = A317B28517D4C58F00CF926A /* lock.png */; };
+		A317B28817D4CF4A00CF926A /* bckG2.png in Resources */ = {isa = PBXBuildFile; fileRef = A317B28717D4CF4A00CF926A /* bckG2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		A30EF63217D231390089D859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A30EF63417D231390089D859 /* textMsgTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textMsgTests.m; sourceTree = "<group>"; };
 		A30EF63E17D234F70089D859 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A317B27D17D415FA00CF926A /* bckG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bckG.png; sourceTree = "<group>"; };
+		A317B28117D4C3F600CF926A /* bkG1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkG1.png; sourceTree = "<group>"; };
+		A317B28317D4C3FC00CF926A /* sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sms.png; sourceTree = "<group>"; };
+		A317B28517D4C58F00CF926A /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		A317B28717D4CF4A00CF926A /* bckG2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bckG2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +140,11 @@
 		A30EF61017D231380089D859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A317B28717D4CF4A00CF926A /* bckG2.png */,
+				A317B28517D4C58F00CF926A /* lock.png */,
+				A317B28317D4C3FC00CF926A /* sms.png */,
+				A317B28117D4C3F600CF926A /* bkG1.png */,
+				A317B27D17D415FA00CF926A /* bckG.png */,
 				A30EF61117D231380089D859 /* textMsg-Info.plist */,
 				A30EF61217D231380089D859 /* InfoPlist.strings */,
 				A30EF61517D231380089D859 /* main.m */,
@@ -233,8 +248,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30EF62217D231390089D859 /* Images.xcassets in Resources */,
+				A317B28217D4C3F600CF926A /* bkG1.png in Resources */,
 				A30EF61417D231380089D859 /* InfoPlist.strings in Resources */,
+				A317B28417D4C3FC00CF926A /* sms.png in Resources */,
+				A317B27E17D415FA00CF926A /* bckG.png in Resources */,
+				A317B28817D4CF4A00CF926A /* bckG2.png in Resources */,
 				A30EF61D17D231380089D859 /* Main.storyboard in Resources */,
+				A317B28617D4C58F00CF926A /* lock.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +478,7 @@
 				A30EF63A17D231390089D859 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A30EF63B17D231390089D859 /* Build configuration list for PBXNativeTarget "textMsgTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +487,7 @@
 				A30EF63D17D231390089D859 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
