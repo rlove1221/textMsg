@@ -92,7 +92,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9s7-YE-Ax4">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -122,18 +122,23 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="B2G-Qn-Xvd"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="aEy-cY-783"/>
+                                    <outlet property="dataSource" destination="blB-8X-GVl" id="BXX-YX-avy"/>
+                                    <outlet property="delegate" destination="blB-8X-GVl" id="uvq-2f-FcO"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="hJs-j8-fEm">
-                        <barButtonItem key="rightBarButtonItem" title="Add Contact" id="9pz-mV-cVk"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add Contact" id="9pz-mV-cVk">
+                            <connections>
+                                <action selector="addcontact_Click:" destination="blB-8X-GVl" id="OIp-Vf-che"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addContactBarButton" destination="9pz-mV-cVk" id="cVo-US-KvG"/>
+                        <outlet property="contactTableView" destination="9s7-YE-Ax4" id="HJT-yd-dkD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDU-DH-l9o" userLabel="First Responder" sceneMemberID="firstResponder"/>

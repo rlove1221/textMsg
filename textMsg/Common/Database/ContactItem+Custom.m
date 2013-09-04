@@ -112,6 +112,35 @@
     return cgItem;
 }
 
++ (ContactItem *)checkCGItemByName:(NSString *)name groupUUID:(NSString *)groupUUID
+{
+    ContactItem *cgItem = nil;
+    NSArray *lists;
+    NSManagedObjectContext *managedObjectContext = [NSManagedObjectContext managedObjectContext];
+    if (managedObjectContext == nil)
+    {
+        return nil;
+    }
+    @try
+    {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"contactName LIKE[c] %@ AND groupUUID = %@", name,groupUUID];
+        lists = [CoreDataHelper searchObjectsInContext:managedObjectContext
+                                            entityName:kEntityName
+                                             predicate:predicate
+                                               sortKey:nil
+                                         sortAscending:NO];
+        if ([lists count] > 0)
+        {
+            cgItem = [lists objectAtIndex:0];
+        }
+    }
+    @catch (NSException *exception)
+    {
+        NSLog(@"__ERROR__%@__", exception.reason);
+    }
+    return cgItem;
+}
+
 + (BOOL)updateCGItem:(ContactItem *)itemObj
 {
     BOOL success = YES;

@@ -19,4 +19,6 @@
 + (BOOL)updateCGItem:(ContactItem *)itemObj;
 
 + (BOOL)deleteCGItem:(ContactItem *)itemObj;
+
++ (ContactItem *)checkCGItemByName:(NSString *)name groupUUID:(NSString *)groupUUID;
 @end
