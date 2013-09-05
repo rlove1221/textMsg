@@ -55,6 +55,42 @@
     return lists;
 }
 
++ (NSArray *)getExpiredGroup
+{
+    NSArray *lists;
+    NSMutableArray *resultList = [[NSMutableArray alloc] initWithCapacity:0];
+    NSManagedObjectContext *managedObjectContext = [NSManagedObjectContext managedObjectContext];
+    if (managedObjectContext == nil)
+    {
+        return nil;
+    }
+    @try
+    {
+        NSTimeInterval timeinterval = [[NSDate date] timeIntervalSince1970];
+        lists = [CoreDataHelper getObjectsFromcontext:managedObjectContext
+                                           entityName:kEntityName
+                                              sortKey:nil
+                                        sortAscending:NO];
+        for (GroupItem *groupItem in lists) {
+            if ([groupItem.blockTime floatValue] == 0) {
+                continue;
+            }
+            NSTimeInterval tempInterval = [groupItem.blockTime floatValue] - timeinterval;
+            if (tempInterval <= 0) {
+                [resultList addObject:groupItem];
+            }
+        }
+        
+
+    }
+    @catch (NSException *exception)
+    {
+        NSLog(@"__ERROR__%@__", exception.reason);
+    }
+    
+    return resultList;
+}
+
 
 
 
@@ -86,6 +122,8 @@
     }
     return cgItem;
 }
+
+
 
 + (BOOL)updateGroupItem:(GroupItem *)itemObj
 {

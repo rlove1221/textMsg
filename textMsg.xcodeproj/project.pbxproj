@@ -43,7 +43,7 @@
 		85D8BC9B17D6BF7400E5FD66 /* GroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BC9717D6BCDC00E5FD66 /* GroupItem.m */; };
 		85D8BC9E17D6C05B00E5FD66 /* NewGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BC9D17D6C04800E5FD66 /* NewGroupViewController.m */; };
 		85D8BC9F17D6C48E00E5FD66 /* TextData.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 855563BE17D35D8A0060E9F5 /* TextData.xcdatamodeld */; };
-		85D8BCA217D6C56200E5FD66 /* GroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BCA117D6C55200E5FD66 /* GroupDetailViewController.m */; };
+		85D8BCA217D6C56200E5FD66 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BCA117D6C55200E5FD66 /* AddContactViewController.m */; };
 		85D8BCAF17D6C96A00E5FD66 /* UIBarButtonItem+WEPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BCA517D6C95A00E5FD66 /* UIBarButtonItem+WEPopover.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		85D8BCB017D6C96A00E5FD66 /* WEPopoverContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BCA717D6C95A00E5FD66 /* WEPopoverContainerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		85D8BCB117D6C96A00E5FD66 /* WEPopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BCA917D6C95A00E5FD66 /* WEPopoverContentViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -145,8 +145,8 @@
 		85D8BC9917D6BF1E00E5FD66 /* GroupItem+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GroupItem+Custom.m"; sourceTree = "<group>"; };
 		85D8BC9C17D6C04800E5FD66 /* NewGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewGroupViewController.h; sourceTree = "<group>"; };
 		85D8BC9D17D6C04800E5FD66 /* NewGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewGroupViewController.m; sourceTree = "<group>"; };
-		85D8BCA017D6C55200E5FD66 /* GroupDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupDetailViewController.h; sourceTree = "<group>"; };
-		85D8BCA117D6C55200E5FD66 /* GroupDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupDetailViewController.m; sourceTree = "<group>"; };
+		85D8BCA017D6C55200E5FD66 /* AddContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
+		85D8BCA117D6C55200E5FD66 /* AddContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
 		85D8BCA417D6C95A00E5FD66 /* UIBarButtonItem+WEPopover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WEPopover.h"; sourceTree = "<group>"; };
 		85D8BCA517D6C95A00E5FD66 /* UIBarButtonItem+WEPopover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WEPopover.m"; sourceTree = "<group>"; };
 		85D8BCA617D6C95A00E5FD66 /* WEPopoverContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WEPopoverContainerView.h; sourceTree = "<group>"; };
@@ -226,8 +226,8 @@
 				855563B317D35D8A0060E9F5 /* MainViewController.m */,
 				85D8BC9C17D6C04800E5FD66 /* NewGroupViewController.h */,
 				85D8BC9D17D6C04800E5FD66 /* NewGroupViewController.m */,
-				85D8BCA017D6C55200E5FD66 /* GroupDetailViewController.h */,
-				85D8BCA117D6C55200E5FD66 /* GroupDetailViewController.m */,
+				85D8BCA017D6C55200E5FD66 /* AddContactViewController.h */,
+				85D8BCA117D6C55200E5FD66 /* AddContactViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -579,7 +579,7 @@
 				85D8BCB117D6C96A00E5FD66 /* WEPopoverContentViewController.m in Sources */,
 				85D8BCB217D6C96A00E5FD66 /* WEPopoverController.m in Sources */,
 				85D8BCB317D6C96A00E5FD66 /* WETouchableView.m in Sources */,
-				85D8BCA217D6C56200E5FD66 /* GroupDetailViewController.m in Sources */,
+				85D8BCA217D6C56200E5FD66 /* AddContactViewController.m in Sources */,
 				85D8BC9E17D6C05B00E5FD66 /* NewGroupViewController.m in Sources */,
 				85D8BC9A17D6BF7400E5FD66 /* GroupItem+Custom.m in Sources */,
 				85D8BC9B17D6BF7400E5FD66 /* GroupItem.m in Sources */,

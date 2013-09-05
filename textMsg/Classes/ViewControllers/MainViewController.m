@@ -7,10 +7,11 @@
 //
 
 #import "MainViewController.h"
-#import "GroupDetailViewController.h"
+#import "AddContactViewController.h"
 #import <MessageUI/MessageUI.h>
 #import <AddressBook/AddressBook.h>
 #import "GroupItem+Custom.h"
+#import "NewGroupViewController.h"
 @interface MainViewController ()
 
 @end
@@ -20,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(checkExpiredGroup) userInfo:nil repeats:YES];
     ABAddressBookRef addressBook = ABAddressBookCreate();
     
     __block BOOL accessGranted = NO;
@@ -69,6 +71,60 @@
         }
     }
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)checkExpiredGroup
+{
+    NSArray *expiredList =  [GroupItem getExpiredGroup];
+    for (GroupItem *groupitem in expiredList) {
+        if ([groupitem.blockTime floatValue] == 0) {
+            continue;
+        }
+        groupitem.blockTime = @"0";
+        [GroupItem updateGroupItem:groupitem];
+        NSArray *contactList = [ContactItem getAllCGItemByGroupUUID:groupitem.groupUUID];
+        for (ContactItem *contactItem in contactList) {
+            [self creatContact:contactItem];
+        }
+    }
+}
+
+- (void)creatContact:(ContactItem *)contactitem
+{
+    CFErrorRef error = nil;
+    ABAddressBookRef addressBook = ABAddressBookCreate(); // create address book record
+    ABRecordRef person = ABPersonCreate(); // create a person
+    
+    NSString *phone = contactitem.contactNumber; // the phone number to add
+    NSArray *splitArray = [contactitem.contactName componentsSeparatedByString:@" "];
+    NSString *firstname=@"";
+    NSString *lastname=@"";
+    if ([splitArray count] > 1) {
+        firstname = [splitArray objectAtIndex:0];
+        lastname = [splitArray objectAtIndex:1];
+    }
+    
+    //Phone number is a list of phone number, so create a multivalue
+    ABMutableMultiValueRef phoneNumberMultiValue =
+    ABMultiValueCreateMutable(kABPersonPhoneProperty);
+    ABMultiValueAddValueAndLabel(phoneNumberMultiValue ,(__bridge CFTypeRef)(phone),kABPersonPhoneMobileLabel, NULL);
+    
+    ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge CFTypeRef)(firstname) , nil); // first name of the new person
+    ABRecordSetValue(person, kABPersonLastNameProperty, (__bridge CFTypeRef)(lastname), nil); // his last name
+    ABRecordSetValue(person, kABPersonPhoneProperty, phoneNumberMultiValue, &error); // set the phone number property
+    ABAddressBookAddRecord(addressBook, person, nil); //add the new person to the record
+    
+    ABRecordRef group = ABGroupCreate(); //create a group
+    ABRecordSetValue(group, kABGroupNameProperty,@"My Group", &error); // set group's name
+    ABGroupAddMember(group, person, &error); // add the person to the group
+    ABAddressBookAddRecord(addressBook, group, &error); // add the group
+    
+    
+    ABAddressBookSave(addressBook, nil); //save the record
+    
+    
+    
+    CFRelease(person); // relase the ABRecordRef  variable
 }
 
 - (NSString *) getName: (ABRecordRef) person
@@ -135,17 +191,30 @@
     
     GroupItem *group = [groupList objectAtIndex:indexPath.row];
     UILabel *name = (UILabel*)[cell viewWithTag:1];
+    UILabel *remaining = (UILabel*)[cell viewWithTag:2];
     name.text = group.groupName;
+    if ([group.blockTime floatValue] != 0) {
+        NSTimeInterval timeInterval = [[NSDate date] timeIntervalSince1970];
+        timeInterval =[group.blockTime floatValue] - timeInterval;
+        remaining.text = [NSString stringWithFormat:@"%.0f seconds",timeInterval];
+    }
+    else
+    {
+        remaining.text = @"expired";
+    }
+    
+    
+    //groupItem.blockTime = [NSString stringWithFormat:@"%.0f",timeInterval/1000];
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
-    GroupDetailViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"GroupDetailViewController"];
+    NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
     groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:groupDetail animated:YES];
-    
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -154,4 +223,8 @@
     [self viewWillAppear:YES];
 }
 
+- (IBAction)creategroup_click:(id)sender {
+    NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+    [self.navigationController pushViewController:groupDetail animated:YES];
+}
 @end

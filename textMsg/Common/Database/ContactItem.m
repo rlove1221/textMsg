@@ -14,4 +14,5 @@
 @dynamic contactName;
 @dynamic contactNumber;
 @dynamic groupUUID;
+@dynamic contactData;
 @end

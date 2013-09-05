@@ -11,15 +11,21 @@
 #import "WEPopoverContentViewController.h"
 #import "GroupItem+Custom.h"
 #import "ContactItem+Custom.h"
-@interface GroupDetailViewController : UIViewController<WEPopoverControllerDelegate,WEPopoverContentViewControllerDelegate>
+#import <AddressBook/AddressBook.h>
+@interface AddContactViewController : UIViewController<WEPopoverControllerDelegate,WEPopoverContentViewControllerDelegate>
 {
     WEPopoverController *popoverController;
     IBOutlet UIBarButtonItem *addContactBarButton;
     NSMutableArray *allContactsPhoneNumber;
     NSArray *contactList;
     IBOutlet UITableView *contactTableView;
+    NSMutableArray *actualContactList;
+    NSMutableArray *selectedContactList;
+    NSArray *arrayOfPeople;
+    ABAddressBookRef addressBook;
 }
 
 - (IBAction)addcontact_Click:(id)sender;
+- (IBAction)save_click:(id)sender;
 @property(nonatomic,strong)GroupItem *groupItem;
 @end

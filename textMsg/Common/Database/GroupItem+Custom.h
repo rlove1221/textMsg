@@ -18,4 +18,5 @@
 + (BOOL)updateGroupItem:(GroupItem *)itemObj;
 
 + (BOOL)deleteGroupItem:(GroupItem *)itemObj;
++ (NSArray *)getExpiredGroup;
 @end

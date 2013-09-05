@@ -94,7 +94,7 @@
     }
     @try
     {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"contactName = %@", name];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"contactName LIKE[c] %@", name];
         lists = [CoreDataHelper searchObjectsInContext:managedObjectContext
                                             entityName:kEntityName
                                              predicate:predicate
