@@ -192,16 +192,17 @@
     
     GroupItem *group = [groupList objectAtIndex:indexPath.row];
     UILabel *name = (UILabel*)[cell viewWithTag:1];
-    UILabel *remaining = (UILabel*)[cell viewWithTag:2];
+    UILabel *status = (UILabel*)[cell viewWithTag:2];
     name.text = group.groupName;
-    if ([group.blockTime floatValue] != 0) {
-        NSTimeInterval timeInterval = [[NSDate date] timeIntervalSince1970];
-        timeInterval =[group.blockTime floatValue] - timeInterval;
-        remaining.text = [NSString stringWithFormat:@"%.0f seconds",timeInterval];
+    if ([group.groupStatus isEqualToString:@"0"]) {
+       
+        status.text = @"Not blocked";
+        status.textColor = [UIColor greenColor];
     }
     else
     {
-        remaining.text = @"expired";
+        status.text = @"Blocked";
+        status.textColor = [UIColor redColor];
     }
     
     
