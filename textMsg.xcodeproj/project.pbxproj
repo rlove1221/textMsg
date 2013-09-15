@@ -63,7 +63,21 @@
 		A30EF63317D231390089D859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A30EF63117D231390089D859 /* InfoPlist.strings */; };
 		A30EF63517D231390089D859 /* textMsgTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A30EF63417D231390089D859 /* textMsgTests.m */; };
 		A30EF63F17D234F70089D859 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30EF63E17D234F70089D859 /* MessageUI.framework */; };
+		A37B22BF17E65723002572A6 /* contactsGroup.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22BE17E65723002572A6 /* contactsGroup.png */; };
+		A37B22C117E65759002572A6 /* contactsBlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C017E65759002572A6 /* contactsBlocked.png */; };
+		A37B22C317E659D4002572A6 /* contactsGroup2.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C217E659D4002572A6 /* contactsGroup2.png */; };
+		A37B22C517E65C33002572A6 /* contactsGroup3.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C417E65C33002572A6 /* contactsGroup3.png */; };
 		A3D2347417E61C3F00903654 /* BlockedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D2347317E61C3F00903654 /* BlockedListViewController.m */; };
+		A3D2347C17E638B800903654 /* bckG.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2347B17E638B800903654 /* bckG.png */; };
+		A3D2347F17E638CD00903654 /* bkG1.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2347E17E638CD00903654 /* bkG1.png */; };
+		A3D2348117E638D500903654 /* cloudColor.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2348017E638D500903654 /* cloudColor.png */; };
+		A3D2348317E6461F00903654 /* salmonBG.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2348217E6461F00903654 /* salmonBG.png */; };
+		A3D2348517E648DF00903654 /* sms.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2348417E648DF00903654 /* sms.png */; };
+		A3D2348717E648E500903654 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2348617E648E500903654 /* lock.png */; };
+		A3D2348917E6499A00903654 /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2348817E6499A00903654 /* contacts.png */; };
+		A3D2348B17E649E400903654 /* contacts2.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2348A17E649E400903654 /* contacts2.png */; };
+		A3D2348D17E64D5200903654 /* sms2.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2348C17E64D5200903654 /* sms2.png */; };
+		A3D2348F17E6508B00903654 /* msg.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2348E17E6508B00903654 /* msg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,8 +191,22 @@
 		A30EF63217D231390089D859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A30EF63417D231390089D859 /* textMsgTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textMsgTests.m; sourceTree = "<group>"; };
 		A30EF63E17D234F70089D859 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A37B22BE17E65723002572A6 /* contactsGroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsGroup.png; sourceTree = "<group>"; };
+		A37B22C017E65759002572A6 /* contactsBlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsBlocked.png; sourceTree = "<group>"; };
+		A37B22C217E659D4002572A6 /* contactsGroup2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsGroup2.png; sourceTree = "<group>"; };
+		A37B22C417E65C33002572A6 /* contactsGroup3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsGroup3.png; sourceTree = "<group>"; };
 		A3D2347217E61C3F00903654 /* BlockedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockedListViewController.h; sourceTree = "<group>"; };
 		A3D2347317E61C3F00903654 /* BlockedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockedListViewController.m; sourceTree = "<group>"; };
+		A3D2347B17E638B800903654 /* bckG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bckG.png; sourceTree = "<group>"; };
+		A3D2347E17E638CD00903654 /* bkG1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkG1.png; sourceTree = "<group>"; };
+		A3D2348017E638D500903654 /* cloudColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudColor.png; sourceTree = "<group>"; };
+		A3D2348217E6461F00903654 /* salmonBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = salmonBG.png; sourceTree = "<group>"; };
+		A3D2348417E648DF00903654 /* sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sms.png; sourceTree = "<group>"; };
+		A3D2348617E648E500903654 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		A3D2348817E6499A00903654 /* contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacts.png; sourceTree = "<group>"; };
+		A3D2348A17E649E400903654 /* contacts2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacts2.png; sourceTree = "<group>"; };
+		A3D2348C17E64D5200903654 /* sms2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sms2.png; sourceTree = "<group>"; };
+		A3D2348E17E6508B00903654 /* msg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +483,20 @@
 		A30EF61017D231380089D859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A37B22C417E65C33002572A6 /* contactsGroup3.png */,
+				A37B22C217E659D4002572A6 /* contactsGroup2.png */,
+				A37B22BE17E65723002572A6 /* contactsGroup.png */,
+				A37B22C017E65759002572A6 /* contactsBlocked.png */,
+				A3D2348E17E6508B00903654 /* msg.png */,
+				A3D2348C17E64D5200903654 /* sms2.png */,
+				A3D2348A17E649E400903654 /* contacts2.png */,
+				A3D2348817E6499A00903654 /* contacts.png */,
+				A3D2348617E648E500903654 /* lock.png */,
+				A3D2348417E648DF00903654 /* sms.png */,
+				A3D2348217E6461F00903654 /* salmonBG.png */,
+				A3D2348017E638D500903654 /* cloudColor.png */,
+				A3D2347E17E638CD00903654 /* bkG1.png */,
+				A3D2347B17E638B800903654 /* bckG.png */,
 				A30EF61117D231380089D859 /* textMsg-Info.plist */,
 				A30EF61217D231380089D859 /* InfoPlist.strings */,
 				A30EF61517D231380089D859 /* main.m */,
@@ -557,10 +599,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D2348517E648DF00903654 /* sms.png in Resources */,
+				A3D2348D17E64D5200903654 /* sms2.png in Resources */,
+				A37B22C517E65C33002572A6 /* contactsGroup3.png in Resources */,
+				A3D2348B17E649E400903654 /* contacts2.png in Resources */,
 				85D8BC9F17D6C48E00E5FD66 /* TextData.xcdatamodeld in Resources */,
+				A3D2348917E6499A00903654 /* contacts.png in Resources */,
+				A3D2348117E638D500903654 /* cloudColor.png in Resources */,
+				A3D2348317E6461F00903654 /* salmonBG.png in Resources */,
+				A37B22C317E659D4002572A6 /* contactsGroup2.png in Resources */,
+				A3D2348F17E6508B00903654 /* msg.png in Resources */,
+				A3D2347C17E638B800903654 /* bckG.png in Resources */,
+				A37B22C117E65759002572A6 /* contactsBlocked.png in Resources */,
+				A3D2347F17E638CD00903654 /* bkG1.png in Resources */,
+				A3D2348717E648E500903654 /* lock.png in Resources */,
 				A30EF62217D231390089D859 /* Images.xcassets in Resources */,
 				A30EF61417D231380089D859 /* InfoPlist.strings in Resources */,
 				A30EF61D17D231380089D859 /* Main.storyboard in Resources */,
+				A37B22BF17E65723002572A6 /* contactsGroup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
