@@ -158,11 +158,7 @@
     //self.navigationController.navigationBarHidden = YES;
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:YES];
-    //self.navigationController.navigationBarHidden = NO;
-}
+
 
 
 - (void)didReceiveMemoryWarning
@@ -240,7 +236,7 @@
     {
         NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
         groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
-        [self.navigationController pushViewController:groupDetail animated:YES];
+        [self.navigationController pushViewController:groupDetail animated:NO];
     }
     
 }

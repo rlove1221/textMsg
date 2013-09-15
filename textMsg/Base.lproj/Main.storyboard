@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9oe-x0-LlA">
-                                <rect key="frame" x="0.0" y="101" width="320" height="315"/>
+                                <rect key="frame" x="0.0" y="81" width="320" height="335"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -64,9 +64,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="W95-Hn-G2z" kind="push" id="4sG-D7-FUG"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -123,6 +120,7 @@
                     <connections>
                         <outlet property="groupTableView" destination="9oe-x0-LlA" id="H3A-Qw-PQI"/>
                         <segue destination="VPh-pa-Zcx" kind="push" id="BsM-FD-eoK"/>
+                        <segue destination="W95-Hn-G2z" kind="push" id="F1N-PP-2eV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
