@@ -17,5 +17,6 @@
     
     
 }
+- (IBAction)setpass_click:(id)sender;
 - (IBAction)creategroup_click:(id)sender;
 @end

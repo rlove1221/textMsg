@@ -36,7 +36,21 @@
     if (isAddNew) {
         groupItem = [GroupItem newGroupItem];
         groupItem.groupUUID = tempUUID;
+        groupItem.groupStatus = @"0";
+        saveBTN.hidden = YES;
     }
+    else
+    {
+        if ([groupItem.groupStatus isEqualToString:@"0"]) {
+            [blockBTn setTitle:@"Block"];
+        }
+        else
+        {
+            [blockBTn setTitle:@"Unblock"];
+        }
+        addBTN.hidden = YES;
+    }
+    
     
     addressBook = ABAddressBookCreate();
     
@@ -150,18 +164,14 @@
         }
     }
     
-    if ([timeTextField.text integerValue] != 0) {
-        NSTimeInterval timeInterval = [[NSDate date] timeIntervalSince1970];
-        timeInterval +=[timeTextField.text integerValue];
-        groupItem.blockTime = [NSString stringWithFormat:@"%f",timeInterval];
-    }
+    
     
     groupItem.groupName = groupname;
     groupItem.groupStatus = @"0";
     [GroupItem updateGroupItem:groupItem];
-    for (ContactItem *contactItem in contactList) {
-        [self deleteContact:contactItem.contactName];
-    }
+//    for (ContactItem *contactItem in contactList) {
+//        [self deleteContact:contactItem.contactName];
+//    }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -192,6 +202,44 @@
     
 }
 
+- (void)creatContact:(ContactItem *)contactitem
+{
+    CFErrorRef error = nil;
+    ABAddressBookRef addressBook = ABAddressBookCreate(); // create address book record
+    ABRecordRef person = ABPersonCreate(); // create a person
+    
+    NSString *phone = contactitem.contactNumber; // the phone number to add
+    NSArray *splitArray = [contactitem.contactName componentsSeparatedByString:@" "];
+    NSString *firstname=@"";
+    NSString *lastname=@"";
+    if ([splitArray count] > 1) {
+        firstname = [splitArray objectAtIndex:0];
+        lastname = [splitArray objectAtIndex:1];
+    }
+    
+    //Phone number is a list of phone number, so create a multivalue
+    ABMutableMultiValueRef phoneNumberMultiValue =
+    ABMultiValueCreateMutable(kABPersonPhoneProperty);
+    ABMultiValueAddValueAndLabel(phoneNumberMultiValue ,(__bridge CFTypeRef)(phone),kABPersonPhoneMobileLabel, NULL);
+    
+    ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge CFTypeRef)(firstname) , nil); // first name of the new person
+    ABRecordSetValue(person, kABPersonLastNameProperty, (__bridge CFTypeRef)(lastname), nil); // his last name
+    ABRecordSetValue(person, kABPersonPhoneProperty, phoneNumberMultiValue, &error); // set the phone number property
+    ABAddressBookAddRecord(addressBook, person, nil); //add the new person to the record
+    
+    ABRecordRef group = ABGroupCreate(); //create a group
+    ABRecordSetValue(group, kABGroupNameProperty,@"My Group", &error); // set group's name
+    ABGroupAddMember(group, person, &error); // add the person to the group
+    ABAddressBookAddRecord(addressBook, group, &error); // add the group
+    
+    
+    ABAddressBookSave(addressBook, nil); //save the record
+    
+    
+    
+    CFRelease(person); // relase the ABRecordRef  variable
+}
+
 - (NSString *) getName: (ABRecordRef) person
 {
     NSString *firstName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
@@ -209,6 +257,114 @@
     if (!firstName) firstName = @"";
     
     return [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+}
+
+
+- (IBAction)save_click:(id)sender {
+    if (nameTF.text.length == 0 || [nameTF.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length == 0) {
+        [Util showAlertWithString:@"Please enter group name!"];
+        return;
+    }
+    
+    NSString *groupname = [nameTF.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (isAddNew||(!isAddNew && ![nameTF.text isEqualToString:groupItem.groupName])) {
+        GroupItem *group = [GroupItem getGroupItemByName:groupname];
+        if (group) {
+            [Util showAlertWithString:@"This group is existed"];
+            return;
+        }
+    }    
+    
+    groupItem.groupName = groupname;
+    
+    [GroupItem updateGroupItem:groupItem];
+    if ([groupItem.groupStatus isEqualToString:@"1"]) {
+        for (ContactItem *contactItem in contactList) {
+            [self deleteContact:contactItem.contactName];
+        }
+    }
+    else
+    {
+        for (ContactItem *contactItem in contactList) {
+            [self creatContact:contactItem];
+        }
+    }
+    
+    
+    //[self.navigationController popViewControllerAnimated:YES];
+
+}
+
+- (IBAction)block_click:(id)sender {
+    if ([groupItem.groupStatus isEqualToString:@"0"]) {
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please confirm your passcode to block all contact in this group" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+            [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            alert1.tag = 100;
+            [alert1 show];
+        }
+        else
+        {
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Do you want to block all contacts in this group?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+            alert1.tag = 300;
+            [alert1 show];
+        }
+    }
+    else
+    {
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
+        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please confirm your passcode to unblock all contacts in this group " delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        alert1.tag = 200;
+        [alert1 show];
+        }
+        else
+        {
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Do you want to unblock all contacts in this group?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+            alert1.tag = 400;
+            [alert1 show];
+        }
+    }
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 100 && buttonIndex == 1) {
+        NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
+        if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
+            groupItem.groupStatus = @"1";
+        }
+        else
+        {
+            [Util showAlertWithString:@"Passcode not correct"];
+        }
+        
+    }
+    if (alertView.tag == 200 && buttonIndex == 1) {
+        NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
+        if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
+            groupItem.groupStatus = @"0";
+        }
+        else
+        {
+            [Util showAlertWithString:@"Passcode not correct"];
+        }
+        
+    }
+    if (alertView.tag == 300 && buttonIndex == 1) {
+        groupItem.groupStatus = @"1";
+    }
+    if (alertView.tag == 400 && buttonIndex == 1) {
+        groupItem.groupStatus = @"0";
+    }
+    if ([groupItem.groupStatus isEqualToString:@"0"]) {
+        [blockBTn setTitle:@"Block"];
+    }
+    else
+    {
+        [blockBTn setTitle:@"Unblock"];
+    }
+    
 }
 
 

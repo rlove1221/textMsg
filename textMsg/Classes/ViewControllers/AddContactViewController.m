@@ -165,7 +165,7 @@
         }
         item.contactNumber = [dict objectForKey:@"phone"];
         item.groupUUID = self.groupItem.groupUUID;
-        [self deleteContact:item.contactName];
+        //[self deleteContact:item.contactName];
         //item.contactData = [dict objectForKey:@"contactData"];
         [ContactItem updateCGItem:item];
     }

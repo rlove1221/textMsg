@@ -12,6 +12,7 @@
 #import <AddressBook/AddressBook.h>
 #import "GroupItem+Custom.h"
 #import "NewGroupViewController.h"
+#import "Util.h"
 @interface MainViewController ()
 
 @end
@@ -21,7 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(checkExpiredGroup) userInfo:nil repeats:YES];
+    //[NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(checkExpiredGroup) userInfo:nil repeats:YES];
     ABAddressBookRef addressBook = ABAddressBookCreate();
     
     __block BOOL accessGranted = NO;
@@ -222,6 +223,45 @@
     [GroupItem deleteGroupItem:[groupList objectAtIndex:indexPath.row]];
     [self viewWillAppear:YES];
 }
+
+- (IBAction)setpass_click:(id)sender {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
+        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your Current Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        alert1.tag = 100;
+        [alert1 show];
+    }
+    else{
+        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your New Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        alert1.tag = 200;
+        [alert1 show];
+    }
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 100 && buttonIndex == 1) {
+        NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
+        if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your New Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+            [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            alert1.tag = 200;
+            [alert1 show];
+        }
+        else
+        {
+            [Util showAlertWithString:@"Passcode not correct"];
+        }
+        
+    }
+    if (alertView.tag == 200 && buttonIndex == 1) {
+        [[NSUserDefaults standardUserDefaults] setObject:[alertView textFieldAtIndex:0].text forKey:@"passcode"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+}
+
 
 - (IBAction)creategroup_click:(id)sender {
     NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];

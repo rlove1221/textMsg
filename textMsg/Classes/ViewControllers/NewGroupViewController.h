@@ -23,10 +23,16 @@
     ABAddressBookRef addressBook;
     NSMutableArray *allContactsPhoneNumber;
     BOOL accessGranted;
+    IBOutlet UIButton *saveBTN;
+    IBOutlet UIButton *addBTN;
+    IBOutlet UIBarButtonItem *blockBTn;
 }
 - (IBAction)create_Click:(id)sender;
 - (IBAction)addContact_Click:(id)sender;
 @property(nonatomic,strong)GroupItem *groupItem;
 @property(nonatomic)BOOL isAddNew;
+- (IBAction)save_click:(id)sender;
+- (IBAction)block_click:(id)sender;
+
 
 @end
