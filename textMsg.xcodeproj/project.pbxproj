@@ -63,6 +63,7 @@
 		A30EF63317D231390089D859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A30EF63117D231390089D859 /* InfoPlist.strings */; };
 		A30EF63517D231390089D859 /* textMsgTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A30EF63417D231390089D859 /* textMsgTests.m */; };
 		A30EF63F17D234F70089D859 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30EF63E17D234F70089D859 /* MessageUI.framework */; };
+		A3D2347417E61C3F00903654 /* BlockedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D2347317E61C3F00903654 /* BlockedListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,8 @@
 		A30EF63217D231390089D859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A30EF63417D231390089D859 /* textMsgTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textMsgTests.m; sourceTree = "<group>"; };
 		A30EF63E17D234F70089D859 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A3D2347217E61C3F00903654 /* BlockedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockedListViewController.h; sourceTree = "<group>"; };
+		A3D2347317E61C3F00903654 /* BlockedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockedListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +231,8 @@
 				85D8BC9D17D6C04800E5FD66 /* NewGroupViewController.m */,
 				85D8BCA017D6C55200E5FD66 /* AddContactViewController.h */,
 				85D8BCA117D6C55200E5FD66 /* AddContactViewController.m */,
+				A3D2347217E61C3F00903654 /* BlockedListViewController.h */,
+				A3D2347317E61C3F00903654 /* BlockedListViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D2347417E61C3F00903654 /* BlockedListViewController.m in Sources */,
 				85D8BCAF17D6C96A00E5FD66 /* UIBarButtonItem+WEPopover.m in Sources */,
 				85D8BCB017D6C96A00E5FD66 /* WEPopoverContainerView.m in Sources */,
 				85D8BCB117D6C96A00E5FD66 /* WEPopoverContentViewController.m in Sources */,

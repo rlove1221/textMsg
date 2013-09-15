@@ -55,6 +55,32 @@
     return lists;
 }
 
++ (NSArray *)getGroupByStatus:(NSString *)status
+{
+    NSArray *lists;
+    NSManagedObjectContext *managedObjectContext = [NSManagedObjectContext managedObjectContext];
+    if (managedObjectContext == nil)
+    {
+        return nil;
+    }
+    @try
+    {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"groupStatus LIKE[c] %@", status];
+        lists = [CoreDataHelper searchObjectsInContext:managedObjectContext
+                                            entityName:kEntityName
+                                             predicate:predicate
+                                               sortKey:nil
+                                         sortAscending:NO];
+
+    }
+    @catch (NSException *exception)
+    {
+        NSLog(@"__ERROR__%@__", exception.reason);
+    }
+    
+    return lists;
+}
+
 + (NSArray *)getExpiredGroup
 {
     NSArray *lists;

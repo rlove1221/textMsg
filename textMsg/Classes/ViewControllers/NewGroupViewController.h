@@ -33,6 +33,7 @@
 @property(nonatomic)BOOL isAddNew;
 - (IBAction)save_click:(id)sender;
 - (IBAction)block_click:(id)sender;
+- (IBAction)back_click:(id)sender;
 
 
 @end

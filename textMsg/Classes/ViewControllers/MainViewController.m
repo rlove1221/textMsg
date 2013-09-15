@@ -13,6 +13,8 @@
 #import "GroupItem+Custom.h"
 #import "NewGroupViewController.h"
 #import "Util.h"
+#import "NSManagedObjectContext+Custom.h"
+#import "BlockedListViewController.h"
 @interface MainViewController ()
 
 @end
@@ -149,8 +151,17 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    groupList = [GroupItem getAllGroupItems];
+    [super viewWillAppear:YES];
+    [[NSManagedObjectContext managedObjectContext] reset];
+    groupList = [GroupItem getGroupByStatus:@"0"];
     [groupTableView reloadData];
+    //self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    //self.navigationController.navigationBarHidden = NO;
 }
 
 
@@ -213,16 +224,44 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
-    NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
-    groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
-    [self.navigationController pushViewController:groupDetail animated:YES];
+    selectedItem = [groupList objectAtIndex:indexPath.row];
+    
+    if ([selectedItem.groupStatus isEqualToString:@"1"]) {
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Confirm Your Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+            [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            alert1.tag = 400;
+            [alert1 show];
+        }
+    }
+    else
+    {
+        NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+        groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:groupDetail animated:YES];
+    }
+    
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [GroupItem deleteGroupItem:[groupList objectAtIndex:indexPath.row]];
-    [self viewWillAppear:YES];
+    selectedItem = [groupList objectAtIndex:indexPath.row];
+    if ([selectedItem.groupStatus isEqualToString:@"1"]) {
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Confirm Your Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+            [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            alert1.tag = 300;
+            [alert1 show];
+        }
+    }
+    else
+    {
+        [GroupItem deleteGroupItem:selectedItem];
+        [self viewWillAppear:YES];
+    }
+    
 }
 
 - (IBAction)setpass_click:(id)sender {
@@ -261,11 +300,73 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
+    if (alertView.tag == 300 && buttonIndex == 1) {
+        NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
+        if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
+            NSArray *contactList = [ContactItem getAllCGItemByGroupUUID:selectedItem.groupUUID];
+            for (ContactItem *contactItem in contactList) {
+                [self creatContact:contactItem];
+            }
+            [GroupItem deleteGroupItem:selectedItem];
+            [self viewWillAppear:YES];
+        }
+        else
+        {
+            [Util showAlertWithString:@"Passcode not correct"];
+        }
+        
+    }
+    
+    if (alertView.tag == 400 && buttonIndex == 1) {
+        NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
+        if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
+            NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+            groupDetail.groupItem = selectedItem;
+            [self.navigationController pushViewController:groupDetail animated:YES];
+        }
+        else
+        {
+            [Util showAlertWithString:@"Passcode not correct"];
+        }
+        
+    }
+    
+    if (alertView.tag == 500 && buttonIndex == 1) {
+        NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
+        if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
+            BlockedListViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"BlockedListViewController"];
+            
+            [self.navigationController pushViewController:groupDetail animated:YES];
+        }
+        else
+        {
+            [Util showAlertWithString:@"Passcode not correct"];
+        }
+        
+    }
+    
+    groupTableView.editing = NO;
+    
 }
 
 
 - (IBAction)creategroup_click:(id)sender {
     NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
     [self.navigationController pushViewController:groupDetail animated:YES];
+}
+
+- (IBAction)viewBlockedList_Click:(id)sender {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
+        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Confirm Your Current Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        alert1.tag = 500;
+        [alert1 show];
+    }
+    else{
+        BlockedListViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"BlockedListViewController"];
+        
+        [self.navigationController pushViewController:groupDetail animated:YES];
+    }
+    
 }
 @end

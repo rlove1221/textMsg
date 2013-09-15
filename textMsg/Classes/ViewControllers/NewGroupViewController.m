@@ -167,11 +167,19 @@
     
     
     groupItem.groupName = groupname;
-    groupItem.groupStatus = @"0";
+    
     [GroupItem updateGroupItem:groupItem];
-//    for (ContactItem *contactItem in contactList) {
-//        [self deleteContact:contactItem.contactName];
-//    }
+    if ([groupItem.groupStatus isEqualToString:@"1"]) {
+        for (ContactItem *contactItem in contactList) {
+            [self deleteContact:contactItem.contactName];
+        }
+    }
+    else
+    {
+        for (ContactItem *contactItem in contactList) {
+            [self creatContact:contactItem];
+        }
+    }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -289,7 +297,7 @@
             [self creatContact:contactItem];
         }
     }
-    
+    //[Util showAlertWithString:@"Saved"];
     
     //[self.navigationController popViewControllerAnimated:YES];
 
@@ -328,11 +336,20 @@
     
 }
 
+- (IBAction)back_click:(id)sender {
+    [self save_click:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
     if (alertView.tag == 100 && buttonIndex == 1) {
         NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
         if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
             groupItem.groupStatus = @"1";
+            if (!isAddNew) {
+                [self save_click:nil];
+            }
         }
         else
         {
@@ -344,6 +361,9 @@
         NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
         if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
             groupItem.groupStatus = @"0";
+            if (!isAddNew) {
+                [self save_click:nil];
+            }
         }
         else
         {
@@ -353,9 +373,15 @@
     }
     if (alertView.tag == 300 && buttonIndex == 1) {
         groupItem.groupStatus = @"1";
+        if (!isAddNew) {
+            [self save_click:nil];
+        }
     }
     if (alertView.tag == 400 && buttonIndex == 1) {
         groupItem.groupStatus = @"0";
+        if (!isAddNew) {
+            [self save_click:nil];
+        }
     }
     if ([groupItem.groupStatus isEqualToString:@"0"]) {
         [blockBTn setTitle:@"Block"];

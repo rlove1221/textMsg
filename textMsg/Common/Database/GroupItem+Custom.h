@@ -12,6 +12,7 @@
 + (NSArray *)getAllGroupItems;
 
 + (GroupItem *)getGroupItemByName:(NSString *)name;
++ (NSArray *)getGroupByStatus:(NSString *)status;
 
 + (GroupItem *)newGroupItem;
 
