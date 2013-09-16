@@ -63,6 +63,13 @@
 		A30EF63317D231390089D859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A30EF63117D231390089D859 /* InfoPlist.strings */; };
 		A30EF63517D231390089D859 /* textMsgTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A30EF63417D231390089D859 /* textMsgTests.m */; };
 		A30EF63F17D234F70089D859 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30EF63E17D234F70089D859 /* MessageUI.framework */; };
+		A31899C817E68001004FCAD5 /* msg1.png in Resources */ = {isa = PBXBuildFile; fileRef = A31899C717E68001004FCAD5 /* msg1.png */; };
+		A31899CA17E681AE004FCAD5 /* msg2.png in Resources */ = {isa = PBXBuildFile; fileRef = A31899C917E681AE004FCAD5 /* msg2.png */; };
+		A31899CC17E687CF004FCAD5 /* torquise.png in Resources */ = {isa = PBXBuildFile; fileRef = A31899CB17E687CF004FCAD5 /* torquise.png */; };
+		A31899CE17E68812004FCAD5 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = A31899CD17E68812004FCAD5 /* green.png */; };
+		A338C5EA17E6A51600FE9D1E /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = A338C5E917E6A51600FE9D1E /* save.png */; };
+		A338C5EC17E6B79F00FE9D1E /* content.png in Resources */ = {isa = PBXBuildFile; fileRef = A338C5EB17E6B79F00FE9D1E /* content.png */; };
+		A338C5EE17E6B7A600FE9D1E /* contentLines.png in Resources */ = {isa = PBXBuildFile; fileRef = A338C5ED17E6B7A600FE9D1E /* contentLines.png */; };
 		A37B22BF17E65723002572A6 /* contactsGroup.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22BE17E65723002572A6 /* contactsGroup.png */; };
 		A37B22C117E65759002572A6 /* contactsBlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C017E65759002572A6 /* contactsBlocked.png */; };
 		A37B22C317E659D4002572A6 /* contactsGroup2.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C217E659D4002572A6 /* contactsGroup2.png */; };
@@ -191,6 +198,13 @@
 		A30EF63217D231390089D859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A30EF63417D231390089D859 /* textMsgTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textMsgTests.m; sourceTree = "<group>"; };
 		A30EF63E17D234F70089D859 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A31899C717E68001004FCAD5 /* msg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msg1.png; sourceTree = "<group>"; };
+		A31899C917E681AE004FCAD5 /* msg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msg2.png; sourceTree = "<group>"; };
+		A31899CB17E687CF004FCAD5 /* torquise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torquise.png; sourceTree = "<group>"; };
+		A31899CD17E68812004FCAD5 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		A338C5E917E6A51600FE9D1E /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		A338C5EB17E6B79F00FE9D1E /* content.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = content.png; sourceTree = "<group>"; };
+		A338C5ED17E6B7A600FE9D1E /* contentLines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contentLines.png; sourceTree = "<group>"; };
 		A37B22BE17E65723002572A6 /* contactsGroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsGroup.png; sourceTree = "<group>"; };
 		A37B22C017E65759002572A6 /* contactsBlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsBlocked.png; sourceTree = "<group>"; };
 		A37B22C217E659D4002572A6 /* contactsGroup2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsGroup2.png; sourceTree = "<group>"; };
@@ -483,6 +497,13 @@
 		A30EF61017D231380089D859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A338C5ED17E6B7A600FE9D1E /* contentLines.png */,
+				A338C5EB17E6B79F00FE9D1E /* content.png */,
+				A338C5E917E6A51600FE9D1E /* save.png */,
+				A31899CD17E68812004FCAD5 /* green.png */,
+				A31899CB17E687CF004FCAD5 /* torquise.png */,
+				A31899C917E681AE004FCAD5 /* msg2.png */,
+				A31899C717E68001004FCAD5 /* msg1.png */,
 				A37B22C417E65C33002572A6 /* contactsGroup3.png */,
 				A37B22C217E659D4002572A6 /* contactsGroup2.png */,
 				A37B22BE17E65723002572A6 /* contactsGroup.png */,
@@ -599,24 +620,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A31899CC17E687CF004FCAD5 /* torquise.png in Resources */,
+				A31899CE17E68812004FCAD5 /* green.png in Resources */,
 				A3D2348517E648DF00903654 /* sms.png in Resources */,
 				A3D2348D17E64D5200903654 /* sms2.png in Resources */,
+				A338C5EA17E6A51600FE9D1E /* save.png in Resources */,
 				A37B22C517E65C33002572A6 /* contactsGroup3.png in Resources */,
 				A3D2348B17E649E400903654 /* contacts2.png in Resources */,
 				85D8BC9F17D6C48E00E5FD66 /* TextData.xcdatamodeld in Resources */,
 				A3D2348917E6499A00903654 /* contacts.png in Resources */,
+				A338C5EC17E6B79F00FE9D1E /* content.png in Resources */,
 				A3D2348117E638D500903654 /* cloudColor.png in Resources */,
 				A3D2348317E6461F00903654 /* salmonBG.png in Resources */,
 				A37B22C317E659D4002572A6 /* contactsGroup2.png in Resources */,
 				A3D2348F17E6508B00903654 /* msg.png in Resources */,
 				A3D2347C17E638B800903654 /* bckG.png in Resources */,
 				A37B22C117E65759002572A6 /* contactsBlocked.png in Resources */,
+				A31899C817E68001004FCAD5 /* msg1.png in Resources */,
 				A3D2347F17E638CD00903654 /* bkG1.png in Resources */,
 				A3D2348717E648E500903654 /* lock.png in Resources */,
 				A30EF62217D231390089D859 /* Images.xcassets in Resources */,
+				A31899CA17E681AE004FCAD5 /* msg2.png in Resources */,
 				A30EF61417D231380089D859 /* InfoPlist.strings in Resources */,
 				A30EF61D17D231380089D859 /* Main.storyboard in Resources */,
 				A37B22BF17E65723002572A6 /* contactsGroup.png in Resources */,
+				A338C5EE17E6B7A600FE9D1E /* contentLines.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
