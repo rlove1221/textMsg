@@ -155,7 +155,12 @@
     [[NSManagedObjectContext managedObjectContext] reset];
     groupList = [GroupItem getGroupByStatus:@"0"];
     [groupTableView reloadData];
-    //self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = NO;
 }
 
 
