@@ -216,8 +216,6 @@
         status.text = @"Blocked";
         status.textColor = [UIColor redColor];
     }
-    
-    
     //groupItem.blockTime = [NSString stringWithFormat:@"%.0f",timeInterval/1000];
     
     return cell;
@@ -229,19 +227,39 @@
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
     selectedItem = [groupList objectAtIndex:indexPath.row];
     
-    if ([selectedItem.groupStatus isEqualToString:@"1"]) {
-        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
-            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Confirm Your Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-            [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
-            alert1.tag = 400;
-            [alert1 show];
-        }
-    }
-    else
+//    if ([selectedItem.groupStatus isEqualToString:@"1"]) {
+//        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
+//            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Confirm Your Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+//            [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+//            alert1.tag = 400;
+//            [alert1 show];
+//        }
+//    }
+//    else
+//    {
+//        NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+//        groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
+//        [self.navigationController pushViewController:groupDetail animated:NO];
+//    }
+    MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+    
+     if([MFMessageComposeViewController canSendText])
     {
-        NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
-        groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
-        [self.navigationController pushViewController:groupDetail animated:NO];
+        NSArray *contactList = [ContactItem getAllCGItemByGroupUUID:selectedItem.groupUUID];
+        NSMutableArray *phoneList = [[NSMutableArray alloc] initWithCapacity:0];
+        for (ContactItem *item in contactList) {
+            [phoneList addObject:item.contactNumber];
+        }
+        if ([phoneList count] == 0) {
+            [Util showAlertWithString:@"No contact to send message"];
+        }
+        else{
+            controller.body = @"SMS message here";
+            controller.recipients = phoneList;
+            controller.messageComposeDelegate = self;
+            [self presentViewController:controller animated:YES completion:nil];
+        }
+        
     }
     
 }
