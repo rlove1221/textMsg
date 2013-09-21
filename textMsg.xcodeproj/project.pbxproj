@@ -92,6 +92,9 @@
 		A3D2348B17E649E400903654 /* contacts2.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2348A17E649E400903654 /* contacts2.png */; };
 		A3D2348D17E64D5200903654 /* sms2.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2348C17E64D5200903654 /* sms2.png */; };
 		A3D2348F17E6508B00903654 /* msg.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2348E17E6508B00903654 /* msg.png */; };
+		A3D4680417ED0E080002A1C5 /* test3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D4680317ED0E080002A1C5 /* test3@2x.png */; };
+		A3D4680617ED1B710002A1C5 /* blocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D4680517ED1B710002A1C5 /* blocked@2x.png */; };
+		A3D4680817ED30CC0002A1C5 /* main3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D4680717ED30CC0002A1C5 /* main3@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,6 +238,9 @@
 		A3D2348A17E649E400903654 /* contacts2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacts2.png; sourceTree = "<group>"; };
 		A3D2348C17E64D5200903654 /* sms2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sms2.png; sourceTree = "<group>"; };
 		A3D2348E17E6508B00903654 /* msg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msg.png; sourceTree = "<group>"; };
+		A3D4680317ED0E080002A1C5 /* test3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test3@2x.png"; sourceTree = "<group>"; };
+		A3D4680517ED1B710002A1C5 /* blocked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blocked@2x.png"; sourceTree = "<group>"; };
+		A3D4680717ED30CC0002A1C5 /* main3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main3@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -511,6 +517,9 @@
 		A30EF61017D231380089D859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A3D4680717ED30CC0002A1C5 /* main3@2x.png */,
+				A3D4680517ED1B710002A1C5 /* blocked@2x.png */,
+				A3D4680317ED0E080002A1C5 /* test3@2x.png */,
 				A338C5FD17E78F7200FE9D1E /* contactsHideGroup8.png */,
 				A338C5FB17E753BE00FE9D1E /* contactsGroup7.png */,
 				A338C5F917E7510C00FE9D1E /* contactsGroup5.png */,
@@ -646,6 +655,7 @@
 				A3D2348517E648DF00903654 /* sms.png in Resources */,
 				A338C5F417E7492900FE9D1E /* contactsHideGroup.png in Resources */,
 				A3D2348D17E64D5200903654 /* sms2.png in Resources */,
+				A3D4680817ED30CC0002A1C5 /* main3@2x.png in Resources */,
 				A338C5EA17E6A51600FE9D1E /* save.png in Resources */,
 				A338C5FA17E7510C00FE9D1E /* contactsGroup5.png in Resources */,
 				A338C5FE17E78F7200FE9D1E /* contactsHideGroup8.png in Resources */,
@@ -656,6 +666,7 @@
 				A3D2348917E6499A00903654 /* contacts.png in Resources */,
 				A338C5EC17E6B79F00FE9D1E /* content.png in Resources */,
 				A3D2348117E638D500903654 /* cloudColor.png in Resources */,
+				A3D4680617ED1B710002A1C5 /* blocked@2x.png in Resources */,
 				A338C5F817E7501900FE9D1E /* contactsGroup6.png in Resources */,
 				A3D2348317E6461F00903654 /* salmonBG.png in Resources */,
 				A37B22C317E659D4002572A6 /* contactsGroup2.png in Resources */,
@@ -665,6 +676,7 @@
 				A31899C817E68001004FCAD5 /* msg1.png in Resources */,
 				A3D2347F17E638CD00903654 /* bkG1.png in Resources */,
 				A338C5F017E6BE2700FE9D1E /* save1.png in Resources */,
+				A3D4680417ED0E080002A1C5 /* test3@2x.png in Resources */,
 				A3D2348717E648E500903654 /* lock.png in Resources */,
 				A30EF62217D231390089D859 /* Images.xcassets in Resources */,
 				A31899CA17E681AE004FCAD5 /* msg2.png in Resources */,
