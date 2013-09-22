@@ -95,6 +95,7 @@
 		A3D4680417ED0E080002A1C5 /* test3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D4680317ED0E080002A1C5 /* test3@2x.png */; };
 		A3D4680617ED1B710002A1C5 /* blocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D4680517ED1B710002A1C5 /* blocked@2x.png */; };
 		A3D4680817ED30CC0002A1C5 /* main3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D4680717ED30CC0002A1C5 /* main3@2x.png */; };
+		A3D4681017EE83020002A1C5 /* contacts3.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D4680F17EE83020002A1C5 /* contacts3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +242,7 @@
 		A3D4680317ED0E080002A1C5 /* test3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test3@2x.png"; sourceTree = "<group>"; };
 		A3D4680517ED1B710002A1C5 /* blocked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blocked@2x.png"; sourceTree = "<group>"; };
 		A3D4680717ED30CC0002A1C5 /* main3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main3@2x.png"; sourceTree = "<group>"; };
+		A3D4680F17EE83020002A1C5 /* contacts3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacts3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,6 +537,7 @@
 				A31899C917E681AE004FCAD5 /* msg2.png */,
 				A31899C717E68001004FCAD5 /* msg1.png */,
 				A37B22C417E65C33002572A6 /* contactsGroup3.png */,
+				A3D4680F17EE83020002A1C5 /* contacts3.png */,
 				A37B22C217E659D4002572A6 /* contactsGroup2.png */,
 				A37B22BE17E65723002572A6 /* contactsGroup.png */,
 				A37B22C017E65759002572A6 /* contactsBlocked.png */,
@@ -684,6 +687,7 @@
 				A30EF61D17D231380089D859 /* Main.storyboard in Resources */,
 				A338C5F617E74BE600FE9D1E /* contactsGroup4.png in Resources */,
 				A37B22BF17E65723002572A6 /* contactsGroup.png in Resources */,
+				A3D4681017EE83020002A1C5 /* contacts3.png in Resources */,
 				A338C5EE17E6B7A600FE9D1E /* contentLines.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
