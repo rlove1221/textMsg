@@ -18,6 +18,7 @@
     GroupItem *selectedItem;
     
 }
+- (IBAction)edit_click:(id)sender;
 - (IBAction)setpass_click:(id)sender;
 - (IBAction)creategroup_click:(id)sender;
 - (IBAction)viewBlockedList_Click:(id)sender;

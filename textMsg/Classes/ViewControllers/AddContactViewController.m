@@ -65,13 +65,16 @@
         NSArray *phones =
         (__bridge NSArray *)ABMultiValueCopyArrayOfAllValues(
                                                              ABRecordCopyValue(currentPerson, kABPersonPhoneProperty));
+        NSDictionary *additionDict = [self dictionaryRepresentationForABPerson:currentPerson];
         
+        //[[NSUserDefaults standardUserDefaults] setObject:testdict forKey:@"test"];
+       // [[NSUserDefaults standardUserDefaults] synchronize];
         // Make sure that the selected contact has one phone at least filled in.
         if ([phones count] > 0) {
             // We'll use the first phone number only here.
             // In a real app, it's up to you to play around with the returned values and pick the necessary value.
             //NSData *contactData = [NSKeyedArchiver archivedDataWithRootObject:(__bridge id)(currentPerson)];
-            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:name,@"name",[phones objectAtIndex:0],@"phone", nil];
+            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:name,@"name",[phones objectAtIndex:0],@"phone",additionDict,@"additioninfo", nil];
             [allContactsPhoneNumber addObject:dict];
             //[actualContactList addObject:(__bridge id)(currentPerson)];
         }
@@ -79,9 +82,63 @@
             //[allContactsPhoneNumber addObject:@"No phone number was set."];
         }
     }
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
+                                                 ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    allContactsPhoneNumber = [[allContactsPhoneNumber sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+-(NSDictionary*) dictionaryRepresentationForABPerson:(ABRecordRef)person
+{
+    NSMutableDictionary* dictionary = [NSMutableDictionary dictionary];
+    
+    for ( int32_t propertyIndex = kABPersonFirstNameProperty; propertyIndex <= kABPersonSocialProfileProperty; propertyIndex ++ )
+    {
+        NSString* propertyName = (__bridge NSString *)ABPersonCopyLocalizedPropertyName(propertyIndex);
+        id value = (__bridge id)(ABRecordCopyValue(person, propertyIndex));
+        
+        if ( value )
+        {
+            
+            ABMutableMultiValueRef multi = ABRecordCopyValue(person, propertyIndex);
+            NSString *stringvalue = (__bridge NSString *)ABRecordCopyValue(person, propertyIndex);
+            if ([stringvalue isKindOfClass:[NSString class]] ||[stringvalue isKindOfClass:[NSDate class]] ||[stringvalue isKindOfClass:[NSNumber class]])
+            {
+                
+                [dictionary setObject:value forKey:propertyName];
+            }
+
+            else
+            {
+                NSMutableArray *tempArray = [[NSMutableArray alloc] initWithCapacity:0];
+                
+                for (CFIndex i = 0; i < ABMultiValueGetCount(multi); i++) {
+                    NSString *valueRef = (__bridge NSString *)ABMultiValueCopyValueAtIndex(multi, i);
+                    NSString *keyRef = (__bridge NSString *)ABMultiValueCopyLabelAtIndex(multi, i);
+                    if (valueRef  && keyRef ) {
+                        NSDictionary *tempDict = [[NSDictionary alloc] initWithObjectsAndKeys:valueRef,keyRef, nil];
+                        [tempArray addObject:tempDict];
+                    }
+                    else{
+                        NSLog(@"nil");
+                    }
+                    
+                    
+                }
+                if ([tempArray count] > 0) {
+                     [dictionary setObject:tempArray forKey:propertyName];
+                }
+             
+            }
+            
+        }
+    }
+    
+    return dictionary;
+}
 - (NSString *) getName: (ABRecordRef) person
 {
     NSString *firstName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
@@ -165,6 +222,9 @@
         }
         item.contactNumber = [dict objectForKey:@"phone"];
         item.groupUUID = self.groupItem.groupUUID;
+        NSDictionary *tempdict = [dict objectForKey:@"addtioninfo"];
+        NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:tempdict];
+        item.contactData = myData;
         //[self deleteContact:item.contactName];
         //item.contactData = [dict objectForKey:@"contactData"];
         [ContactItem updateCGItem:item];

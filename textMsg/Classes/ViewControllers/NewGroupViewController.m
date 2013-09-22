@@ -337,7 +337,7 @@
 }
 
 - (IBAction)back_click:(id)sender {
-    //[self save_click:nil];
+    [self save_click:nil];
     [self.navigationController popViewControllerAnimated:YES];
     
 }
