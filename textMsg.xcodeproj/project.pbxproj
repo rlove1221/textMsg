@@ -81,6 +81,17 @@
 		A37B22C117E65759002572A6 /* contactsBlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C017E65759002572A6 /* contactsBlocked.png */; };
 		A37B22C317E659D4002572A6 /* contactsGroup2.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C217E659D4002572A6 /* contactsGroup2.png */; };
 		A37B22C517E65C33002572A6 /* contactsGroup3.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C417E65C33002572A6 /* contactsGroup3.png */; };
+		A3CC0A3C17EF6662005E2BE2 /* goldView.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A3B17EF6662005E2BE2 /* goldView.png */; };
+		A3CC0A3E17EF6851005E2BE2 /* gold.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A3D17EF6851005E2BE2 /* gold.png */; };
+		A3CC0A4017EF87D3005E2BE2 /* gold3.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A3F17EF87D3005E2BE2 /* gold3.png */; };
+		A3CC0A4217EF8806005E2BE2 /* gold2.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A4117EF8806005E2BE2 /* gold2.png */; };
+		A3CC0A4617EF8994005E2BE2 /* gold4.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A4517EF8994005E2BE2 /* gold4.png */; };
+		A3CC0A4817EF8D71005E2BE2 /* goldApple.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A4717EF8D71005E2BE2 /* goldApple.png */; };
+		A3CC0A4A17EF929E005E2BE2 /* appleGold.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A4917EF929E005E2BE2 /* appleGold.png */; };
+		A3CC0A4C17EF93EB005E2BE2 /* gold5.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A4B17EF93EB005E2BE2 /* gold5.png */; };
+		A3CC0A5017EFB8B1005E2BE2 /* newGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A4F17EFB8B1005E2BE2 /* newGreen.png */; };
+		A3CC0A5217EFCEDE005E2BE2 /* block2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A5117EFCEDE005E2BE2 /* block2@2x.png */; };
+		A3CC0A5417EFD4D6005E2BE2 /* blocked3.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A5317EFD4D6005E2BE2 /* blocked3.png */; };
 		A3D2347417E61C3F00903654 /* BlockedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D2347317E61C3F00903654 /* BlockedListViewController.m */; };
 		A3D2347C17E638B800903654 /* bckG.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2347B17E638B800903654 /* bckG.png */; };
 		A3D2347F17E638CD00903654 /* bkG1.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2347E17E638CD00903654 /* bkG1.png */; };
@@ -227,6 +238,17 @@
 		A37B22C017E65759002572A6 /* contactsBlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsBlocked.png; sourceTree = "<group>"; };
 		A37B22C217E659D4002572A6 /* contactsGroup2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsGroup2.png; sourceTree = "<group>"; };
 		A37B22C417E65C33002572A6 /* contactsGroup3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsGroup3.png; sourceTree = "<group>"; };
+		A3CC0A3B17EF6662005E2BE2 /* goldView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldView.png; sourceTree = "<group>"; };
+		A3CC0A3D17EF6851005E2BE2 /* gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold.png; sourceTree = "<group>"; };
+		A3CC0A3F17EF87D3005E2BE2 /* gold3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold3.png; sourceTree = "<group>"; };
+		A3CC0A4117EF8806005E2BE2 /* gold2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold2.png; sourceTree = "<group>"; };
+		A3CC0A4517EF8994005E2BE2 /* gold4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold4.png; sourceTree = "<group>"; };
+		A3CC0A4717EF8D71005E2BE2 /* goldApple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldApple.png; sourceTree = "<group>"; };
+		A3CC0A4917EF929E005E2BE2 /* appleGold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appleGold.png; sourceTree = "<group>"; };
+		A3CC0A4B17EF93EB005E2BE2 /* gold5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold5.png; sourceTree = "<group>"; };
+		A3CC0A4F17EFB8B1005E2BE2 /* newGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newGreen.png; sourceTree = "<group>"; };
+		A3CC0A5117EFCEDE005E2BE2 /* block2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block2@2x.png"; sourceTree = "<group>"; };
+		A3CC0A5317EFD4D6005E2BE2 /* blocked3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blocked3.png; sourceTree = "<group>"; };
 		A3D2347217E61C3F00903654 /* BlockedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockedListViewController.h; sourceTree = "<group>"; };
 		A3D2347317E61C3F00903654 /* BlockedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockedListViewController.m; sourceTree = "<group>"; };
 		A3D2347B17E638B800903654 /* bckG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bckG.png; sourceTree = "<group>"; };
@@ -519,6 +541,17 @@
 		A30EF61017D231380089D859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A3CC0A5317EFD4D6005E2BE2 /* blocked3.png */,
+				A3CC0A5117EFCEDE005E2BE2 /* block2@2x.png */,
+				A3CC0A4F17EFB8B1005E2BE2 /* newGreen.png */,
+				A3CC0A4B17EF93EB005E2BE2 /* gold5.png */,
+				A3CC0A4917EF929E005E2BE2 /* appleGold.png */,
+				A3CC0A4717EF8D71005E2BE2 /* goldApple.png */,
+				A3CC0A4517EF8994005E2BE2 /* gold4.png */,
+				A3CC0A3F17EF87D3005E2BE2 /* gold3.png */,
+				A3CC0A4117EF8806005E2BE2 /* gold2.png */,
+				A3CC0A3D17EF6851005E2BE2 /* gold.png */,
+				A3CC0A3B17EF6662005E2BE2 /* goldView.png */,
 				A3D4680717ED30CC0002A1C5 /* main3@2x.png */,
 				A3D4680517ED1B710002A1C5 /* blocked@2x.png */,
 				A3D4680317ED0E080002A1C5 /* test3@2x.png */,
@@ -653,6 +686,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3CC0A4817EF8D71005E2BE2 /* goldApple.png in Resources */,
 				A31899CC17E687CF004FCAD5 /* torquise.png in Resources */,
 				A31899CE17E68812004FCAD5 /* green.png in Resources */,
 				A3D2348517E648DF00903654 /* sms.png in Resources */,
@@ -663,26 +697,36 @@
 				A338C5FA17E7510C00FE9D1E /* contactsGroup5.png in Resources */,
 				A338C5FE17E78F7200FE9D1E /* contactsHideGroup8.png in Resources */,
 				A37B22C517E65C33002572A6 /* contactsGroup3.png in Resources */,
+				A3CC0A5017EFB8B1005E2BE2 /* newGreen.png in Resources */,
 				A3D2348B17E649E400903654 /* contacts2.png in Resources */,
 				A338C5FC17E753BE00FE9D1E /* contactsGroup7.png in Resources */,
+				A3CC0A4217EF8806005E2BE2 /* gold2.png in Resources */,
+				A3CC0A4017EF87D3005E2BE2 /* gold3.png in Resources */,
 				85D8BC9F17D6C48E00E5FD66 /* TextData.xcdatamodeld in Resources */,
 				A3D2348917E6499A00903654 /* contacts.png in Resources */,
 				A338C5EC17E6B79F00FE9D1E /* content.png in Resources */,
 				A3D2348117E638D500903654 /* cloudColor.png in Resources */,
+				A3CC0A4C17EF93EB005E2BE2 /* gold5.png in Resources */,
 				A3D4680617ED1B710002A1C5 /* blocked@2x.png in Resources */,
 				A338C5F817E7501900FE9D1E /* contactsGroup6.png in Resources */,
 				A3D2348317E6461F00903654 /* salmonBG.png in Resources */,
 				A37B22C317E659D4002572A6 /* contactsGroup2.png in Resources */,
+				A3CC0A5217EFCEDE005E2BE2 /* block2@2x.png in Resources */,
 				A3D2348F17E6508B00903654 /* msg.png in Resources */,
+				A3CC0A4617EF8994005E2BE2 /* gold4.png in Resources */,
 				A3D2347C17E638B800903654 /* bckG.png in Resources */,
+				A3CC0A4A17EF929E005E2BE2 /* appleGold.png in Resources */,
 				A37B22C117E65759002572A6 /* contactsBlocked.png in Resources */,
 				A31899C817E68001004FCAD5 /* msg1.png in Resources */,
 				A3D2347F17E638CD00903654 /* bkG1.png in Resources */,
+				A3CC0A3C17EF6662005E2BE2 /* goldView.png in Resources */,
+				A3CC0A5417EFD4D6005E2BE2 /* blocked3.png in Resources */,
 				A338C5F017E6BE2700FE9D1E /* save1.png in Resources */,
 				A3D4680417ED0E080002A1C5 /* test3@2x.png in Resources */,
 				A3D2348717E648E500903654 /* lock.png in Resources */,
 				A30EF62217D231390089D859 /* Images.xcassets in Resources */,
 				A31899CA17E681AE004FCAD5 /* msg2.png in Resources */,
+				A3CC0A3E17EF6851005E2BE2 /* gold.png in Resources */,
 				A30EF61417D231380089D859 /* InfoPlist.strings in Resources */,
 				A30EF61D17D231380089D859 /* Main.storyboard in Resources */,
 				A338C5F617E74BE600FE9D1E /* contactsGroup4.png in Resources */,

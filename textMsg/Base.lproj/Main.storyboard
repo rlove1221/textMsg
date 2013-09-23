@@ -31,7 +31,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main3.png" translatesAutoresizingMaskIntoConstraints="NO" id="nnr-3v-nU0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="nnr-3v-nU0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -100,6 +100,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gold4.png" translatesAutoresizingMaskIntoConstraints="NO" id="DpA-aY-duK">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKc-cr-dNA">
                                         <rect key="frame" x="20" y="12" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -174,7 +178,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blocked.png" translatesAutoresizingMaskIntoConstraints="NO" id="eo3-fU-mc9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blocked3.png" translatesAutoresizingMaskIntoConstraints="NO" id="eo3-fU-mc9">
                                 <rect key="frame" x="0.0" y="0.0" width="326" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -427,14 +431,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blocked.png" width="320" height="568"/>
+        <image name="blocked3.png" width="640" height="1136"/>
         <image name="cloudColor.png" width="640" height="1136"/>
         <image name="contactsHideGroup.png" width="60" height="60"/>
         <image name="contactsHideGroup8.png" width="60" height="60"/>
         <image name="contentLines.png" width="321" height="70"/>
+        <image name="gold4.png" width="633" height="275"/>
         <image name="lock.png" width="60" height="60"/>
-        <image name="main3.png" width="320" height="568"/>
         <image name="msg2.png" width="60" height="60"/>
+        <image name="newGreen.png" width="640" height="1136"/>
         <image name="save.png" width="60" height="60"/>
         <image name="torquise.png" width="640" height="1136"/>
     </resources>
