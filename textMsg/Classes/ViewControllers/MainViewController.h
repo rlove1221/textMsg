@@ -16,7 +16,7 @@
     NSArray *groupList;
     IBOutlet UITableView *groupTableView;
     GroupItem *selectedItem;
-    
+    BOOL isRemovePass;
 }
 - (IBAction)edit_click:(id)sender;
 - (IBAction)setpass_click:(id)sender;

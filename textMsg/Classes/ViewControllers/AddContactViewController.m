@@ -66,7 +66,7 @@
         (__bridge NSArray *)ABMultiValueCopyArrayOfAllValues(
                                                              ABRecordCopyValue(currentPerson, kABPersonPhoneProperty));
         NSDictionary *additionDict = [self dictionaryRepresentationForABPerson:currentPerson];
-        
+        NSInteger recordID = ABRecordGetRecordID(currentPerson);
         //[[NSUserDefaults standardUserDefaults] setObject:testdict forKey:@"test"];
        // [[NSUserDefaults standardUserDefaults] synchronize];
         // Make sure that the selected contact has one phone at least filled in.
@@ -74,7 +74,7 @@
             // We'll use the first phone number only here.
             // In a real app, it's up to you to play around with the returned values and pick the necessary value.
             //NSData *contactData = [NSKeyedArchiver archivedDataWithRootObject:(__bridge id)(currentPerson)];
-            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:name,@"name",[phones objectAtIndex:0],@"phone",additionDict,@"additioninfo", nil];
+            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:name,@"name",[phones objectAtIndex:0],@"phone",additionDict,@"additioninfo",[NSNumber numberWithInteger:recordID],@"contactId", nil];
             [allContactsPhoneNumber addObject:dict];
             //[actualContactList addObject:(__bridge id)(currentPerson)];
         }
@@ -108,7 +108,7 @@
             if ([stringvalue isKindOfClass:[NSString class]] ||[stringvalue isKindOfClass:[NSDate class]] ||[stringvalue isKindOfClass:[NSNumber class]])
             {
                 
-                [dictionary setObject:value forKey:propertyName];
+                [dictionary setObject:value forKey:[NSString stringWithFormat:@"%i",propertyIndex]];
             }
 
             else
@@ -129,7 +129,7 @@
                     
                 }
                 if ([tempArray count] > 0) {
-                     [dictionary setObject:tempArray forKey:propertyName];
+                     [dictionary setObject:tempArray forKey:[NSString stringWithFormat:@"%i",propertyIndex]];
                 }
              
             }
@@ -215,14 +215,16 @@
 - (IBAction)save_click:(id)sender {
     //NSArray *contactList = [ContactItem getAllCGItemByGroupUUID:self.groupItem.groupUUID];
     for (NSDictionary *dict in selectedContactList) {
-        ContactItem *item = [ContactItem getCGItemByName:[dict objectForKey:@"name"]];
+        NSInteger recordId = [[dict objectForKey:@"contactId"] integerValue];
+        ContactItem *item = [ContactItem getCGItemById:recordId groupUUID:self.groupItem.groupUUID];
         if (!item) {
             item = [ContactItem newCGItem];
             item.contactName = [dict objectForKey:@"name"];
         }
         item.contactNumber = [dict objectForKey:@"phone"];
+        item.contactId = [dict objectForKey:@"contactId"];
         item.groupUUID = self.groupItem.groupUUID;
-        NSDictionary *tempdict = [dict objectForKey:@"addtioninfo"];
+        NSDictionary *tempdict = [dict objectForKey:@"additioninfo"];
         NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:tempdict];
         item.contactData = myData;
         //[self deleteContact:item.contactName];

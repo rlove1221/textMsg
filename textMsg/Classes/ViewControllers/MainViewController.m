@@ -15,6 +15,9 @@
 #import "Util.h"
 #import "NSManagedObjectContext+Custom.h"
 #import "BlockedListViewController.h"
+#import "UIColor+FlatUI.h"
+#import "UITableViewCell+FlatUI.h"
+
 @interface MainViewController ()
 
 @end
@@ -74,6 +77,15 @@
         }
     }
 	// Do any additional setup after loading the view, typically from a nib.
+  //  self.title = @"Group Table View";
+    
+    //Set the separator color
+  //  groupTableView.separatorColor = [UIColor cloudsColor];
+    
+    //Set the background color
+   // groupTableView.backgroundColor = [UIColor cloudsColor];
+   // groupTableView.backgroundView = nil;
+
 }
 
 - (void)checkExpiredGroup
@@ -206,21 +218,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell"];
     
     GroupItem *group = [groupList objectAtIndex:indexPath.row];
     UILabel *name = (UILabel*)[cell viewWithTag:1];
     UILabel *status = (UILabel*)[cell viewWithTag:2];
     name.text = group.groupName;
+    
     if ([group.groupStatus isEqualToString:@"0"]) {
-       
+        
+        
+        cell.backgroundColor = [UIColor greenSeaColor];
         status.text = @"Not blocked";
         status.textColor = [UIColor greenColor];
-    }
+
+        }
     else
     {
+        cell.backgroundColor = [UIColor pomegranateColor];
         status.text = @"Blocked";
-        status.textColor = [UIColor redColor];
+        status.textColor = [UIColor cloudsColor];
     }
     //groupItem.blockTime = [NSString stringWithFormat:@"%.0f",timeInterval/1000];
     
@@ -291,7 +310,7 @@
 
 - (IBAction)edit_click:(id)sender {
     UIButton *button = (UIButton*)sender;
-    UITableViewCell *cell = (UITableViewCell*)button.superview;
+    UITableViewCell *cell = (UITableViewCell*)button.superview.superview.superview;
     if(cell)
     {
         NSIndexPath *indexPath = [groupTableView indexPathForCell:cell];
@@ -303,6 +322,13 @@
                 [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
                 alert1.tag = 400;
                 [alert1 show];
+            }
+            else
+            {
+                NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+                groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
+                [self.navigationController pushViewController:groupDetail animated:NO];
+
             }
         }
         else
@@ -317,10 +343,13 @@
 
 - (IBAction)setpass_click:(id)sender {
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
-        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your Current Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-        [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
-        alert1.tag = 100;
-        [alert1 show];
+//        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your Current Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+//        [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+//        alert1.tag = 100;
+//        [alert1 show];
+        UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Remove Passcode" otherButtonTitles:@"Change Passcode", nil];
+        actionsheet.tag = 100;
+        [actionsheet showInView:self.view];
     }
     else{
         UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your New Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
@@ -329,6 +358,23 @@
         [alert1 show];
     }
     
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your Current Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        alert1.tag = 600;
+        [alert1 show];
+    }
+    else if(buttonIndex == 1)
+    {
+        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your Current Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        alert1.tag = 100;
+        [alert1 show];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
@@ -395,9 +441,23 @@
         }
         
     }
+    if (alertView.tag == 600 && buttonIndex == 1) {
+        NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
+        if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"passcode"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+        }
+        else
+        {
+            [Util showAlertWithString:@"Passcode not correct"];
+        }
+       // NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
+        
+    }
     
     groupTableView.editing = NO;
-    
+    [self viewWillAppear:YES];
 }
 
 

@@ -26,6 +26,7 @@
     IBOutlet UIButton *saveBTN;
     IBOutlet UIButton *addBTN;
     IBOutlet UIBarButtonItem *blockBTn;
+    BOOL isBack;
 }
 - (IBAction)create_Click:(id)sender;
 - (IBAction)addContact_Click:(id)sender;

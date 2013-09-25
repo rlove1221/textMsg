@@ -13,6 +13,7 @@
 
 + (NSArray *)getAllCGItemByGroupUUID:(NSString *)groupUUID;
 + (ContactItem *)getCGItemByName:(NSString *)name;
++ (ContactItem *)getCGItemById:(NSInteger )recordId groupUUID:(NSString *)groupUUID;
 
 + (ContactItem *)newCGItem;
 

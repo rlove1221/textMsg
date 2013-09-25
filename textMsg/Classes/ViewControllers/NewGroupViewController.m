@@ -51,7 +51,7 @@
         addBTN.hidden = YES;
     }
     
-    
+    //NSLog(@"%@",kABPersonFirstNameProperty);
     addressBook = ABAddressBookCreate();
     
      accessGranted = NO;
@@ -150,37 +150,9 @@
 }
 
 - (IBAction)create_Click:(id)sender {
-    if (nameTF.text.length == 0 || [nameTF.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length == 0) {
-        [Util showAlertWithString:@"Please enter group name!"];
-        return;
-    }
+    [self save_click:nil];
     
-    NSString *groupname = [nameTF.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if (isAddNew||(!isAddNew && ![nameTF.text isEqualToString:groupItem.groupName])) {
-        GroupItem *group = [GroupItem getGroupItemByName:groupname];
-        if (group) {
-            [Util showAlertWithString:@"This group is existed"];
-            return;
-        }
-    }
-    
-    
-    
-    groupItem.groupName = groupname;
-    
-    [GroupItem updateGroupItem:groupItem];
-    if ([groupItem.groupStatus isEqualToString:@"1"]) {
-        for (ContactItem *contactItem in contactList) {
-            [self deleteContact:contactItem.contactName];
-        }
-    }
-    else
-    {
-        for (ContactItem *contactItem in contactList) {
-            [self creatContact:contactItem];
-        }
-    }
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)addContact_Click:(id)sender {
@@ -191,28 +163,21 @@
     
 }
 
-- (void)deleteContact:(NSString *)name
+- (void)deleteContact:(NSInteger)recordId
 {
     CFErrorRef error = nil;
-    
+    ABRecordRef currentPerson = ABAddressBookGetPersonWithRecordID(addressBook, recordId);
     //ABAddressBookRef addressBook = ABAddressBookCreate();
-    for(int index = 0; index<[arrayOfPeople count]; index++){
-        
-        ABRecordRef currentPerson =
-        (__bridge ABRecordRef)[arrayOfPeople objectAtIndex:index];
-        NSString *contactname = [self getName:currentPerson];
-        if ([contactname isEqualToString:name]) {
-            bool removed = ABAddressBookRemoveRecord(addressBook, currentPerson, &error);
-            bool saved = ABAddressBookSave(addressBook, &error);
-        }
-        
+    if (currentPerson) {
+        bool removed = ABAddressBookRemoveRecord(addressBook, currentPerson, &error);
+        bool saved = ABAddressBookSave(addressBook, &error);
     }
-    
 }
 
 - (void)creatContact:(ContactItem *)contactitem
 {
     CFErrorRef error = nil;
+    NSDictionary *contactdict = [NSKeyedUnarchiver unarchiveObjectWithData:contactitem.contactData];
     ABAddressBookRef addressBook = ABAddressBookCreate(); // create address book record
     ABRecordRef person = ABPersonCreate(); // create a person
     
@@ -226,24 +191,45 @@
     }
     
     //Phone number is a list of phone number, so create a multivalue
-    ABMutableMultiValueRef phoneNumberMultiValue =
-    ABMultiValueCreateMutable(kABPersonPhoneProperty);
-    ABMultiValueAddValueAndLabel(phoneNumberMultiValue ,(__bridge CFTypeRef)(phone),kABPersonPhoneMobileLabel, NULL);
-    
-    ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge CFTypeRef)(firstname) , nil); // first name of the new person
-    ABRecordSetValue(person, kABPersonLastNameProperty, (__bridge CFTypeRef)(lastname), nil); // his last name
-    ABRecordSetValue(person, kABPersonPhoneProperty, phoneNumberMultiValue, &error); // set the phone number property
+//    ABMutableMultiValueRef phoneNumberMultiValue =
+//    ABMultiValueCreateMutable(kABPersonPhoneProperty);
+//    ABMultiValueAddValueAndLabel(phoneNumberMultiValue ,(__bridge CFTypeRef)(phone),kABPersonPhoneMobileLabel, NULL);
+//    
+//    ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge CFTypeRef)(firstname) , nil); // first name of the new person
+//    ABRecordSetValue(person, kABPersonLastNameProperty, (__bridge CFTypeRef)(lastname), nil); // his last name
+//    ABRecordSetValue(person, kABPersonPhoneProperty, phoneNumberMultiValue, &error); // set the phone number property
+    for (NSString* key in [contactdict allKeys]) {
+        NSString *stringval = [contactdict objectForKey:key
+                              ];
+        if ([stringval isKindOfClass:[NSString class]] ||[stringval isKindOfClass:[NSDate class]] ||[stringval isKindOfClass:[NSNumber class]]) {
+            
+           ABRecordSetValue(person, [key intValue], (__bridge CFTypeRef)(stringval) , nil);
+            
+        }
+        else
+        {
+            NSMutableArray *tempArray =[contactdict objectForKey:key
+                                        ];
+            
+            //NSDictionary *tempDict = [contactdict objectForKey:key];
+            ABMutableMultiValueRef phoneNumberMultiValue =
+            ABMultiValueCreateMutable([key intValue]);
+            for (NSDictionary *tempDict in tempArray) {
+                for (NSString* tempkey in [tempDict allKeys]) {
+                NSString *stringval2 = [tempDict objectForKey:tempkey];
+                    ABMultiValueAddValueAndLabel(phoneNumberMultiValue ,(__bridge CFTypeRef)(stringval2),kABPersonPhoneMobileLabel, NULL);
+                }
+            }
+            ABRecordSetValue(person, [key intValue], phoneNumberMultiValue, &error);
+        }
+    }
     ABAddressBookAddRecord(addressBook, person, nil); //add the new person to the record
     
-    ABRecordRef group = ABGroupCreate(); //create a group
-    ABRecordSetValue(group, kABGroupNameProperty,@"My Group", &error); // set group's name
-    ABGroupAddMember(group, person, &error); // add the person to the group
-    ABAddressBookAddRecord(addressBook, group, &error); // add the group
     
     
     ABAddressBookSave(addressBook, nil); //save the record
-    
-    
+    NSInteger recordId = ABRecordGetRecordID(person);
+    contactitem.contactId = [NSNumber numberWithInteger:recordId];
     
     CFRelease(person); // relase the ABRecordRef  variable
 }
@@ -270,7 +256,10 @@
 
 - (IBAction)save_click:(id)sender {
     if (nameTF.text.length == 0 || [nameTF.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length == 0) {
-        [Util showAlertWithString:@"Please enter group name!"];
+        if (!isBack) {
+            [Util showAlertWithString:@"Please enter group name!"];
+        }
+        //[Util showAlertWithString:@"Please enter group name!"];
         return;
     }
     
@@ -278,25 +267,38 @@
     if (isAddNew||(!isAddNew && ![nameTF.text isEqualToString:groupItem.groupName])) {
         GroupItem *group = [GroupItem getGroupItemByName:groupname];
         if (group) {
+            if (!isBack) {
             [Util showAlertWithString:@"This group is existed"];
+            }
             return;
         }
     }    
-    
+    if (isAddNew) {
+        isAddNew = NO;
+        addBTN.hidden = YES;
+        [Util showAlertWithString:@"Saved"];
+    }
     groupItem.groupName = groupname;
     
-    [GroupItem updateGroupItem:groupItem];
+    
     if ([groupItem.groupStatus isEqualToString:@"1"]) {
         for (ContactItem *contactItem in contactList) {
-            [self deleteContact:contactItem.contactName];
+            if (contactItem.contactId) {
+                [self deleteContact:[contactItem.contactId integerValue]];
+            }
+            contactItem.contactId = nil;
         }
     }
     else
     {
         for (ContactItem *contactItem in contactList) {
-            [self creatContact:contactItem];
+            if (!contactItem.contactId) {
+                [self creatContact:contactItem];
+            }
+            
         }
     }
+    [GroupItem updateGroupItem:groupItem];
     //[Util showAlertWithString:@"Saved"];
     
     //[self.navigationController popViewControllerAnimated:YES];
@@ -337,6 +339,7 @@
 }
 
 - (IBAction)back_click:(id)sender {
+    isBack = YES;
     [self save_click:nil];
     [self.navigationController popViewControllerAnimated:YES];
     
