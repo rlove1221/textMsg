@@ -198,6 +198,9 @@
 //    ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge CFTypeRef)(firstname) , nil); // first name of the new person
 //    ABRecordSetValue(person, kABPersonLastNameProperty, (__bridge CFTypeRef)(lastname), nil); // his last name
 //    ABRecordSetValue(person, kABPersonPhoneProperty, phoneNumberMultiValue, &error); // set the phone number property
+    if (contactitem.imageData) {
+        ABPersonSetImageData(person, (__bridge CFDataRef)(contactitem.imageData), nil);
+    }
     for (NSString* key in [contactdict allKeys]) {
         NSString *stringval = [contactdict objectForKey:key
                               ];

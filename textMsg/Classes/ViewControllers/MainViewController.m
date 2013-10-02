@@ -178,7 +178,10 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    self.navigationController.navigationBarHidden = NO;
+    if (!isShowMessage) {
+        self.navigationController.navigationBarHidden = NO;
+    }
+    
 }
 
 
@@ -193,6 +196,7 @@
     MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
     if([MFMessageComposeViewController canSendText])
     {
+        isShowMessage = YES;
         controller.body = @"";
         //        controller.recipients = recipients;
         controller.messageComposeDelegate = self;
@@ -203,7 +207,8 @@
 
 -(void) messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
     NSLog(@"%d", result);
-    [controller dismissViewControllerAnimated:YES completion:nil];
+    [controller dismissViewControllerAnimated:NO completion:nil];
+    isShowMessage = NO;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -224,22 +229,29 @@
     
     GroupItem *group = [groupList objectAtIndex:indexPath.row];
     UILabel *name = (UILabel*)[cell viewWithTag:1];
+    UILabel *name2 = (UILabel*)[cell viewWithTag:3];
     UILabel *status = (UILabel*)[cell viewWithTag:2];
+    //UIImageView *imageView = (UIImageView*)[cell viewWithTag:3];
     name.text = group.groupName;
-    
+    name2.text = group.groupName;
     if ([group.groupStatus isEqualToString:@"0"]) {
         
         
         cell.backgroundColor = [UIColor greenSeaColor];
-        status.text = @"Not blocked";
-        status.textColor = [UIColor greenColor];
-
+        status.text = @"";
+        status.textColor = [UIColor cloudsColor];
+        //imageView.hidden = NO;
+        name.hidden = YES;
+        name2.hidden = NO;
         }
     else
     {
         cell.backgroundColor = [UIColor pomegranateColor];
         status.text = @"Blocked";
         status.textColor = [UIColor cloudsColor];
+        //imageView.hidden = YES;
+        name.hidden = NO;
+        name2.hidden = YES;
     }
     //groupItem.blockTime = [NSString stringWithFormat:@"%.0f",timeInterval/1000];
     
@@ -251,21 +263,7 @@
     
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
     selectedItem = [groupList objectAtIndex:indexPath.row];
-    
-//    if ([selectedItem.groupStatus isEqualToString:@"1"]) {
-//        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
-//            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Confirm Your Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-//            [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
-//            alert1.tag = 400;
-//            [alert1 show];
-//        }
-//    }
-//    else
-//    {
-//        NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
-//        groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
-//        [self.navigationController pushViewController:groupDetail animated:NO];
-//    }
+
     MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
     
      if([MFMessageComposeViewController canSendText])
@@ -274,15 +272,19 @@
         NSMutableArray *phoneList = [[NSMutableArray alloc] initWithCapacity:0];
         for (ContactItem *item in contactList) {
             [phoneList addObject:item.contactNumber];
+            if (item.contactINumber != nil &&item.contactINumber.length > 0) {
+                [phoneList addObject:item.contactINumber];
+            }
         }
         if ([phoneList count] == 0) {
             [Util showAlertWithString:@"No contact to send message"];
         }
         else{
-            controller.body = @"SMS message here";
+            //controller.body = @"SMS message here";
+            isShowMessage = YES;
             controller.recipients = phoneList;
             controller.messageComposeDelegate = self;
-            [self presentViewController:controller animated:YES completion:nil];
+            [self presentViewController:controller animated:NO completion:nil];
         }
         
     }

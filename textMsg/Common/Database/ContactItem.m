@@ -16,4 +16,6 @@
 @dynamic groupUUID;
 @dynamic contactData;
 @dynamic contactId;
+@dynamic contactINumber;
+@dynamic imageData;
 @end

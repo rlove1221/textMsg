@@ -3,9 +3,11 @@
     <entity name="ContactItem" representedClassName="CGItem" syncable="YES">
         <attribute name="contactData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="contactId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="contactINumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="contactName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="contactNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="groupUUID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <entity name="GroupItem" representedClassName="GroupItem" syncable="YES">
         <attribute name="blockTime" optional="YES" attributeType="String" syncable="YES"/>

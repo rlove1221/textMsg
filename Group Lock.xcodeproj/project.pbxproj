@@ -95,6 +95,11 @@
 		A3CC0A5717F1E6AF005E2BE2 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC0A5617F1E6AF005E2BE2 /* UIColor+FlatUI.m */; };
 		A3CC0A5A17F1E6C2005E2BE2 /* UITableViewCell+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC0A5917F1E6C2005E2BE2 /* UITableViewCell+FlatUI.m */; };
 		A3CC0A5D17F1E72B005E2BE2 /* FUICellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC0A5C17F1E72B005E2BE2 /* FUICellBackgroundView.m */; };
+		A3CC0A5F17F3258B005E2BE2 /* editContact.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A5E17F3258B005E2BE2 /* editContact.png */; };
+		A3CC0A6117F3259F005E2BE2 /* messages.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A6017F3259F005E2BE2 /* messages.png */; };
+		A3CC0A6317F32815005E2BE2 /* messages2.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A6217F32815005E2BE2 /* messages2.png */; };
+		A3CC0A6517F32C67005E2BE2 /* messages3.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A6417F32C67005E2BE2 /* messages3.png */; };
+		A3CC0A6717F336D1005E2BE2 /* messages4.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A6617F336D1005E2BE2 /* messages4.png */; };
 		A3D2347417E61C3F00903654 /* BlockedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D2347317E61C3F00903654 /* BlockedListViewController.m */; };
 		A3D2347C17E638B800903654 /* bckG.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2347B17E638B800903654 /* bckG.png */; };
 		A3D2347F17E638CD00903654 /* bkG1.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D2347E17E638CD00903654 /* bkG1.png */; };
@@ -110,6 +115,17 @@
 		A3D4680617ED1B710002A1C5 /* blocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D4680517ED1B710002A1C5 /* blocked@2x.png */; };
 		A3D4680817ED30CC0002A1C5 /* main3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D4680717ED30CC0002A1C5 /* main3@2x.png */; };
 		A3D4681017EE83020002A1C5 /* contacts3.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D4680F17EE83020002A1C5 /* contacts3.png */; };
+		A3E386F517F3B839008758F9 /* blckd3.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E386F417F3B839008758F9 /* blckd3.png */; };
+		A3E3873D17F877C5008758F9 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873317F877C5008758F9 /* AppIcon29x29.png */; };
+		A3E3873E17F877C5008758F9 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873417F877C5008758F9 /* AppIcon29x29@2x.png */; };
+		A3E3873F17F877C5008758F9 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873517F877C5008758F9 /* AppIcon40x40.png */; };
+		A3E3874017F877C5008758F9 /* AppIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873617F877C5008758F9 /* AppIcon40x40@2x.png */; };
+		A3E3874117F877C5008758F9 /* AppIcon60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873717F877C5008758F9 /* AppIcon60x60.png */; };
+		A3E3874217F877C5008758F9 /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873817F877C5008758F9 /* AppIcon60x60@2x.png */; };
+		A3E3874317F877C5008758F9 /* AppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873917F877C5008758F9 /* AppIcon76x76.png */; };
+		A3E3874417F877C5008758F9 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873A17F877C5008758F9 /* AppIcon76x76@2x.png */; };
+		A3E3874517F877C5008758F9 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873B17F877C5008758F9 /* iTunesArtwork.png */; };
+		A3E3874617F877C5008758F9 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873C17F877C5008758F9 /* iTunesArtwork@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,21 +221,21 @@
 		85D8BCAC17D6C95A00E5FD66 /* WEPopoverParentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WEPopoverParentView.h; sourceTree = "<group>"; };
 		85D8BCAD17D6C95A00E5FD66 /* WETouchableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WETouchableView.h; sourceTree = "<group>"; };
 		85D8BCAE17D6C95A00E5FD66 /* WETouchableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WETouchableView.m; sourceTree = "<group>"; };
-		A30EF60617D231380089D859 /* textMsg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = textMsg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A30EF60617D231380089D859 /* Group Lock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group Lock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30EF60917D231380089D859 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A30EF60B17D231380089D859 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A30EF60D17D231380089D859 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A30EF61117D231380089D859 /* textMsg-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "textMsg-Info.plist"; sourceTree = "<group>"; };
+		A30EF61117D231380089D859 /* Group Lock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Group Lock-Info.plist"; sourceTree = "<group>"; };
 		A30EF61317D231380089D859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A30EF61517D231380089D859 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A30EF61717D231380089D859 /* textMsg-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "textMsg-Prefix.pch"; sourceTree = "<group>"; };
+		A30EF61717D231380089D859 /* Group Lock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Group Lock-Prefix.pch"; sourceTree = "<group>"; };
 		A30EF61817D231380089D859 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A30EF61917D231380089D859 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A30EF61C17D231380089D859 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A30EF62117D231390089D859 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A30EF62717D231390089D859 /* textMsgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = textMsgTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A30EF62717D231390089D859 /* Group LockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Group LockTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30EF62817D231390089D859 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		A30EF63017D231390089D859 /* textMsgTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "textMsgTests-Info.plist"; sourceTree = "<group>"; };
+		A30EF63017D231390089D859 /* Group LockTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Group LockTests-Info.plist"; sourceTree = "<group>"; };
 		A30EF63217D231390089D859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A30EF63417D231390089D859 /* textMsgTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textMsgTests.m; sourceTree = "<group>"; };
 		A30EF63E17D234F70089D859 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -258,6 +274,11 @@
 		A3CC0A5917F1E6C2005E2BE2 /* UITableViewCell+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+FlatUI.m"; sourceTree = "<group>"; };
 		A3CC0A5B17F1E72B005E2BE2 /* FUICellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUICellBackgroundView.h; sourceTree = "<group>"; };
 		A3CC0A5C17F1E72B005E2BE2 /* FUICellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUICellBackgroundView.m; sourceTree = "<group>"; };
+		A3CC0A5E17F3258B005E2BE2 /* editContact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editContact.png; sourceTree = "<group>"; };
+		A3CC0A6017F3259F005E2BE2 /* messages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messages.png; sourceTree = "<group>"; };
+		A3CC0A6217F32815005E2BE2 /* messages2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messages2.png; sourceTree = "<group>"; };
+		A3CC0A6417F32C67005E2BE2 /* messages3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messages3.png; sourceTree = "<group>"; };
+		A3CC0A6617F336D1005E2BE2 /* messages4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messages4.png; sourceTree = "<group>"; };
 		A3D2347217E61C3F00903654 /* BlockedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockedListViewController.h; sourceTree = "<group>"; };
 		A3D2347317E61C3F00903654 /* BlockedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockedListViewController.m; sourceTree = "<group>"; };
 		A3D2347B17E638B800903654 /* bckG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bckG.png; sourceTree = "<group>"; };
@@ -274,6 +295,17 @@
 		A3D4680517ED1B710002A1C5 /* blocked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blocked@2x.png"; sourceTree = "<group>"; };
 		A3D4680717ED30CC0002A1C5 /* main3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main3@2x.png"; sourceTree = "<group>"; };
 		A3D4680F17EE83020002A1C5 /* contacts3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacts3.png; sourceTree = "<group>"; };
+		A3E386F417F3B839008758F9 /* blckd3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blckd3.png; sourceTree = "<group>"; };
+		A3E3873317F877C5008758F9 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
+		A3E3873417F877C5008758F9 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
+		A3E3873517F877C5008758F9 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
+		A3E3873617F877C5008758F9 /* AppIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x.png"; sourceTree = "<group>"; };
+		A3E3873717F877C5008758F9 /* AppIcon60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon60x60.png; sourceTree = "<group>"; };
+		A3E3873817F877C5008758F9 /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
+		A3E3873917F877C5008758F9 /* AppIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon76x76.png; sourceTree = "<group>"; };
+		A3E3873A17F877C5008758F9 /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
+		A3E3873B17F877C5008758F9 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		A3E3873C17F877C5008758F9 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -514,8 +546,8 @@
 		A30EF60717D231380089D859 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A30EF60617D231380089D859 /* textMsg.app */,
-				A30EF62717D231390089D859 /* textMsgTests.xctest */,
+				A30EF60617D231380089D859 /* Group Lock.app */,
+				A30EF62717D231390089D859 /* Group LockTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -556,6 +588,22 @@
 		A30EF61017D231380089D859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A3E3873317F877C5008758F9 /* AppIcon29x29.png */,
+				A3E3873417F877C5008758F9 /* AppIcon29x29@2x.png */,
+				A3E3873517F877C5008758F9 /* AppIcon40x40.png */,
+				A3E3873617F877C5008758F9 /* AppIcon40x40@2x.png */,
+				A3E3873717F877C5008758F9 /* AppIcon60x60.png */,
+				A3E3873817F877C5008758F9 /* AppIcon60x60@2x.png */,
+				A3E3873917F877C5008758F9 /* AppIcon76x76.png */,
+				A3E3873A17F877C5008758F9 /* AppIcon76x76@2x.png */,
+				A3E3873B17F877C5008758F9 /* iTunesArtwork.png */,
+				A3E3873C17F877C5008758F9 /* iTunesArtwork@2x.png */,
+				A3CC0A6617F336D1005E2BE2 /* messages4.png */,
+				A3E386F417F3B839008758F9 /* blckd3.png */,
+				A3CC0A6417F32C67005E2BE2 /* messages3.png */,
+				A3CC0A6217F32815005E2BE2 /* messages2.png */,
+				A3CC0A6017F3259F005E2BE2 /* messages.png */,
+				A3CC0A5E17F3258B005E2BE2 /* editContact.png */,
 				A3CC0A5317EFD4D6005E2BE2 /* blocked3.png */,
 				A3CC0A5117EFCEDE005E2BE2 /* block2@2x.png */,
 				A3CC0A4F17EFB8B1005E2BE2 /* newGreen.png */,
@@ -599,10 +647,10 @@
 				A3D2348017E638D500903654 /* cloudColor.png */,
 				A3D2347E17E638CD00903654 /* bkG1.png */,
 				A3D2347B17E638B800903654 /* bckG.png */,
-				A30EF61117D231380089D859 /* textMsg-Info.plist */,
+				A30EF61117D231380089D859 /* Group Lock-Info.plist */,
 				A30EF61217D231380089D859 /* InfoPlist.strings */,
 				A30EF61517D231380089D859 /* main.m */,
-				A30EF61717D231380089D859 /* textMsg-Prefix.pch */,
+				A30EF61717D231380089D859 /* Group Lock-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -619,7 +667,7 @@
 		A30EF62F17D231390089D859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A30EF63017D231390089D859 /* textMsgTests-Info.plist */,
+				A30EF63017D231390089D859 /* Group LockTests-Info.plist */,
 				A30EF63117D231390089D859 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -628,9 +676,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A30EF60517D231380089D859 /* textMsg */ = {
+		A30EF60517D231380089D859 /* Group Lock */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A30EF63817D231390089D859 /* Build configuration list for PBXNativeTarget "textMsg" */;
+			buildConfigurationList = A30EF63817D231390089D859 /* Build configuration list for PBXNativeTarget "Group Lock" */;
 			buildPhases = (
 				A30EF60217D231380089D859 /* Sources */,
 				A30EF60317D231380089D859 /* Frameworks */,
@@ -640,14 +688,14 @@
 			);
 			dependencies = (
 			);
-			name = textMsg;
+			name = "Group Lock";
 			productName = textMsg;
-			productReference = A30EF60617D231380089D859 /* textMsg.app */;
+			productReference = A30EF60617D231380089D859 /* Group Lock.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A30EF62617D231390089D859 /* textMsgTests */ = {
+		A30EF62617D231390089D859 /* Group LockTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A30EF63B17D231390089D859 /* Build configuration list for PBXNativeTarget "textMsgTests" */;
+			buildConfigurationList = A30EF63B17D231390089D859 /* Build configuration list for PBXNativeTarget "Group LockTests" */;
 			buildPhases = (
 				A30EF62317D231390089D859 /* Sources */,
 				A30EF62417D231390089D859 /* Frameworks */,
@@ -658,9 +706,9 @@
 			dependencies = (
 				A30EF62D17D231390089D859 /* PBXTargetDependency */,
 			);
-			name = textMsgTests;
+			name = "Group LockTests";
 			productName = textMsgTests;
-			productReference = A30EF62717D231390089D859 /* textMsgTests.xctest */;
+			productReference = A30EF62717D231390089D859 /* Group LockTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -677,7 +725,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A30EF60117D231380089D859 /* Build configuration list for PBXProject "textMsg" */;
+			buildConfigurationList = A30EF60117D231380089D859 /* Build configuration list for PBXProject "Group Lock" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -690,8 +738,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A30EF60517D231380089D859 /* textMsg */,
-				A30EF62617D231390089D859 /* textMsgTests */,
+				A30EF60517D231380089D859 /* Group Lock */,
+				A30EF62617D231390089D859 /* Group LockTests */,
 			);
 		};
 /* End PBXProject section */
@@ -701,6 +749,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3CC0A6717F336D1005E2BE2 /* messages4.png in Resources */,
 				A3CC0A4817EF8D71005E2BE2 /* goldApple.png in Resources */,
 				A31899CC17E687CF004FCAD5 /* torquise.png in Resources */,
 				A31899CE17E68812004FCAD5 /* green.png in Resources */,
@@ -713,24 +762,35 @@
 				A338C5FE17E78F7200FE9D1E /* contactsHideGroup8.png in Resources */,
 				A37B22C517E65C33002572A6 /* contactsGroup3.png in Resources */,
 				A3CC0A5017EFB8B1005E2BE2 /* newGreen.png in Resources */,
+				A3E3873F17F877C5008758F9 /* AppIcon40x40.png in Resources */,
 				A3D2348B17E649E400903654 /* contacts2.png in Resources */,
+				A3E3874017F877C5008758F9 /* AppIcon40x40@2x.png in Resources */,
 				A338C5FC17E753BE00FE9D1E /* contactsGroup7.png in Resources */,
+				A3CC0A6517F32C67005E2BE2 /* messages3.png in Resources */,
 				A3CC0A4217EF8806005E2BE2 /* gold2.png in Resources */,
 				A3CC0A4017EF87D3005E2BE2 /* gold3.png in Resources */,
 				85D8BC9F17D6C48E00E5FD66 /* TextData.xcdatamodeld in Resources */,
 				A3D2348917E6499A00903654 /* contacts.png in Resources */,
 				A338C5EC17E6B79F00FE9D1E /* content.png in Resources */,
+				A3E3874117F877C5008758F9 /* AppIcon60x60.png in Resources */,
 				A3D2348117E638D500903654 /* cloudColor.png in Resources */,
+				A3CC0A5F17F3258B005E2BE2 /* editContact.png in Resources */,
 				A3CC0A4C17EF93EB005E2BE2 /* gold5.png in Resources */,
 				A3D4680617ED1B710002A1C5 /* blocked@2x.png in Resources */,
 				A338C5F817E7501900FE9D1E /* contactsGroup6.png in Resources */,
+				A3E3874417F877C5008758F9 /* AppIcon76x76@2x.png in Resources */,
 				A3D2348317E6461F00903654 /* salmonBG.png in Resources */,
 				A37B22C317E659D4002572A6 /* contactsGroup2.png in Resources */,
+				A3E3874517F877C5008758F9 /* iTunesArtwork.png in Resources */,
 				A3CC0A5217EFCEDE005E2BE2 /* block2@2x.png in Resources */,
 				A3D2348F17E6508B00903654 /* msg.png in Resources */,
 				A3CC0A4617EF8994005E2BE2 /* gold4.png in Resources */,
+				A3E3873E17F877C5008758F9 /* AppIcon29x29@2x.png in Resources */,
 				A3D2347C17E638B800903654 /* bckG.png in Resources */,
+				A3CC0A6117F3259F005E2BE2 /* messages.png in Resources */,
+				A3E386F517F3B839008758F9 /* blckd3.png in Resources */,
 				A3CC0A4A17EF929E005E2BE2 /* appleGold.png in Resources */,
+				A3E3874317F877C5008758F9 /* AppIcon76x76.png in Resources */,
 				A37B22C117E65759002572A6 /* contactsBlocked.png in Resources */,
 				A31899C817E68001004FCAD5 /* msg1.png in Resources */,
 				A3D2347F17E638CD00903654 /* bkG1.png in Resources */,
@@ -739,11 +799,15 @@
 				A338C5F017E6BE2700FE9D1E /* save1.png in Resources */,
 				A3D4680417ED0E080002A1C5 /* test3@2x.png in Resources */,
 				A3D2348717E648E500903654 /* lock.png in Resources */,
+				A3CC0A6317F32815005E2BE2 /* messages2.png in Resources */,
 				A30EF62217D231390089D859 /* Images.xcassets in Resources */,
 				A31899CA17E681AE004FCAD5 /* msg2.png in Resources */,
+				A3E3874217F877C5008758F9 /* AppIcon60x60@2x.png in Resources */,
 				A3CC0A3E17EF6851005E2BE2 /* gold.png in Resources */,
+				A3E3873D17F877C5008758F9 /* AppIcon29x29.png in Resources */,
 				A30EF61417D231380089D859 /* InfoPlist.strings in Resources */,
 				A30EF61D17D231380089D859 /* Main.storyboard in Resources */,
+				A3E3874617F877C5008758F9 /* iTunesArtwork@2x.png in Resources */,
 				A338C5F617E74BE600FE9D1E /* contactsGroup4.png in Resources */,
 				A37B22BF17E65723002572A6 /* contactsGroup.png in Resources */,
 				A3D4681017EE83020002A1C5 /* contacts3.png in Resources */,
@@ -822,7 +886,7 @@
 /* Begin PBXTargetDependency section */
 		A30EF62D17D231390089D859 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A30EF60517D231380089D859 /* textMsg */;
+			target = A30EF60517D231380089D859 /* Group Lock */;
 			targetProxy = A30EF62C17D231390089D859 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -928,10 +992,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Richard Morena (J59DRR7KV5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Richard Morena (J59DRR7KV5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "textMsg/textMsg-Prefix.pch";
-				INFOPLIST_FILE = "textMsg/textMsg-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "textMsg/Group Lock-Prefix.pch";
+				INFOPLIST_FILE = "textMsg/Group Lock-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "Group Lock";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -941,10 +1008,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Richard Morena (J59DRR7KV5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Richard Morena (J59DRR7KV5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "textMsg/textMsg-Prefix.pch";
-				INFOPLIST_FILE = "textMsg/textMsg-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "textMsg/Group Lock-Prefix.pch";
+				INFOPLIST_FILE = "textMsg/Group Lock-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "Group Lock";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -964,8 +1034,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "textMsgTests/textMsgTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "textMsgTests/Group LockTests-Info.plist";
+				PRODUCT_NAME = "Group LockTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -982,8 +1052,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "textMsg/textMsg-Prefix.pch";
-				INFOPLIST_FILE = "textMsgTests/textMsgTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "textMsgTests/Group LockTests-Info.plist";
+				PRODUCT_NAME = "Group LockTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -992,7 +1062,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A30EF60117D231380089D859 /* Build configuration list for PBXProject "textMsg" */ = {
+		A30EF60117D231380089D859 /* Build configuration list for PBXProject "Group Lock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A30EF63617D231390089D859 /* Debug */,
@@ -1001,7 +1071,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A30EF63817D231390089D859 /* Build configuration list for PBXNativeTarget "textMsg" */ = {
+		A30EF63817D231390089D859 /* Build configuration list for PBXNativeTarget "Group Lock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A30EF63917D231390089D859 /* Debug */,
@@ -1010,7 +1080,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A30EF63B17D231390089D859 /* Build configuration list for PBXNativeTarget "textMsgTests" */ = {
+		A30EF63B17D231390089D859 /* Build configuration list for PBXNativeTarget "Group LockTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A30EF63C17D231390089D859 /* Debug */,

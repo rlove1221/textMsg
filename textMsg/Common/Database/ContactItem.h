@@ -14,11 +14,12 @@
 
 @property (nonatomic, retain) NSString * contactName;
 @property (nonatomic, retain) NSString * contactNumber;
+@property (nonatomic, retain) NSString * contactINumber;
 @property (nonatomic, retain) NSString * groupUUID;
 @property (nonatomic, retain) NSNumber * contactId;
 
 @property (nonatomic, retain) NSData * contactData;
-
+@property (nonatomic, retain) NSData * imageData;
 
 
 @end

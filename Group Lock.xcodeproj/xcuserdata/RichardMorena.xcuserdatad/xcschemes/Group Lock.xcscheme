@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A30EF60517D231380089D859"
-               BuildableName = "textMsg.app"
-               BlueprintName = "textMsg"
-               ReferencedContainer = "container:textMsg.xcodeproj">
+               BuildableName = "Group Lock.app"
+               BlueprintName = "Group Lock"
+               ReferencedContainer = "container:Group Lock.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A30EF62617D231390089D859"
-               BuildableName = "textMsgTests.xctest"
-               BlueprintName = "textMsgTests"
-               ReferencedContainer = "container:textMsg.xcodeproj">
+               BuildableName = "Group LockTests.xctest"
+               BlueprintName = "Group LockTests"
+               ReferencedContainer = "container:Group Lock.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A30EF60517D231380089D859"
-            BuildableName = "textMsg.app"
-            BlueprintName = "textMsg"
-            ReferencedContainer = "container:textMsg.xcodeproj">
+            BuildableName = "Group Lock.app"
+            BlueprintName = "Group Lock"
+            ReferencedContainer = "container:Group Lock.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A30EF60517D231380089D859"
-            BuildableName = "textMsg.app"
-            BlueprintName = "textMsg"
-            ReferencedContainer = "container:textMsg.xcodeproj">
+            BuildableName = "Group Lock.app"
+            BlueprintName = "Group Lock"
+            ReferencedContainer = "container:Group Lock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A30EF60517D231380089D859"
-            BuildableName = "textMsg.app"
-            BlueprintName = "textMsg"
-            ReferencedContainer = "container:textMsg.xcodeproj">
+            BuildableName = "Group Lock.app"
+            BlueprintName = "Group Lock"
+            ReferencedContainer = "container:Group Lock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

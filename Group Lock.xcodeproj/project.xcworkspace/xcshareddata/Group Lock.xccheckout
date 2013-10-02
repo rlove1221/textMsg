@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>791C7F7D-931B-49CC-845F-01850DCB8F79</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Group Lock</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>97C84CBF-09E2-4CBA-9200-112F447C8D6C</key>
+		<string>https://github.com/rlove1221/textMsg.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Group Lock.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>97C84CBF-09E2-4CBA-9200-112F447C8D6C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rlove1221/textMsg.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>97C84CBF-09E2-4CBA-9200-112F447C8D6C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>97C84CBF-09E2-4CBA-9200-112F447C8D6C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>textMsg</string>
+		</dict>
+	</array>
+</dict>
+</plist>

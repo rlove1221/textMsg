@@ -61,20 +61,62 @@
         
         ABRecordRef currentPerson =
         (__bridge ABRecordRef)[arrayOfPeople objectAtIndex:index];
+        
+        
         NSString *name = [self getName:currentPerson];
-        NSArray *phones =
-        (__bridge NSArray *)ABMultiValueCopyArrayOfAllValues(
-                                                             ABRecordCopyValue(currentPerson, kABPersonPhoneProperty));
+        //NSArray *phones =        (__bridge NSArray *)ABMultiValueCopyArrayOfAllValues(  ABRecordCopyValue(currentPerson, kABPersonPhoneProperty));
+        ABMultiValueRef phones = (ABMultiValueRef)ABRecordCopyValue(currentPerson, kABPersonPhoneProperty);
+        NSString* mobile=@"";
+        NSString* imobile=@"";
+        NSString* mobileLabel;
+        for (int i=0; i < ABMultiValueGetCount(phones); i++) {
+            //NSString *phone = (NSString *)ABMultiValueCopyValueAtIndex(phones, i);
+            //NSLog(@"%@", phone);
+            mobileLabel = (__bridge NSString*)ABMultiValueCopyLabelAtIndex(phones, i);
+            if ([mobileLabel isEqualToString:(NSString*)kABPersonPhonePagerLabel]) {
+                NSLog(@"pager:");
+            }else if ([mobileLabel isEqualToString:(NSString*)kABPersonPhoneMainLabel])
+            {
+                mobile = (__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i);
+            }
+            else if ([mobileLabel isEqualToString:(NSString*)kABOtherLabel])
+            {
+                mobile = (__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i);
+            }else
+            if ([mobileLabel isEqualToString:(NSString*)kABHomeLabel])
+            {
+                mobile = (__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i);
+            }
+            else if ([mobileLabel isEqualToString:(NSString*)kABWorkLabel])
+            {
+                mobile = (__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i);
+            }
+            	else if([mobileLabel isEqualToString:(NSString *)kABPersonPhoneMobileLabel]) {
+                mobile = (__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i);
+            } else if ([mobileLabel isEqualToString:(NSString*)kABPersonPhoneIPhoneLabel]) {
+                NSLog(@"iphone:");
+                mobile =(__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i);;
+                imobile = (__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i);
+                break;
+            }
+            
+            
+            
+            NSLog(@"%@", mobile);
+        }
         NSDictionary *additionDict = [self dictionaryRepresentationForABPerson:currentPerson];
         NSInteger recordID = ABRecordGetRecordID(currentPerson);
         //[[NSUserDefaults standardUserDefaults] setObject:testdict forKey:@"test"];
        // [[NSUserDefaults standardUserDefaults] synchronize];
         // Make sure that the selected contact has one phone at least filled in.
-        if ([phones count] > 0) {
+        if (mobile.length > 0) {
             // We'll use the first phone number only here.
             // In a real app, it's up to you to play around with the returned values and pick the necessary value.
             //NSData *contactData = [NSKeyedArchiver archivedDataWithRootObject:(__bridge id)(currentPerson)];
-            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:name,@"name",[phones objectAtIndex:0],@"phone",additionDict,@"additioninfo",[NSNumber numberWithInteger:recordID],@"contactId", nil];
+            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:name,@"name",mobile,@"phone",additionDict,@"additioninfo",[NSNumber numberWithInteger:recordID],@"contactId",[NSNumber numberWithInteger:index],@"index", nil];
+            if (imobile.length > 0) {
+                dict = [[NSDictionary alloc] initWithObjectsAndKeys:name,@"name",mobile,@"phone",imobile,@"iphone",additionDict,@"additioninfo",[NSNumber numberWithInteger:recordID],@"contactId",[NSNumber numberWithInteger:index],@"index",nil];
+            }
             [allContactsPhoneNumber addObject:dict];
             //[actualContactList addObject:(__bridge id)(currentPerson)];
         }
@@ -182,6 +224,14 @@
     UILabel *phone = (UILabel*)[cell viewWithTag:2];
     name.text = [contact objectForKey:@"name"];
     phone.text = [contact objectForKey:@"phone"];
+    if ([selectedContactList indexOfObject:contact] != NSNotFound) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        //[selectedContactList addObject:[allContactsPhoneNumber objectAtIndex:indexPath.row]];
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return cell;
 }
 
@@ -216,12 +266,19 @@
     //NSArray *contactList = [ContactItem getAllCGItemByGroupUUID:self.groupItem.groupUUID];
     for (NSDictionary *dict in selectedContactList) {
         NSInteger recordId = [[dict objectForKey:@"contactId"] integerValue];
+        int index = [[dict objectForKey:@"index"] intValue];
+        ABRecordRef currentPerson =
+        (__bridge ABRecordRef)[arrayOfPeople objectAtIndex:index];
+        NSData  *imgData = (__bridge NSData *)ABPersonCopyImageData(currentPerson);
         ContactItem *item = [ContactItem getCGItemById:recordId groupUUID:self.groupItem.groupUUID];
         if (!item) {
             item = [ContactItem newCGItem];
             item.contactName = [dict objectForKey:@"name"];
         }
+        item.imageData = imgData;
         item.contactNumber = [dict objectForKey:@"phone"];
+        
+        item.contactINumber = [dict objectForKey:@"iphone"];
         item.contactId = [dict objectForKey:@"contactId"];
         item.groupUUID = self.groupItem.groupUUID;
         NSDictionary *tempdict = [dict objectForKey:@"additioninfo"];

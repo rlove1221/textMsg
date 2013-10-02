@@ -10,6 +10,12 @@
 #import "GroupItem+Custom.h"
 #import "NewGroupViewController.h"
 #import "NSManagedObjectContext+Custom.h"
+#import "UIColor+FlatUI.h"
+#import "UITableViewCell+FlatUI.h"
+#import <MessageUI/MessageUI.h>
+#import "ContactItem+Custom.h"
+#import "Util.h"
+
 @interface BlockedListViewController ()
 
 @end
@@ -69,8 +75,9 @@
     }
     else
     {
+        cell.backgroundColor = [UIColor pomegranateColor];
         status.text = @"Blocked";
-        status.textColor = [UIColor redColor];
+        status.textColor = [UIColor cloudsColor];
     }
     
     
@@ -82,12 +89,54 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+//    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
+//    
+//        NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+//        groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
+//        [self.navigationController pushViewController:groupDetail animated:YES];
+    
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
+    selectedItem = [groupList objectAtIndex:indexPath.row];
     
-        NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
-        groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
-        [self.navigationController pushViewController:groupDetail animated:YES];
+    MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
     
-    
+    if([MFMessageComposeViewController canSendText])
+    {
+        NSArray *contactList = [ContactItem getAllCGItemByGroupUUID:selectedItem.groupUUID];
+        NSMutableArray *phoneList = [[NSMutableArray alloc] initWithCapacity:0];
+        for (ContactItem *item in contactList) {
+            [phoneList addObject:item.contactNumber];
+            if (item.contactINumber != nil &&item.contactINumber.length > 0) {
+                [phoneList addObject:item.contactINumber];
+            }
+        }
+        if ([phoneList count] == 0) {
+            [Util showAlertWithString:@"No contact to send message"];
+        }
+        else{
+            //controller.body = @"SMS message here";
+            //isShowMessage = YES;
+            controller.recipients = phoneList;
+            controller.messageComposeDelegate = self;
+            [self presentViewController:controller animated:NO completion:nil];
+        }
+        
+    }
+}
+- (IBAction)edit_click:(id)sender {
+    UIButton *button = (UIButton*)sender;
+    UITableViewCell *cell = (UITableViewCell*)button.superview.superview.superview;
+    if(cell)
+    {
+        NSIndexPath *indexPath = [groupTableView indexPathForCell:cell];
+        selectedItem = [groupList objectAtIndex:indexPath.row];
+        
+        
+            NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+            groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
+            [self.navigationController pushViewController:groupDetail animated:NO];
+        
+        
+    }
 }
 @end

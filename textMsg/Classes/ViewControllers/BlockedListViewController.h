@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GroupItem+Custom.h"
 @interface BlockedListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
     NSArray *groupList;
+    GroupItem *selectedItem;
     IBOutlet UITableView *groupTableView;
 }
+- (IBAction)edit_click:(id)sender;
 
 @end
