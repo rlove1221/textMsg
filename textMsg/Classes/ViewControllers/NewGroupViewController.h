@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "GroupItem.h"
 #import <AddressBook/AddressBook.h>
+#import "WYPopoverController.h"
+
+
+
 @interface NewGroupViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
     NSArray *contactList;
@@ -27,14 +31,24 @@
     IBOutlet UIButton *addBTN;
     IBOutlet UIBarButtonItem *blockBTn;
     BOOL isBack;
+    IBOutlet UIBarButtonItem *backButton;
 }
 - (IBAction)create_Click:(id)sender;
 - (IBAction)addContact_Click:(id)sender;
 @property(nonatomic,strong)GroupItem *groupItem;
 @property(nonatomic)BOOL isAddNew;
+
+@property (nonatomic, retain) WYPopoverController *popGroup;
+
+@property(nonatomic, assign)WYPopoverController *popoverController;
 - (IBAction)save_click:(id)sender;
 - (IBAction)block_click:(id)sender;
 - (IBAction)back_click:(id)sender;
+
+
+- (void)newGroupBack:(NewGroupViewController *)controller;
+
+
 
 
 @end

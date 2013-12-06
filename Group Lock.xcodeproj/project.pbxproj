@@ -67,6 +67,15 @@
 		A31899CA17E681AE004FCAD5 /* msg2.png in Resources */ = {isa = PBXBuildFile; fileRef = A31899C917E681AE004FCAD5 /* msg2.png */; };
 		A31899CC17E687CF004FCAD5 /* torquise.png in Resources */ = {isa = PBXBuildFile; fileRef = A31899CB17E687CF004FCAD5 /* torquise.png */; };
 		A31899CE17E68812004FCAD5 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = A31899CD17E68812004FCAD5 /* green.png */; };
+		A324B8A2184EDB2B0031608D /* buttonEdit.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8A1184EDB2B0031608D /* buttonEdit.png */; };
+		A324B8A4184EDED10031608D /* buttonedit3.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8A3184EDED10031608D /* buttonedit3.png */; };
+		A324B8A8184EE0BB0031608D /* lock1.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8A7184EE0BB0031608D /* lock1.png */; };
+		A324B8AA184EE1C00031608D /* unLock.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8A9184EE1C00031608D /* unLock.png */; };
+		A324B8B018500E200031608D /* lockUn2.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8AF18500E200031608D /* lockUn2.png */; };
+		A324B8B2185023330031608D /* pssCode.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8B1185023330031608D /* pssCode.png */; };
+		A324B8B4185025970031608D /* pssCde1.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8B3185025970031608D /* pssCde1.png */; };
+		A333AF921834883C002A68EB /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = A333AF8F1834883C002A68EB /* WYPopoverController.m */; };
+		A333AF931834883C002A68EB /* WYStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A333AF911834883C002A68EB /* WYStoryboardPopoverSegue.m */; };
 		A338C5EA17E6A51600FE9D1E /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = A338C5E917E6A51600FE9D1E /* save.png */; };
 		A338C5EC17E6B79F00FE9D1E /* content.png in Resources */ = {isa = PBXBuildFile; fileRef = A338C5EB17E6B79F00FE9D1E /* content.png */; };
 		A338C5EE17E6B7A600FE9D1E /* contentLines.png in Resources */ = {isa = PBXBuildFile; fileRef = A338C5ED17E6B7A600FE9D1E /* contentLines.png */; };
@@ -81,6 +90,8 @@
 		A37B22C117E65759002572A6 /* contactsBlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C017E65759002572A6 /* contactsBlocked.png */; };
 		A37B22C317E659D4002572A6 /* contactsGroup2.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C217E659D4002572A6 /* contactsGroup2.png */; };
 		A37B22C517E65C33002572A6 /* contactsGroup3.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C417E65C33002572A6 /* contactsGroup3.png */; };
+		A3AAED4F182B2B800084F052 /* lockUnselected1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3AAED4E182B2B800084F052 /* lockUnselected1@2x.png */; };
+		A3AAED53182B2F9E0084F052 /* lockUn.png in Resources */ = {isa = PBXBuildFile; fileRef = A3AAED52182B2F9E0084F052 /* lockUn.png */; };
 		A3CC0A3C17EF6662005E2BE2 /* goldView.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A3B17EF6662005E2BE2 /* goldView.png */; };
 		A3CC0A3E17EF6851005E2BE2 /* gold.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A3D17EF6851005E2BE2 /* gold.png */; };
 		A3CC0A4017EF87D3005E2BE2 /* gold3.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A3F17EF87D3005E2BE2 /* gold3.png */; };
@@ -126,6 +137,18 @@
 		A3E3874417F877C5008758F9 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873A17F877C5008758F9 /* AppIcon76x76@2x.png */; };
 		A3E3874517F877C5008758F9 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873B17F877C5008758F9 /* iTunesArtwork.png */; };
 		A3E3874617F877C5008758F9 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E3873C17F877C5008758F9 /* iTunesArtwork@2x.png */; };
+		A3EF69AE1831B0DE00798F23 /* addSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69AD1831B0DE00798F23 /* addSelected.png */; };
+		A3EF69B01831B0E400798F23 /* lockSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69AF1831B0E400798F23 /* lockSelected.png */; };
+		A3EF69B21831B0EA00798F23 /* topLock.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69B11831B0EA00798F23 /* topLock.png */; };
+		A3EF69B41831B0F300798F23 /* lockUn1.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69B31831B0F300798F23 /* lockUn1.png */; };
+		A3EF69B61831B0F900798F23 /* lockUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69B51831B0F900798F23 /* lockUnselected.png */; };
+		A3EF69B81831B0FF00798F23 /* topAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69B71831B0FF00798F23 /* topAdd.png */; };
+		A3EF69BA1831B10800798F23 /* addUnselect.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69B91831B10800798F23 /* addUnselect.png */; };
+		A3EF69BC1831B11D00798F23 /* leftSeperator.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69BB1831B11D00798F23 /* leftSeperator.png */; };
+		A3EF69BE1831B12900798F23 /* rightLine.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69BD1831B12900798F23 /* rightLine.png */; };
+		A3EF69C01831B12F00798F23 /* topSeparator.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69BF1831B12F00798F23 /* topSeparator.png */; };
+		A3EF69C21831B9AB00798F23 /* groupBck.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69C11831B9AB00798F23 /* groupBck.png */; };
+		A3EF69C41831BB6300798F23 /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69C31831BB6300798F23 /* topBar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +266,17 @@
 		A31899C917E681AE004FCAD5 /* msg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msg2.png; sourceTree = "<group>"; };
 		A31899CB17E687CF004FCAD5 /* torquise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torquise.png; sourceTree = "<group>"; };
 		A31899CD17E68812004FCAD5 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		A324B8A1184EDB2B0031608D /* buttonEdit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonEdit.png; sourceTree = "<group>"; };
+		A324B8A3184EDED10031608D /* buttonedit3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonedit3.png; sourceTree = "<group>"; };
+		A324B8A7184EE0BB0031608D /* lock1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock1.png; sourceTree = "<group>"; };
+		A324B8A9184EE1C00031608D /* unLock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unLock.png; sourceTree = "<group>"; };
+		A324B8AF18500E200031608D /* lockUn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockUn2.png; sourceTree = "<group>"; };
+		A324B8B1185023330031608D /* pssCode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pssCode.png; sourceTree = "<group>"; };
+		A324B8B3185025970031608D /* pssCde1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pssCde1.png; sourceTree = "<group>"; };
+		A333AF8E1834883C002A68EB /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYPopoverController.h; sourceTree = "<group>"; };
+		A333AF8F1834883C002A68EB /* WYPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYPopoverController.m; sourceTree = "<group>"; };
+		A333AF901834883C002A68EB /* WYStoryboardPopoverSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYStoryboardPopoverSegue.h; sourceTree = "<group>"; };
+		A333AF911834883C002A68EB /* WYStoryboardPopoverSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYStoryboardPopoverSegue.m; sourceTree = "<group>"; };
 		A338C5E917E6A51600FE9D1E /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		A338C5EB17E6B79F00FE9D1E /* content.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = content.png; sourceTree = "<group>"; };
 		A338C5ED17E6B7A600FE9D1E /* contentLines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contentLines.png; sourceTree = "<group>"; };
@@ -257,6 +291,8 @@
 		A37B22C017E65759002572A6 /* contactsBlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsBlocked.png; sourceTree = "<group>"; };
 		A37B22C217E659D4002572A6 /* contactsGroup2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsGroup2.png; sourceTree = "<group>"; };
 		A37B22C417E65C33002572A6 /* contactsGroup3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsGroup3.png; sourceTree = "<group>"; };
+		A3AAED4E182B2B800084F052 /* lockUnselected1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lockUnselected1@2x.png"; sourceTree = "<group>"; };
+		A3AAED52182B2F9E0084F052 /* lockUn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockUn.png; sourceTree = "<group>"; };
 		A3CC0A3B17EF6662005E2BE2 /* goldView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldView.png; sourceTree = "<group>"; };
 		A3CC0A3D17EF6851005E2BE2 /* gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold.png; sourceTree = "<group>"; };
 		A3CC0A3F17EF87D3005E2BE2 /* gold3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold3.png; sourceTree = "<group>"; };
@@ -306,6 +342,18 @@
 		A3E3873A17F877C5008758F9 /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
 		A3E3873B17F877C5008758F9 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		A3E3873C17F877C5008758F9 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		A3EF69AD1831B0DE00798F23 /* addSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addSelected.png; sourceTree = "<group>"; };
+		A3EF69AF1831B0E400798F23 /* lockSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockSelected.png; sourceTree = "<group>"; };
+		A3EF69B11831B0EA00798F23 /* topLock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topLock.png; sourceTree = "<group>"; };
+		A3EF69B31831B0F300798F23 /* lockUn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockUn1.png; sourceTree = "<group>"; };
+		A3EF69B51831B0F900798F23 /* lockUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockUnselected.png; sourceTree = "<group>"; };
+		A3EF69B71831B0FF00798F23 /* topAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topAdd.png; sourceTree = "<group>"; };
+		A3EF69B91831B10800798F23 /* addUnselect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addUnselect.png; sourceTree = "<group>"; };
+		A3EF69BB1831B11D00798F23 /* leftSeperator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftSeperator.png; sourceTree = "<group>"; };
+		A3EF69BD1831B12900798F23 /* rightLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightLine.png; sourceTree = "<group>"; };
+		A3EF69BF1831B12F00798F23 /* topSeparator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topSeparator.png; sourceTree = "<group>"; };
+		A3EF69C11831B9AB00798F23 /* groupBck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupBck.png; sourceTree = "<group>"; };
+		A3EF69C31831BB6300798F23 /* topBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topBar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +400,10 @@
 		855563B117D35D8A0060E9F5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A333AF8E1834883C002A68EB /* WYPopoverController.h */,
+				A333AF8F1834883C002A68EB /* WYPopoverController.m */,
+				A333AF901834883C002A68EB /* WYStoryboardPopoverSegue.h */,
+				A333AF911834883C002A68EB /* WYStoryboardPopoverSegue.m */,
 				A3CC0A5B17F1E72B005E2BE2 /* FUICellBackgroundView.h */,
 				A3CC0A5C17F1E72B005E2BE2 /* FUICellBackgroundView.m */,
 				A3CC0A5517F1E6AF005E2BE2 /* UIColor+FlatUI.h */,
@@ -588,6 +640,11 @@
 		A30EF61017D231380089D859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A324B8A9184EE1C00031608D /* unLock.png */,
+				A324B8B3185025970031608D /* pssCde1.png */,
+				A324B8A7184EE0BB0031608D /* lock1.png */,
+				A324B8B1185023330031608D /* pssCode.png */,
+				A324B8A3184EDED10031608D /* buttonedit3.png */,
 				A3E3873317F877C5008758F9 /* AppIcon29x29.png */,
 				A3E3873417F877C5008758F9 /* AppIcon29x29@2x.png */,
 				A3E3873517F877C5008758F9 /* AppIcon40x40.png */,
@@ -598,13 +655,29 @@
 				A3E3873A17F877C5008758F9 /* AppIcon76x76@2x.png */,
 				A3E3873B17F877C5008758F9 /* iTunesArtwork.png */,
 				A3E3873C17F877C5008758F9 /* iTunesArtwork@2x.png */,
+				A3EF69BD1831B12900798F23 /* rightLine.png */,
+				A3EF69C31831BB6300798F23 /* topBar.png */,
+				A3EF69C11831B9AB00798F23 /* groupBck.png */,
+				A3EF69BF1831B12F00798F23 /* topSeparator.png */,
+				A3EF69BB1831B11D00798F23 /* leftSeperator.png */,
+				A3EF69AD1831B0DE00798F23 /* addSelected.png */,
+				A3EF69B91831B10800798F23 /* addUnselect.png */,
+				A3EF69AF1831B0E400798F23 /* lockSelected.png */,
+				A3EF69B11831B0EA00798F23 /* topLock.png */,
+				A3EF69B31831B0F300798F23 /* lockUn1.png */,
+				A324B8AF18500E200031608D /* lockUn2.png */,
+				A3EF69B71831B0FF00798F23 /* topAdd.png */,
+				A3EF69B51831B0F900798F23 /* lockUnselected.png */,
 				A3CC0A6617F336D1005E2BE2 /* messages4.png */,
 				A3E386F417F3B839008758F9 /* blckd3.png */,
 				A3CC0A6417F32C67005E2BE2 /* messages3.png */,
+				A3AAED4E182B2B800084F052 /* lockUnselected1@2x.png */,
+				A3AAED52182B2F9E0084F052 /* lockUn.png */,
 				A3CC0A6217F32815005E2BE2 /* messages2.png */,
 				A3CC0A6017F3259F005E2BE2 /* messages.png */,
 				A3CC0A5E17F3258B005E2BE2 /* editContact.png */,
 				A3CC0A5317EFD4D6005E2BE2 /* blocked3.png */,
+				A324B8A1184EDB2B0031608D /* buttonEdit.png */,
 				A3CC0A5117EFCEDE005E2BE2 /* block2@2x.png */,
 				A3CC0A4F17EFB8B1005E2BE2 /* newGreen.png */,
 				A3CC0A4B17EF93EB005E2BE2 /* gold5.png */,
@@ -749,20 +822,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A324B8B018500E200031608D /* lockUn2.png in Resources */,
 				A3CC0A6717F336D1005E2BE2 /* messages4.png in Resources */,
 				A3CC0A4817EF8D71005E2BE2 /* goldApple.png in Resources */,
+				A3EF69B21831B0EA00798F23 /* topLock.png in Resources */,
+				A324B8A2184EDB2B0031608D /* buttonEdit.png in Resources */,
 				A31899CC17E687CF004FCAD5 /* torquise.png in Resources */,
 				A31899CE17E68812004FCAD5 /* green.png in Resources */,
 				A3D2348517E648DF00903654 /* sms.png in Resources */,
+				A3EF69BA1831B10800798F23 /* addUnselect.png in Resources */,
+				A324B8B4185025970031608D /* pssCde1.png in Resources */,
 				A338C5F417E7492900FE9D1E /* contactsHideGroup.png in Resources */,
 				A3D2348D17E64D5200903654 /* sms2.png in Resources */,
 				A3D4680817ED30CC0002A1C5 /* main3@2x.png in Resources */,
+				A3AAED53182B2F9E0084F052 /* lockUn.png in Resources */,
 				A338C5EA17E6A51600FE9D1E /* save.png in Resources */,
 				A338C5FA17E7510C00FE9D1E /* contactsGroup5.png in Resources */,
 				A338C5FE17E78F7200FE9D1E /* contactsHideGroup8.png in Resources */,
 				A37B22C517E65C33002572A6 /* contactsGroup3.png in Resources */,
 				A3CC0A5017EFB8B1005E2BE2 /* newGreen.png in Resources */,
+				A3EF69B41831B0F300798F23 /* lockUn1.png in Resources */,
 				A3E3873F17F877C5008758F9 /* AppIcon40x40.png in Resources */,
+				A3EF69B81831B0FF00798F23 /* topAdd.png in Resources */,
 				A3D2348B17E649E400903654 /* contacts2.png in Resources */,
 				A3E3874017F877C5008758F9 /* AppIcon40x40@2x.png in Resources */,
 				A338C5FC17E753BE00FE9D1E /* contactsGroup7.png in Resources */,
@@ -774,7 +855,10 @@
 				A338C5EC17E6B79F00FE9D1E /* content.png in Resources */,
 				A3E3874117F877C5008758F9 /* AppIcon60x60.png in Resources */,
 				A3D2348117E638D500903654 /* cloudColor.png in Resources */,
+				A3EF69C01831B12F00798F23 /* topSeparator.png in Resources */,
+				A3AAED4F182B2B800084F052 /* lockUnselected1@2x.png in Resources */,
 				A3CC0A5F17F3258B005E2BE2 /* editContact.png in Resources */,
+				A3EF69BC1831B11D00798F23 /* leftSeperator.png in Resources */,
 				A3CC0A4C17EF93EB005E2BE2 /* gold5.png in Resources */,
 				A3D4680617ED1B710002A1C5 /* blocked@2x.png in Resources */,
 				A338C5F817E7501900FE9D1E /* contactsGroup6.png in Resources */,
@@ -782,6 +866,7 @@
 				A3D2348317E6461F00903654 /* salmonBG.png in Resources */,
 				A37B22C317E659D4002572A6 /* contactsGroup2.png in Resources */,
 				A3E3874517F877C5008758F9 /* iTunesArtwork.png in Resources */,
+				A3EF69BE1831B12900798F23 /* rightLine.png in Resources */,
 				A3CC0A5217EFCEDE005E2BE2 /* block2@2x.png in Resources */,
 				A3D2348F17E6508B00903654 /* msg.png in Resources */,
 				A3CC0A4617EF8994005E2BE2 /* gold4.png in Resources */,
@@ -792,16 +877,23 @@
 				A3CC0A4A17EF929E005E2BE2 /* appleGold.png in Resources */,
 				A3E3874317F877C5008758F9 /* AppIcon76x76.png in Resources */,
 				A37B22C117E65759002572A6 /* contactsBlocked.png in Resources */,
+				A3EF69C21831B9AB00798F23 /* groupBck.png in Resources */,
+				A3EF69C41831BB6300798F23 /* topBar.png in Resources */,
 				A31899C817E68001004FCAD5 /* msg1.png in Resources */,
+				A3EF69B61831B0F900798F23 /* lockUnselected.png in Resources */,
 				A3D2347F17E638CD00903654 /* bkG1.png in Resources */,
 				A3CC0A3C17EF6662005E2BE2 /* goldView.png in Resources */,
+				A3EF69AE1831B0DE00798F23 /* addSelected.png in Resources */,
 				A3CC0A5417EFD4D6005E2BE2 /* blocked3.png in Resources */,
 				A338C5F017E6BE2700FE9D1E /* save1.png in Resources */,
 				A3D4680417ED0E080002A1C5 /* test3@2x.png in Resources */,
 				A3D2348717E648E500903654 /* lock.png in Resources */,
 				A3CC0A6317F32815005E2BE2 /* messages2.png in Resources */,
+				A324B8B2185023330031608D /* pssCode.png in Resources */,
 				A30EF62217D231390089D859 /* Images.xcassets in Resources */,
+				A324B8AA184EE1C00031608D /* unLock.png in Resources */,
 				A31899CA17E681AE004FCAD5 /* msg2.png in Resources */,
+				A324B8A8184EE0BB0031608D /* lock1.png in Resources */,
 				A3E3874217F877C5008758F9 /* AppIcon60x60@2x.png in Resources */,
 				A3CC0A3E17EF6851005E2BE2 /* gold.png in Resources */,
 				A3E3873D17F877C5008758F9 /* AppIcon29x29.png in Resources */,
@@ -811,7 +903,9 @@
 				A338C5F617E74BE600FE9D1E /* contactsGroup4.png in Resources */,
 				A37B22BF17E65723002572A6 /* contactsGroup.png in Resources */,
 				A3D4681017EE83020002A1C5 /* contacts3.png in Resources */,
+				A3EF69B01831B0E400798F23 /* lockSelected.png in Resources */,
 				A338C5EE17E6B7A600FE9D1E /* contentLines.png in Resources */,
+				A324B8A4184EDED10031608D /* buttonedit3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +938,7 @@
 				8555640417D360E80060E9F5 /* ASIDataCompressor.m in Sources */,
 				8555640517D360E80060E9F5 /* ASIDataDecompressor.m in Sources */,
 				8555640617D360E80060E9F5 /* ASIDownloadCache.m in Sources */,
+				A333AF921834883C002A68EB /* WYPopoverController.m in Sources */,
 				8555640717D360E80060E9F5 /* ASIFormDataRequest.m in Sources */,
 				8555640817D360E80060E9F5 /* ASIHTTPRequest.m in Sources */,
 				8555640917D360E80060E9F5 /* ASIHTTPRequestDelegate.h in Sources */,
@@ -867,6 +962,7 @@
 				855563FB17D360B40060E9F5 /* ContactItem+Custom.m in Sources */,
 				855563FD17D360B40060E9F5 /* ContactItem.m in Sources */,
 				855563FF17D360B40060E9F5 /* CoreDataHelper.m in Sources */,
+				A333AF931834883C002A68EB /* WYStoryboardPopoverSegue.m in Sources */,
 				8555640217D360B40060E9F5 /* NSManagedObjectContext+Custom.m in Sources */,
 				A30EF61A17D231380089D859 /* AppDelegate.m in Sources */,
 				A30EF61617D231380089D859 /* main.m in Sources */,
@@ -997,7 +1093,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "textMsg/Group Lock-Prefix.pch";
 				INFOPLIST_FILE = "textMsg/Group Lock-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Group Lock";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1013,7 +1109,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "textMsg/Group Lock-Prefix.pch";
 				INFOPLIST_FILE = "textMsg/Group Lock-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Group Lock";
 				WRAPPER_EXTENSION = app;
 			};

@@ -8,12 +8,33 @@
 
 #import <UIKit/UIKit.h>
 #import "GroupItem+Custom.h"
+#import "WYPopoverController.h"
+
+
+
+
 @interface BlockedListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
-    NSArray *groupList;
+    
+    NSArray *groupList1;
     GroupItem *selectedItem;
     IBOutlet UITableView *groupTableView;
+    BOOL isBack;
+
+    IBOutlet UIBarButtonItem *backButton;
 }
+@property (nonatomic, retain) WYPopoverController *blockGroup;
+@property(nonatomic, assign)WYPopoverController *popoverController;
+
+
+
+
+
+
 - (IBAction)edit_click:(id)sender;
+
+- (IBAction)back_click:(id)sender;
+
+//- (void)blockBack:(BlockedListViewController *)controller;
 
 @end

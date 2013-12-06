@@ -14,10 +14,13 @@
 {
     NSMutableArray *allContactsPhoneNumber;
     NSArray *groupList;
+    NSArray *groupList1;
     IBOutlet UITableView *groupTableView;
     GroupItem *selectedItem;
     BOOL isShowMessage;
     BOOL isRemovePass;
+    IBOutlet UIButton *passCode;
+    IBOutlet UIButton *lockbutton;
 }
 - (IBAction)edit_click:(id)sender;
 - (IBAction)setpass_click:(id)sender;

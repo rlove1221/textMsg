@@ -11,12 +11,16 @@
 #import "GroupItem+Custom.h"
 #import "ContactItem+Custom.h"
 #import "define.h"
+#import "UIColor+FlatUI.h"
 @interface NewGroupViewController ()
+
 
 @end
 
 @implementation NewGroupViewController
-@synthesize groupItem,isAddNew;
+
+@synthesize groupItem,isAddNew,popoverController,popGroup;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -42,11 +46,11 @@
     else
     {
         if ([groupItem.groupStatus isEqualToString:@"0"]) {
-            [blockBTn setTitle:@"Block"];
+            [blockBTn setTitle:@"Hide"];
         }
         else
         {
-            [blockBTn setTitle:@"Unblock"];
+            [blockBTn setTitle:@"Restore"];
         }
         addBTN.hidden = YES;
     }
@@ -68,6 +72,13 @@
     }
     else { // we're on iOS 5 or older
         accessGranted = YES;
+    }
+    if (IS_OS_7_OR_LATER) {
+        
+    }else
+    {
+        backButton.tintColor = [UIColor turquoiseColor];
+        blockBTn.tintColor = [UIColor pomegranateColor];
     }
     
 	// Do any additional setup after loading the view.
@@ -125,6 +136,7 @@
     UILabel *phone = (UILabel*)[cell viewWithTag:2];
     name.text = contact.contactName;
     phone.text = contact.contactNumber;
+  
     return cell;
 }
 
@@ -220,7 +232,7 @@
             for (NSDictionary *tempDict in tempArray) {
                 for (NSString* tempkey in [tempDict allKeys]) {
                 NSString *stringval2 = [tempDict objectForKey:tempkey];
-                    ABMultiValueAddValueAndLabel(phoneNumberMultiValue ,(__bridge CFTypeRef)(stringval2),kABPersonPhoneMobileLabel, NULL);
+                    ABMultiValueAddValueAndLabel(phoneNumberMultiValue ,(__bridge CFTypeRef)(stringval2),(__bridge CFStringRef)(tempkey), NULL);
                 }
             }
             ABRecordSetValue(person, [key intValue], phoneNumberMultiValue, &error);
@@ -260,7 +272,7 @@
 - (IBAction)save_click:(id)sender {
     if (nameTF.text.length == 0 || [nameTF.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length == 0) {
         if (!isBack) {
-            [Util showAlertWithString:@"Please enter group name!"];
+            [Util showAlertWithString:@"Please enter group name"];
         }
         //[Util showAlertWithString:@"Please enter group name!"];
         return;
@@ -271,14 +283,14 @@
         GroupItem *group = [GroupItem getGroupItemByName:groupname];
         if (group) {
             if (!isBack) {
-            [Util showAlertWithString:@"This group is existed"];
+            [Util showAlertWithString:@"This group name is taken"];
             }
             return;
         }
     }    
     if (isAddNew) {
         isAddNew = NO;
-        addBTN.hidden = YES;
+        addBTN.hidden = NO;
         [Util showAlertWithString:@"Saved"];
     }
     groupItem.groupName = groupname;
@@ -311,14 +323,14 @@
 - (IBAction)block_click:(id)sender {
     if ([groupItem.groupStatus isEqualToString:@"0"]) {
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
-            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please confirm your passcode to block all contact in this group" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please confirm your passcode to hide all contacts in this group" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
             [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
             alert1.tag = 100;
             [alert1 show];
         }
         else
         {
-            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Do you want to block all contacts in this group?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Do you want to hide all contacts in this group?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
             alert1.tag = 300;
             [alert1 show];
         }
@@ -326,14 +338,14 @@
     else
     {
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
-        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please confirm your passcode to unblock all contacts in this group " delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please confirm your passcode to restore all contacts in this group " delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
         [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
         alert1.tag = 200;
         [alert1 show];
         }
         else
         {
-            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Do you want to unblock all contacts in this group?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Do you want to restore all contacts in this group?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
             alert1.tag = 400;
             [alert1 show];
         }
@@ -342,10 +354,12 @@
 }
 
 - (IBAction)back_click:(id)sender {
-    isBack = YES;
-    [self save_click:nil];
-    [self.navigationController popViewControllerAnimated:YES];
-    
+    //[self.delegate newGroupBack.self];
+    if (!isAddNew) {
+        [self save_click:nil];
+    }
+
+    [popGroup dismissPopoverAnimated:YES];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
@@ -390,14 +404,15 @@
         }
     }
     if ([groupItem.groupStatus isEqualToString:@"0"]) {
-        [blockBTn setTitle:@"Block"];
+        [blockBTn setTitle:@"Hide"];
     }
     else
     {
-        [blockBTn setTitle:@"Unblock"];
+        [blockBTn setTitle:@"Restore"];
     }
     
 }
+
 
 
 @end

@@ -17,8 +17,18 @@
 #import "BlockedListViewController.h"
 #import "UIColor+FlatUI.h"
 #import "UITableViewCell+FlatUI.h"
+#import "WYPopoverController.h"
+#import "WYStoryboardPopoverSegue.h"
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+@interface MainViewController ()< WYPopoverControllerDelegate>
+{
+    WYPopoverController *popGroup;
+    
+    WYPopoverController *blockGroup;
+    
+    UIPopoverController* standardPopoverController;
 
-@interface MainViewController ()
+}
 
 @end
 
@@ -27,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     //[NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(checkExpiredGroup) userInfo:nil repeats:YES];
     ABAddressBookRef addressBook = ABAddressBookCreate();
     
@@ -85,6 +96,8 @@
     //Set the background color
    // groupTableView.backgroundColor = [UIColor cloudsColor];
    // groupTableView.backgroundView = nil;
+    
+    
 
 }
 
@@ -157,7 +170,7 @@
     
     if (!lastName) lastName = @"";
     if (!firstName) firstName = @"";
-    
+
     return [NSString stringWithFormat:@"%@ %@", firstName, lastName];
 }
 
@@ -167,15 +180,24 @@
     [[NSManagedObjectContext managedObjectContext] reset];
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
         groupList = [GroupItem getGroupByStatus:@"0"];
+        groupList1 = [GroupItem getGroupByStatus:@"1"];
+    
     }
     else{
         groupList = [GroupItem getAllGroupItems];
     }
-    
+            if ([groupList1 count] > 0 && [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
+        [lockbutton setImage:[UIImage imageNamed:@"lock1.png"] forState:UIControlStateNormal];
+    }
+    else if
+     ([groupList1 count]== 0) {
+        [lockbutton setImage:[UIImage imageNamed:@"lockUn2.png"] forState:UIControlStateNormal];
+    }
     [groupTableView reloadData];
+    
     self.navigationController.navigationBarHidden = YES;
-}
 
+}
 - (void)viewWillDisappear:(BOOL)animated
 {
     if (!isShowMessage) {
@@ -231,27 +253,32 @@
     UILabel *name = (UILabel*)[cell viewWithTag:1];
     UILabel *name2 = (UILabel*)[cell viewWithTag:3];
     UILabel *status = (UILabel*)[cell viewWithTag:2];
+    UILabel *count = (UILabel*)[cell viewWithTag:4];
     //UIImageView *imageView = (UIImageView*)[cell viewWithTag:3];
     name.text = group.groupName;
     name2.text = group.groupName;
+    NSArray *contactList = [ContactItem getAllCGItemByGroupUUID:group.groupUUID];
+    count.text = [NSString stringWithFormat:@"%i",[contactList count]];
     if ([group.groupStatus isEqualToString:@"0"]) {
         
-        
-        cell.backgroundColor = [UIColor greenSeaColor];
+    //cell background
+        cell.backgroundColor = [UIColor clearColor];
+        name2.textColor = [UIColor emerlandColor];
         status.text = @"";
-        status.textColor = [UIColor cloudsColor];
+        status.textColor = [UIColor emerlandColor];
         //imageView.hidden = NO;
         name.hidden = YES;
         name2.hidden = NO;
         }
     else
     {
-        cell.backgroundColor = [UIColor pomegranateColor];
-        status.text = @"Blocked";
+        cell.backgroundColor = [UIColor clearColor];
+        name2.textColor = [UIColor pomegranateColor];
+        status.text = @"";
         status.textColor = [UIColor cloudsColor];
         //imageView.hidden = YES;
-        name.hidden = NO;
-        name2.hidden = YES;
+        name.hidden = YES;
+        name2.hidden = NO;
     }
     //groupItem.blockTime = [NSString stringWithFormat:@"%.0f",timeInterval/1000];
     
@@ -312,11 +339,21 @@
 
 - (IBAction)edit_click:(id)sender {
     UIButton *button = (UIButton*)sender;
+    
     UITableViewCell *cell = (UITableViewCell*)button.superview.superview.superview;
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        cell = (UITableViewCell*)button.superview.superview;
+    }
     if(cell)
     {
         NSIndexPath *indexPath = [groupTableView indexPathForCell:cell];
         selectedItem = [groupList objectAtIndex:indexPath.row];
+        
+        WYPopoverBackgroundView* appearance = [WYPopoverBackgroundView appearance];
+        appearance.fillTopColor = [UIColor colorWithRed:0 green:.9 blue:0.9 alpha:.75];
+        appearance.outerShadowColor = [UIColor colorWithRed:0 green:.9 blue:0.7 alpha:.75];
+
+
         
         if ([selectedItem.groupStatus isEqualToString:@"1"]) {
             if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
@@ -327,40 +364,95 @@
             }
             else
             {
-                NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+                
+                UINavigationController* contentViewController = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"]];
+                NewGroupViewController *groupDetail = ((NewGroupViewController*)[contentViewController.viewControllers objectAtIndex:0]);
                 groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
-                [self.navigationController pushViewController:groupDetail animated:NO];
+                popGroup = [[WYPopoverController alloc] initWithContentViewController:contentViewController];
+                popGroup.delegate = self;
+                groupDetail.popGroup = popGroup;
+                //[popoverController presentPopoverFromRect:button.bounds inView:button permittedArrowDirections:WYPopoverArrowDirectionAny animated:YES];
+                
+                [popGroup presentPopoverFromRect:CGRectZero inView:nil permittedArrowDirections:WYPopoverArrowDirectionNone animated:YES];
+                appearance.fillTopColor = [UIColor colorWithRed:0 green:.9 blue:0.7 alpha:.75];
+                appearance.outerShadowColor = [UIColor colorWithRed:0 green:.9 blue:0.7 alpha:.75];
+
+                
+                
+              //  NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+               // groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
+                //[self.navigationController pushViewController:groupDetail animated:NO];
 
             }
         }
         else
         {
-            NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+            
+            UINavigationController* contentViewController = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"]];
+            NewGroupViewController *groupDetail = ((NewGroupViewController*)[contentViewController.viewControllers objectAtIndex:0]);
             groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
-            [self.navigationController pushViewController:groupDetail animated:NO];
+            
+            popGroup = [[WYPopoverController alloc] initWithContentViewController:contentViewController];
+            popGroup.delegate = self;
+            groupDetail.popGroup = popGroup;
+                
+            
+            //((NewGroupViewController*)[contentViewController.viewControllers objectAtIndex:0]).popGroup = popGroup;
+            //[popoverController presentPopoverFromRect:button.bounds inView:button permittedArrowDirections:WYPopoverArrowDirectionAny animated:YES];
+            
+            [popGroup presentPopoverFromRect:CGRectZero inView:nil permittedArrowDirections:WYPopoverArrowDirectionNone animated:YES];
+            
+            //  NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+            // groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
+            //[self.navigationController pushViewController:groupDetail animated:NO];
+
+           // NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+          //  groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
+           // [self.navigationController pushViewController:groupDetail animated:NO];
         }
 
     }
 }
 
+
+- (BOOL)popGroupShouldDismissPopover:(WYPopoverController *)aPopoverController
+{
+    
+    return YES;
+}
+
+- (void)popoverControllerDidDismissPopover:(WYPopoverController *)popoverController
+{
+    [self viewWillAppear:YES];
+    
+}
 - (IBAction)setpass_click:(id)sender {
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"]) {
+        
+        
 //        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your Current Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
 //        [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
 //        alert1.tag = 100;
 //        [alert1 show];
         UIActionSheet *actionsheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Remove Passcode" otherButtonTitles:@"Change Passcode", nil];
         actionsheet.tag = 100;
+     
+        
         [actionsheet showInView:self.view];
     }
     else{
         UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your New Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
         [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
         alert1.tag = 200;
-        [alert1 show];
+       
+    [alert1 show];
+      
+        
+
     }
-    
-}
+                }
+
+
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -368,6 +460,7 @@
         UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your Current Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
         [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
         alert1.tag = 600;
+        
         [alert1 show];
     }
     else if(buttonIndex == 1)
@@ -376,16 +469,23 @@
         [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
         alert1.tag = 100;
         [alert1 show];
+
+        
     }
 }
 
+
+
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
     if (alertView.tag == 100 && buttonIndex == 1) {
+        
         NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
         if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
             UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Your New Passcode" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
             [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
             alert1.tag = 200;
+        
+            
             [alert1 show];
         }
         else
@@ -397,8 +497,10 @@
     if (alertView.tag == 200 && buttonIndex == 1) {
         [[NSUserDefaults standardUserDefaults] setObject:[alertView textFieldAtIndex:0].text forKey:@"passcode"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        if (buttonIndex == 1) {
+            [passCode setImage:[UIImage imageNamed:@"pssCode.png"] forState:UIControlStateNormal];
     }
-    
+    }
     if (alertView.tag == 300 && buttonIndex == 1) {
         NSString *passcode = [[NSUserDefaults standardUserDefaults] objectForKey:@"passcode"];
         if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
@@ -406,6 +508,8 @@
             for (ContactItem *contactItem in contactList) {
                 [self creatContact:contactItem];
             }
+       
+
             [GroupItem deleteGroupItem:selectedItem];
             [self viewWillAppear:YES];
         }
@@ -435,7 +539,41 @@
         if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
             BlockedListViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"BlockedListViewController"];
             
-            [self.navigationController pushViewController:groupDetail animated:YES];
+           // [self.navigationController pushViewController:groupDetail animated:YES];
+            
+            
+            if ([groupDetail respondsToSelector:@selector(setPreferredContentSize:)]) {
+                groupDetail.preferredContentSize = CGSizeMake(280, 200);             // iOS 7
+            }
+            else {
+                groupDetail.contentSizeForViewInPopover = CGSizeMake(280, 200);      // iOS < 7
+            }
+            
+            UINavigationController* contentViewController = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"BlockedListViewController"]];
+            
+            
+            WYPopoverBackgroundView* appearance = [WYPopoverBackgroundView appearance];
+            appearance.fillTopColor = [UIColor colorWithRed:1 green:0.2 blue:0 alpha:.75];
+            appearance.outerShadowColor = [UIColor pomegranateColor];
+
+
+            
+            
+            //    groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
+            
+            blockGroup = [[WYPopoverController alloc] initWithContentViewController:contentViewController];
+            blockGroup.delegate = self;
+            ((BlockedListViewController*)[contentViewController.viewControllers objectAtIndex:0]).blockGroup = blockGroup;
+            //[popoverController presentPopoverFromRect:button.bounds inView:button permittedArrowDirections:WYPopoverArrowDirectionAny animated:YES];
+            
+            [blockGroup presentPopoverFromRect:CGRectZero inView:nil permittedArrowDirections:WYPopoverArrowDirectionNone
+                                      animated:YES
+                                       options:WYPopoverAnimationOptionFadeWithScale];
+            blockGroup = [[WYPopoverController alloc] initWithContentViewController:contentViewController];
+            blockGroup.delegate = self;
+            blockGroup.popoverLayoutMargins = UIEdgeInsetsMake(10, 10, 10, 10);
+            blockGroup.wantsDefaultContentAppearance = NO;
+            
         }
         else
         {
@@ -448,7 +586,11 @@
         if ([passcode isEqualToString:[alertView textFieldAtIndex:0].text]) {
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"passcode"];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            
+           
+            [passCode setImage:[UIImage imageNamed:@"pssCde1.png"] forState:UIControlStateNormal];
+            [lockbutton setImage:[UIImage imageNamed:@"lockUn2.png"] forState:UIControlStateNormal];
+                
+           
         }
         else
         {
@@ -463,9 +605,46 @@
 }
 
 
-- (IBAction)creategroup_click:(id)sender {
+
+- (IBAction)creategroup_click:(id)sender
+{
+ 
+ //   NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
+  //  [self.navigationController pushViewController:groupDetail animated:YES];
     NewGroupViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"];
-    [self.navigationController pushViewController:groupDetail animated:YES];
+
+   
+    if ([groupDetail respondsToSelector:@selector(setPreferredContentSize:)]) {
+        groupDetail.preferredContentSize = CGSizeMake(280, 200);             // iOS 7
+    }
+    else {
+        groupDetail.contentSizeForViewInPopover = CGSizeMake(280, 200);      // iOS < 7
+    }
+     
+    UINavigationController* contentViewController = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"NewGroupViewController"]];
+
+    
+    //    groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
+    
+    WYPopoverBackgroundView* appearance = [WYPopoverBackgroundView appearance];
+    appearance.fillTopColor = [UIColor colorWithRed:0 green:.9 blue:0.7 alpha:.75];
+    appearance.outerShadowColor = [UIColor turquoiseColor];
+    
+
+
+    popGroup = [[WYPopoverController alloc] initWithContentViewController:contentViewController];
+    popGroup.delegate = self;
+    ((NewGroupViewController*)[contentViewController.viewControllers objectAtIndex:0]).popGroup = popGroup;
+    //[popoverController presentPopoverFromRect:button.bounds inView:button permittedArrowDirections:WYPopoverArrowDirectionAny animated:YES];
+    
+    [popGroup presentPopoverFromRect:CGRectZero inView:nil permittedArrowDirections:WYPopoverArrowDirectionNone animated:YES];
+    popGroup = [[WYPopoverController alloc] initWithContentViewController:contentViewController];
+    popGroup.delegate = self;
+   popGroup.popoverLayoutMargins = UIEdgeInsetsMake(10, 10, 10, 10);
+   popGroup.wantsDefaultContentAppearance = NO;
+    
+    
+  
 }
 
 - (IBAction)viewBlockedList_Click:(id)sender {
@@ -478,8 +657,72 @@
     else{
         BlockedListViewController *groupDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"BlockedListViewController"];
         
-        [self.navigationController pushViewController:groupDetail animated:YES];
+       // [self.navigationController pushViewController:groupDetail animated:YES];
+       
+        
+        if ([groupDetail respondsToSelector:@selector(setPreferredContentSize:)]) {
+            groupDetail.preferredContentSize = CGSizeMake(280, 200);             // iOS 7
+        }
+        else {
+            groupDetail.contentSizeForViewInPopover = CGSizeMake(280, 200);      // iOS < 7
+        }
+        
+        UINavigationController* contentViewController = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"BlockedListViewController"]];
+        
+        
+        //    groupDetail.groupItem = [groupList objectAtIndex:indexPath.row];
+        
+        blockGroup = [[WYPopoverController alloc] initWithContentViewController:contentViewController];
+        blockGroup.delegate = self;
+        
+        
+      WYPopoverBackgroundView* appearance = [WYPopoverBackgroundView appearance];
+        appearance.fillTopColor = [UIColor colorWithRed:1 green:0.2 blue:0 alpha:.75];
+        appearance.outerShadowColor = [UIColor pomegranateColor];
+
+        
+       ((BlockedListViewController*)[contentViewController.viewControllers objectAtIndex:0]).blockGroup = blockGroup;
+        //[popoverController presentPopoverFromRect:button.bounds inView:button permittedArrowDirections:WYPopoverArrowDirectionAny animated:YES];
+        
+        [blockGroup presentPopoverFromRect:CGRectZero inView:nil permittedArrowDirections:WYPopoverArrowDirectionNone
+                                  animated:YES
+         options:WYPopoverAnimationOptionFadeWithScale];
+        blockGroup = [[WYPopoverController alloc] initWithContentViewController:contentViewController];
+        
+        blockGroup.delegate = self;
+        blockGroup.popoverLayoutMargins = UIEdgeInsetsMake(10, 10, 10, 10);
+        blockGroup.wantsDefaultContentAppearance = NO;
+        
+
     }
     
 }
+
+- (BOOL)popoverControllerShouldDismissPopover:(WYPopoverController *)controller
+{
+    return YES;
+}
+
+- (void)newGroupBack:(NewGroupViewController *)controller{
+    //controller.delegate = nil;
+    [popGroup dismissPopoverAnimated:YES];
+    popGroup.delegate = nil;
+    popGroup = nil;
+
+    
+    
+}
+
+
+- (void)blockBack:(BlockedListViewController *)controller{
+    //controller.delegate = nil;
+    [blockGroup dismissPopoverAnimated:YES];
+    blockGroup.delegate = nil;
+    blockGroup = nil;
+    
+    
+    
+}
+
+
 @end

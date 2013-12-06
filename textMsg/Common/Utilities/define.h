@@ -8,15 +8,7 @@
 #import "Util.h"
 #import "NetworkActivityIndicator.h"
 
-#define kServer_Post_UserInfo @"http://www.cgapp.net.au/apis/account_info"
-#define kServer_Post_AddAccount @"http://www.cgapp.net.au/apis/new_account"
-#define kServer_Post_DeviceInfo @"http://www.cgapp.net.au/apis/push_info"
-#define kServer_Get_Policy @"http://www.cgapp.net.au/privacy-policy.pdf"
-#define kServer_Get_List @"http://www.cgapp.net.au/apis/getlist?type="
-#define kServer_Get_CheckAccount @"http://www.cgapp.net.au/apis/account_exist?email="
-#define kServer_Get_CheckLogin @"http://www.cgapp.net.au/apis/check_login?email=%@&password=%@"
-//#define kServer_Get_DealList @"http://server.teamios.info/apis/deallist"
-#define kServer_ImageURL @"http://www.cgapp.net.au/img/"
+
 
 #define mainAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
@@ -40,24 +32,9 @@
 #define PORTRAIT_KEYBOARD_HEIGHT 216
 #define LANDSCAPE_KEYBOARD_HEIGHT  162
 #endif
-#define kUserInfo @"UserInfo"
-#define kUserInfoRegist @"UserInfoRegist"
-#define kDeviceInfo @"DeviceInfo"
-#define kFirstLaunch @"FirstLaunch"
-#define kPrivacyStatmentAccepted @"PrivacyStatementAccepted"
-#define kRegistUser @"kRegistUser"
-#define kDeviceId @"DeviceId"
-#define kDeviceToken @"devicetoken"
-#define kDeviceType @"devidetype"
-#define kPostToken @"PostToken"
-
-#define kUser_Id @"id"
-#define kUser_DeviceID @"device_id"
-#define kUser_Name @"name"
-#define kUser_Email @"email"
-#define kUser_Age @"age"
-#define kUser_Sex @"sex"
-#define kUser_Password @"password"
-#define kUser_Postcode @"postcode"
+#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
+#define IS_OS_5_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
+#define IS_OS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+#define IS_OS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 
 
