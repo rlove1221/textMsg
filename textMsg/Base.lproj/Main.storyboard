@@ -68,8 +68,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pfb-j6-TRa">
-                                                    <rect key="frame" x="263" y="7" width="27" height="27"/>
+                                                    <rect key="frame" x="241" y="7" width="72" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <inset key="contentEdgeInsets" minX="17" minY="0.0" maxX="24" maxY="15"/>
                                                     <state key="normal" image="buttonedit3.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -89,7 +90,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r2U-d4-hsh">
-                                                    <rect key="frame" x="290" y="7" width="22" height="21"/>
+                                                    <rect key="frame" x="290" y="4" width="22" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,8 +222,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="moc-34-qkY">
-                                                    <rect key="frame" x="242" y="7" width="27" height="27"/>
+                                                    <rect key="frame" x="223" y="7" width="72" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <inset key="contentEdgeInsets" minX="17" minY="0.0" maxX="24" maxY="15"/>
                                                     <state key="normal" image="buttonedit3.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -231,7 +233,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LsY-6u-6G0">
-                                                    <rect key="frame" x="272" y="7" width="28" height="21"/>
+                                                    <rect key="frame" x="272" y="4" width="28" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -461,15 +463,20 @@
     <resources>
         <image name="addSelected.png" width="55" height="55"/>
         <image name="buttonedit3.png" width="93" height="93"/>
+        <image name="buttonedit3.png" width="93" height="93"/>
         <image name="cloudColor.png" width="640" height="1136"/>
         <image name="contentLines.png" width="321" height="70"/>
         <image name="groupBck.png" width="640" height="1136"/>
+        <image name="groupBck.png" width="640" height="1136"/>
+        <image name="leftSeperator.png" width="4" height="908"/>
         <image name="leftSeperator.png" width="4" height="908"/>
         <image name="lockUn2.png" width="93" height="93"/>
         <image name="pssCde1.png" width="93" height="93"/>
         <image name="rightLine.png" width="6" height="1342"/>
+        <image name="rightLine.png" width="6" height="1342"/>
         <image name="save.png" width="60" height="60"/>
         <image name="topBar.png" width="640" height="121"/>
+        <image name="topSeparator.png" width="640" height="10"/>
         <image name="topSeparator.png" width="640" height="10"/>
         <image name="torquise.png" width="640" height="1136"/>
     </resources>
