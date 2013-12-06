@@ -263,7 +263,7 @@
         
     //cell background
         cell.backgroundColor = [UIColor clearColor];
-        name2.textColor = [UIColor emerlandColor];
+        name2.textColor = [UIColor turquoiseColor];
         status.text = @"";
         status.textColor = [UIColor emerlandColor];
         //imageView.hidden = NO;
