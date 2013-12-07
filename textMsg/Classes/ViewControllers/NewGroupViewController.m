@@ -33,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
     if (!groupItem) {
         isAddNew = YES;
         tempUUID = [Util GetUUID];

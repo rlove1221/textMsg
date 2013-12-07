@@ -10,6 +10,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="6CI-7s-4Oc" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0ln-JL-pzG">
+                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -283,7 +284,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="1" sectionFooterHeight="1" id="o3C-FA-zYM">
                                 <rect key="frame" x="0.0" y="65" width="320" height="503"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="68" id="euK-l3-8bv">
                                         <rect key="frame" x="0.0" y="65" width="320" height="68"/>
@@ -316,10 +316,12 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="hJs-j8-fEm">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="9pz-mV-cVk">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="save_click:" destination="blB-8X-GVl" id="VZ7-RF-pHh"/>
                             </connections>
@@ -331,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDU-DH-l9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279" y="480"/>
+            <point key="canvasLocation" x="481" y="456"/>
         </scene>
         <!--New Group View Controller-->
         <scene sceneID="k6W-pl-3dm">
@@ -429,7 +431,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="moa-Ei-UPO">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="wyv-no-Crq">
@@ -463,23 +465,19 @@
     <resources>
         <image name="addSelected.png" width="55" height="55"/>
         <image name="buttonedit3.png" width="93" height="93"/>
-        <image name="buttonedit3.png" width="93" height="93"/>
         <image name="cloudColor.png" width="640" height="1136"/>
         <image name="contentLines.png" width="321" height="70"/>
         <image name="groupBck.png" width="640" height="1136"/>
-        <image name="groupBck.png" width="640" height="1136"/>
-        <image name="leftSeperator.png" width="4" height="908"/>
         <image name="leftSeperator.png" width="4" height="908"/>
         <image name="lockUn2.png" width="93" height="93"/>
         <image name="pssCde1.png" width="93" height="93"/>
         <image name="rightLine.png" width="6" height="1342"/>
-        <image name="rightLine.png" width="6" height="1342"/>
         <image name="save.png" width="60" height="60"/>
         <image name="topBar.png" width="640" height="121"/>
         <image name="topSeparator.png" width="640" height="10"/>
-        <image name="topSeparator.png" width="640" height="10"/>
         <image name="torquise.png" width="640" height="1136"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

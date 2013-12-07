@@ -7,8 +7,23 @@
 //
 
 #import "AppDelegate.h"
+#import "iRate.h"
 
 @implementation AppDelegate
+
+#import "iRate.h"
+
++ (void)initialize
+{
+    //configure iRate
+    [iRate sharedInstance].daysUntilPrompt = 3;
+    [iRate sharedInstance].usesUntilPrompt = 6;
+  //  [iRate sharedInstance].applicationBundleID = @"com.richard.grouplock";
+	[iRate sharedInstance].onlyPromptIfLatestVersion = NO;
+    
+    //enable preview mode
+  //  [iRate sharedInstance].previewMode = YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
