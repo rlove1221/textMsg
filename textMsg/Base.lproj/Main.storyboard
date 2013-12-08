@@ -127,10 +127,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XdB-Pr-ml1">
-                                        <rect key="frame" x="235" y="20" width="30" height="30"/>
+                                        <rect key="frame" x="235" y="21" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="addTop.png">
+                                        <state key="normal" image="addSelected.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -138,7 +138,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4bU-bQ-Lx4">
-                                        <rect key="frame" x="281" y="19" width="32" height="32"/>
+                                        <rect key="frame" x="280" y="19" width="32" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="lockUn2.png"/>
                                         <connections>
@@ -464,7 +464,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addTop.png" width="93" height="93"/>
+        <image name="addSelected.png" width="55" height="55"/>
         <image name="buttonedit3.png" width="93" height="93"/>
         <image name="cloudColor.png" width="640" height="1136"/>
         <image name="contentLines.png" width="321" height="70"/>
