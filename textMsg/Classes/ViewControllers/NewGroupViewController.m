@@ -33,7 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+   
 
     if (!groupItem) {
         isAddNew = YES;
@@ -79,6 +81,8 @@
         
     }else
     {
+        
+        self.navigationController.navigationBar.tintColor = [UIColor turquoiseColor];
         backButton.tintColor = [UIColor turquoiseColor];
         blockBTn.tintColor = [UIColor pomegranateColor];
     }
@@ -88,6 +92,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
     if (!isAddNew) {
         [createBarButton setTitle:@"Save"];
         nameTF.text = groupItem.groupName;

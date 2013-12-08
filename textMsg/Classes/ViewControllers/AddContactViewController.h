@@ -24,6 +24,7 @@
     NSArray *arrayOfPeople;
     ABAddressBookRef addressBook;
 }
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveClick;
 
 - (IBAction)addcontact_Click:(id)sender;
 - (IBAction)save_click:(id)sender;

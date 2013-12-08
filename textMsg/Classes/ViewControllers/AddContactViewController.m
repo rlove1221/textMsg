@@ -10,11 +10,14 @@
 
 #import "define.h"
 #import "ContactItem+Custom.h"
+#import "UIColor+FlatUI.h"
 @interface AddContactViewController ()
 
 @end
 
 @implementation AddContactViewController
+
+@synthesize saveClick;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,6 +53,14 @@
         
         arrayOfPeople = (__bridge_transfer NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);
         // Do whatever you need with thePeople...
+    if (IS_OS_7_OR_LATER) {
+            
+            }else
+       {
+        //  backButton.tintColor = [UIColor turquoiseColor];
+          saveClick.tintColor= [UIColor pomegranateColor];
+    }
+
         
     }
     
