@@ -19,6 +19,9 @@
 #import "UITableViewCell+FlatUI.h"
 #import "WYPopoverController.h"
 #import "WYStoryboardPopoverSegue.h"
+#import "ContactItem.h"
+#import "CBAutoScrollLabel.h"
+
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 @interface MainViewController ()< WYPopoverControllerDelegate>
 {
@@ -27,12 +30,15 @@
     WYPopoverController *blockGroup;
     
     UIPopoverController* standardPopoverController;
+    
+
 
 }
 
 @end
 
 @implementation MainViewController
+
 
 - (void)viewDidLoad
 {
@@ -97,6 +103,8 @@
    // groupTableView.backgroundColor = [UIColor cloudsColor];
    // groupTableView.backgroundView = nil;
     
+  
+
     
 
 }
@@ -122,6 +130,7 @@
     CFErrorRef error = nil;
     ABAddressBookRef addressBook = ABAddressBookCreate(); // create address book record
     ABRecordRef person = ABPersonCreate(); // create a person
+    
     
     NSString *phone = contactitem.contactNumber; // the phone number to add
     NSArray *splitArray = [contactitem.contactName componentsSeparatedByString:@" "];
@@ -196,6 +205,20 @@
     [groupTableView reloadData];
     
     self.navigationController.navigationBarHidden = YES;
+    
+ /*   adding code for scroll
+  self.autoScrollLabel.text = @"This text may be clipped, but now it will be scrolled. This text will be scrolled even after device rotation.";
+    self.autoScrollLabel.textColor = [UIColor blueColor];
+    self.autoScrollLabel.labelSpacing = 35; // distance between start and end labels
+    self.autoScrollLabel.pauseInterval = 1.7; // seconds of pause before scrolling starts again
+    self.autoScrollLabel.scrollSpeed = 30; // pixels per second
+    self.autoScrollLabel.textAlignment = NSTextAlignmentCenter; // centers text when no auto-scrolling is applied
+    self.autoScrollLabel.fadeLength = 12.f;
+    self.autoScrollLabel.scrollDirection = CBAutoScrollDirectionLeft;
+    [self.autoScrollLabel observeApplicationNotifications];
+    */
+
+
 
 }
 - (void)viewWillDisappear:(BOOL)animated
@@ -214,6 +237,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 - (IBAction)sendMessage:(id)sender {
     MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
     if([MFMessageComposeViewController canSendText])
@@ -245,27 +270,53 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell"];
+    
+    
+    
     
     GroupItem *group = [groupList objectAtIndex:indexPath.row];
     UILabel *name = (UILabel*)[cell viewWithTag:1];
     UILabel *name2 = (UILabel*)[cell viewWithTag:3];
-    UILabel *status = (UILabel*)[cell viewWithTag:2];
+   // UILabel *status = (UILabel*)[cell viewWithTag:2];
     UILabel *count = (UILabel*)[cell viewWithTag:4];
+    CBAutoScrollLabel *autoScrollLabel = (CBAutoScrollLabel*)[cell viewWithTag:5];
+
+    
     //UIImageView *imageView = (UIImageView*)[cell viewWithTag:3];
     name.text = group.groupName;
     name2.text = group.groupName;
     NSArray *contactList = [ContactItem getAllCGItemByGroupUUID:group.groupUUID];
     count.text = [NSString stringWithFormat:@"%i",[contactList count]];
+    NSString *namelist = @"";
+    for (ContactItem *contact in contactList) {
+        
+        if ([namelist isEqualToString:@""]) {
+            namelist = [namelist stringByAppendingFormat:@"%@",contact.contactName];
+        }
+        else
+        namelist = [namelist stringByAppendingFormat:@",%@",contact.contactName];
+    }
+   // status.text = namelist;
+    autoScrollLabel.text = namelist;
+    autoScrollLabel.textColor = [UIColor concreteColor];
+    autoScrollLabel.font = [UIFont fontWithName:@"Verdana" size:9.0f];
+   // autoScrollLabel.font = [UIFont boldSystemFontOfSize:30];
+    autoScrollLabel.fadeLength = 2.f;
+    autoScrollLabel.labelSpacing = 35;
+   // autoScrollLabel.pauseInterval = 1.7;
+    autoScrollLabel.scrollSpeed = 30;
+    
+    
     if ([group.groupStatus isEqualToString:@"0"]) {
         
     //cell background
         cell.backgroundColor = [UIColor clearColor];
         name2.textColor = [UIColor turquoiseColor];
-        status.text = @"";
-        status.textColor = [UIColor emerlandColor];
+       // status.text = @"";
+      //  status.textColor = [UIColor concreteColor];
         //imageView.hidden = NO;
         name.hidden = YES;
         name2.hidden = NO;
@@ -274,8 +325,8 @@
     {
         cell.backgroundColor = [UIColor clearColor];
         name2.textColor = [UIColor pomegranateColor];
-        status.text = @"";
-        status.textColor = [UIColor cloudsColor];
+     //   status.text = @"";
+      //  status.textColor = [UIColor cloudsColor];
         //imageView.hidden = YES;
         name.hidden = YES;
         name2.hidden = NO;

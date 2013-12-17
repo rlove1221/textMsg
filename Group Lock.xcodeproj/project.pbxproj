@@ -80,8 +80,6 @@
 		A324B8C4185187220031608D /* AppIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8B8185187220031608D /* AppIcon40x40@2x.png */; };
 		A324B8C5185187220031608D /* AppIcon50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8B9185187220031608D /* AppIcon50x50.png */; };
 		A324B8C6185187220031608D /* AppIcon50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8BA185187220031608D /* AppIcon50x50@2x.png */; };
-		A324B8C7185187220031608D /* AppIcon60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8BB185187220031608D /* AppIcon60x60.png */; };
-		A324B8C8185187220031608D /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8BC185187220031608D /* AppIcon60x60@2x.png */; };
 		A324B8C9185187220031608D /* AppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8BD185187220031608D /* AppIcon72x72.png */; };
 		A324B8CA185187220031608D /* AppIcon72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8BE185187220031608D /* AppIcon72x72@2x.png */; };
 		A324B8CB185187220031608D /* AppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8BF185187220031608D /* AppIcon76x76.png */; };
@@ -90,6 +88,8 @@
 		A324B8D01851878F0031608D /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8CE1851878F0031608D /* iTunesArtwork@2x.png */; };
 		A324B8D31853D8140031608D /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = A324B8D21853D8140031608D /* iRate.m */; };
 		A324B8D51854F1230031608D /* addTop.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8D41854F1230031608D /* addTop.png */; };
+		A324B8D71855624D0031608D /* AppIcon57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8D61855624D0031608D /* AppIcon57x57@2x.png */; };
+		A324B8D91855629A0031608D /* AppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = A324B8D81855629A0031608D /* AppIcon57x57.png */; };
 		A333AF921834883C002A68EB /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = A333AF8F1834883C002A68EB /* WYPopoverController.m */; };
 		A333AF931834883C002A68EB /* WYStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A333AF911834883C002A68EB /* WYStoryboardPopoverSegue.m */; };
 		A338C5EA17E6A51600FE9D1E /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = A338C5E917E6A51600FE9D1E /* save.png */; };
@@ -155,6 +155,7 @@
 		A3EF69C01831B12F00798F23 /* topSeparator.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69BF1831B12F00798F23 /* topSeparator.png */; };
 		A3EF69C21831B9AB00798F23 /* groupBck.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69C11831B9AB00798F23 /* groupBck.png */; };
 		A3EF69C41831BB6300798F23 /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF69C31831BB6300798F23 /* topBar.png */; };
+		A3F48FF1185FE04A00BDB1F4 /* CBAutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F48FF0185FE04A00BDB1F4 /* CBAutoScrollLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,8 +286,6 @@
 		A324B8B8185187220031608D /* AppIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x.png"; sourceTree = "<group>"; };
 		A324B8B9185187220031608D /* AppIcon50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon50x50.png; sourceTree = "<group>"; };
 		A324B8BA185187220031608D /* AppIcon50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon50x50@2x.png"; sourceTree = "<group>"; };
-		A324B8BB185187220031608D /* AppIcon60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon60x60.png; sourceTree = "<group>"; };
-		A324B8BC185187220031608D /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
 		A324B8BD185187220031608D /* AppIcon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon72x72.png; sourceTree = "<group>"; };
 		A324B8BE185187220031608D /* AppIcon72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon72x72@2x.png"; sourceTree = "<group>"; };
 		A324B8BF185187220031608D /* AppIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon76x76.png; sourceTree = "<group>"; };
@@ -296,6 +295,8 @@
 		A324B8D11853D8140031608D /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
 		A324B8D21853D8140031608D /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
 		A324B8D41854F1230031608D /* addTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addTop.png; sourceTree = "<group>"; };
+		A324B8D61855624D0031608D /* AppIcon57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon57x57@2x.png"; sourceTree = "<group>"; };
+		A324B8D81855629A0031608D /* AppIcon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon57x57.png; sourceTree = "<group>"; };
 		A333AF8E1834883C002A68EB /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYPopoverController.h; sourceTree = "<group>"; };
 		A333AF8F1834883C002A68EB /* WYPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYPopoverController.m; sourceTree = "<group>"; };
 		A333AF901834883C002A68EB /* WYStoryboardPopoverSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYStoryboardPopoverSegue.h; sourceTree = "<group>"; };
@@ -367,6 +368,8 @@
 		A3EF69BF1831B12F00798F23 /* topSeparator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topSeparator.png; sourceTree = "<group>"; };
 		A3EF69C11831B9AB00798F23 /* groupBck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupBck.png; sourceTree = "<group>"; };
 		A3EF69C31831BB6300798F23 /* topBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topBar.png; sourceTree = "<group>"; };
+		A3F48FEF185FE04A00BDB1F4 /* CBAutoScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAutoScrollLabel.h; sourceTree = "<group>"; };
+		A3F48FF0185FE04A00BDB1F4 /* CBAutoScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAutoScrollLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,6 +418,8 @@
 		855563B117D35D8A0060E9F5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A3F48FEF185FE04A00BDB1F4 /* CBAutoScrollLabel.h */,
+				A3F48FF0185FE04A00BDB1F4 /* CBAutoScrollLabel.m */,
 				A333AF8E1834883C002A68EB /* WYPopoverController.h */,
 				A333AF8F1834883C002A68EB /* WYPopoverController.m */,
 				A333AF901834883C002A68EB /* WYStoryboardPopoverSegue.h */,
@@ -676,8 +681,8 @@
 				A324B8B8185187220031608D /* AppIcon40x40@2x.png */,
 				A324B8B9185187220031608D /* AppIcon50x50.png */,
 				A324B8BA185187220031608D /* AppIcon50x50@2x.png */,
-				A324B8BB185187220031608D /* AppIcon60x60.png */,
-				A324B8BC185187220031608D /* AppIcon60x60@2x.png */,
+				A324B8D81855629A0031608D /* AppIcon57x57.png */,
+				A324B8D61855624D0031608D /* AppIcon57x57@2x.png */,
 				A324B8BD185187220031608D /* AppIcon72x72.png */,
 				A324B8BE185187220031608D /* AppIcon72x72@2x.png */,
 				A324B8BF185187220031608D /* AppIcon76x76.png */,
@@ -865,12 +870,10 @@
 				A3AAED53182B2F9E0084F052 /* lockUn.png in Resources */,
 				A338C5EA17E6A51600FE9D1E /* save.png in Resources */,
 				A338C5FA17E7510C00FE9D1E /* contactsGroup5.png in Resources */,
-				A324B8C8185187220031608D /* AppIcon60x60@2x.png in Resources */,
 				A338C5FE17E78F7200FE9D1E /* contactsHideGroup8.png in Resources */,
 				A37B22C517E65C33002572A6 /* contactsGroup3.png in Resources */,
 				A3CC0A5017EFB8B1005E2BE2 /* newGreen.png in Resources */,
 				A324B8C5185187220031608D /* AppIcon50x50.png in Resources */,
-				A324B8C7185187220031608D /* AppIcon60x60.png in Resources */,
 				A3EF69B41831B0F300798F23 /* lockUn1.png in Resources */,
 				A3EF69B81831B0FF00798F23 /* topAdd.png in Resources */,
 				A3D2348B17E649E400903654 /* contacts2.png in Resources */,
@@ -881,7 +884,9 @@
 				A3CC0A4017EF87D3005E2BE2 /* gold3.png in Resources */,
 				85D8BC9F17D6C48E00E5FD66 /* TextData.xcdatamodeld in Resources */,
 				A324B8D01851878F0031608D /* iTunesArtwork@2x.png in Resources */,
+				A324B8D71855624D0031608D /* AppIcon57x57@2x.png in Resources */,
 				A3D2348917E6499A00903654 /* contacts.png in Resources */,
+				A324B8D91855629A0031608D /* AppIcon57x57.png in Resources */,
 				A338C5EC17E6B79F00FE9D1E /* content.png in Resources */,
 				A3D2348117E638D500903654 /* cloudColor.png in Resources */,
 				A3EF69C01831B12F00798F23 /* topSeparator.png in Resources */,
@@ -963,6 +968,7 @@
 				85D8BC9E17D6C05B00E5FD66 /* NewGroupViewController.m in Sources */,
 				85D8BC9A17D6BF7400E5FD66 /* GroupItem+Custom.m in Sources */,
 				85D8BC9B17D6BF7400E5FD66 /* GroupItem.m in Sources */,
+				A3F48FF1185FE04A00BDB1F4 /* CBAutoScrollLabel.m in Sources */,
 				8555640317D360E80060E9F5 /* ASIAuthenticationDialog.m in Sources */,
 				8555640417D360E80060E9F5 /* ASIDataCompressor.m in Sources */,
 				8555640517D360E80060E9F5 /* ASIDataDecompressor.m in Sources */,
@@ -1124,7 +1130,7 @@
 				INFOPLIST_FILE = "textMsg/Group Lock-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Group Lock";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "CD4279E2-1FE9-4746-B7B5-20A8AFDAD5EF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1141,7 +1147,7 @@
 				INFOPLIST_FILE = "textMsg/Group Lock-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Group Lock";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "CD4279E2-1FE9-4746-B7B5-20A8AFDAD5EF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

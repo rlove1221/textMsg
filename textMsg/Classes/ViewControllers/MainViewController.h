@@ -21,7 +21,11 @@
     BOOL isRemovePass;
     IBOutlet UIButton *passCode;
     IBOutlet UIButton *lockbutton;
+
+    
+
 }
+
 - (IBAction)edit_click:(id)sender;
 - (IBAction)setpass_click:(id)sender;
 - (IBAction)creategroup_click:(id)sender;
