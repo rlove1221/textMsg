@@ -21,6 +21,7 @@
 #import "WYStoryboardPopoverSegue.h"
 #import "ContactItem.h"
 #import "CBAutoScrollLabel.h"
+#import "LoginViewController.h"
 
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 @interface MainViewController ()< WYPopoverControllerDelegate>
@@ -227,6 +228,18 @@
         self.navigationController.navigationBarHidden = NO;
     }
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:kUser_Info]) {
+        LoginViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [self presentViewController:controller animated:NO completion:nil];
+        isLogin = NO;
+        return;
+    }
+    isLogin = YES;
 }
 
 

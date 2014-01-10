@@ -8,7 +8,8 @@
 #import "Util.h"
 #import "NetworkActivityIndicator.h"
 
-
+#define kServer_Post_RegistUser @"http://richiemorena.com/grouplock/apis.php?api=regist&content="
+#define kServer_Post_Login @"http://richiemorena.com/grouplock/apis.php?api=login"
 
 #define mainAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
@@ -36,5 +37,5 @@
 #define IS_OS_5_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
 #define IS_OS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
 #define IS_OS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
-
+#define kUser_Info @"UserInfo"
 

@@ -39,6 +39,8 @@
 		856BA74517D3666C008B1EB5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856BA74417D3666C008B1EB5 /* MobileCoreServices.framework */; };
 		856BA74717D36672008B1EB5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856BA74617D36672008B1EB5 /* CFNetwork.framework */; };
 		856BA74917D36677008B1EB5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856BA74817D36677008B1EB5 /* CoreData.framework */; };
+		85CA1EF9187E4C3900F14219 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CA1EF8187E4C3900F14219 /* LoginViewController.m */; };
+		85CA1EFC187E4C4500F14219 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CA1EFB187E4C4500F14219 /* RegistViewController.m */; };
 		85D8BC9A17D6BF7400E5FD66 /* GroupItem+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BC9917D6BF1E00E5FD66 /* GroupItem+Custom.m */; };
 		85D8BC9B17D6BF7400E5FD66 /* GroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BC9717D6BCDC00E5FD66 /* GroupItem.m */; };
 		85D8BC9E17D6C05B00E5FD66 /* NewGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BC9D17D6C04800E5FD66 /* NewGroupViewController.m */; };
@@ -49,6 +51,7 @@
 		85D8BCB117D6C96A00E5FD66 /* WEPopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BCA917D6C95A00E5FD66 /* WEPopoverContentViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		85D8BCB217D6C96A00E5FD66 /* WEPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BCAB17D6C95A00E5FD66 /* WEPopoverController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		85D8BCB317D6C96A00E5FD66 /* WETouchableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D8BCAE17D6C95A00E5FD66 /* WETouchableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		85EB9B86187F8D44004B60AA /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EB9B85187F8D44004B60AA /* ServiceManager.m */; };
 		A30EF60A17D231380089D859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30EF60917D231380089D859 /* Foundation.framework */; };
 		A30EF60C17D231380089D859 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30EF60B17D231380089D859 /* CoreGraphics.framework */; };
 		A30EF60E17D231380089D859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30EF60D17D231380089D859 /* UIKit.framework */; };
@@ -232,6 +235,10 @@
 		856BA74417D3666C008B1EB5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		856BA74617D36672008B1EB5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		856BA74817D36677008B1EB5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		85CA1EF7187E4C3900F14219 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		85CA1EF8187E4C3900F14219 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		85CA1EFA187E4C4500F14219 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
+		85CA1EFB187E4C4500F14219 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		85D8BC9617D6BCDC00E5FD66 /* GroupItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupItem.h; sourceTree = "<group>"; };
 		85D8BC9717D6BCDC00E5FD66 /* GroupItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupItem.m; sourceTree = "<group>"; };
 		85D8BC9817D6BF1E00E5FD66 /* GroupItem+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GroupItem+Custom.h"; sourceTree = "<group>"; };
@@ -251,6 +258,8 @@
 		85D8BCAC17D6C95A00E5FD66 /* WEPopoverParentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WEPopoverParentView.h; sourceTree = "<group>"; };
 		85D8BCAD17D6C95A00E5FD66 /* WETouchableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WETouchableView.h; sourceTree = "<group>"; };
 		85D8BCAE17D6C95A00E5FD66 /* WETouchableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WETouchableView.m; sourceTree = "<group>"; };
+		85EB9B84187F8D44004B60AA /* ServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceManager.h; sourceTree = "<group>"; };
+		85EB9B85187F8D44004B60AA /* ServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceManager.m; sourceTree = "<group>"; };
 		A30EF60617D231380089D859 /* Group Lock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group Lock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30EF60917D231380089D859 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A30EF60B17D231380089D859 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -438,6 +447,10 @@
 				85D8BCA117D6C55200E5FD66 /* AddContactViewController.m */,
 				A3D2347217E61C3F00903654 /* BlockedListViewController.h */,
 				A3D2347317E61C3F00903654 /* BlockedListViewController.m */,
+				85CA1EF7187E4C3900F14219 /* LoginViewController.h */,
+				85CA1EF8187E4C3900F14219 /* LoginViewController.m */,
+				85CA1EFA187E4C4500F14219 /* RegistViewController.h */,
+				85CA1EFB187E4C4500F14219 /* RegistViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -558,6 +571,8 @@
 		855563E717D35D8A0060E9F5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				85EB9B84187F8D44004B60AA /* ServiceManager.h */,
+				85EB9B85187F8D44004B60AA /* ServiceManager.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -963,6 +978,7 @@
 				85D8BCB017D6C96A00E5FD66 /* WEPopoverContainerView.m in Sources */,
 				85D8BCB117D6C96A00E5FD66 /* WEPopoverContentViewController.m in Sources */,
 				85D8BCB217D6C96A00E5FD66 /* WEPopoverController.m in Sources */,
+				85CA1EFC187E4C4500F14219 /* RegistViewController.m in Sources */,
 				85D8BCB317D6C96A00E5FD66 /* WETouchableView.m in Sources */,
 				85D8BCA217D6C56200E5FD66 /* AddContactViewController.m in Sources */,
 				85D8BC9E17D6C05B00E5FD66 /* NewGroupViewController.m in Sources */,
@@ -971,6 +987,7 @@
 				A3F48FF1185FE04A00BDB1F4 /* CBAutoScrollLabel.m in Sources */,
 				8555640317D360E80060E9F5 /* ASIAuthenticationDialog.m in Sources */,
 				8555640417D360E80060E9F5 /* ASIDataCompressor.m in Sources */,
+				85CA1EF9187E4C3900F14219 /* LoginViewController.m in Sources */,
 				8555640517D360E80060E9F5 /* ASIDataDecompressor.m in Sources */,
 				8555640617D360E80060E9F5 /* ASIDownloadCache.m in Sources */,
 				A333AF921834883C002A68EB /* WYPopoverController.m in Sources */,
@@ -984,6 +1001,7 @@
 				8555640D17D360E80060E9F5 /* NSString+SBJSON.m in Sources */,
 				8555640E17D360E80060E9F5 /* SBJsonBase.m in Sources */,
 				A3CC0A5717F1E6AF005E2BE2 /* UIColor+FlatUI.m in Sources */,
+				85EB9B86187F8D44004B60AA /* ServiceManager.m in Sources */,
 				8555640F17D360E80060E9F5 /* SBJsonParser.m in Sources */,
 				8555641017D360E80060E9F5 /* SBJsonWriter.m in Sources */,
 				8555641117D360E80060E9F5 /* Reachability.m in Sources */,

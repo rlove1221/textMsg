@@ -21,7 +21,7 @@
     BOOL isRemovePass;
     IBOutlet UIButton *passCode;
     IBOutlet UIButton *lockbutton;
-
+    BOOL isLogin;
     
 
 }
