@@ -43,7 +43,7 @@
     if (usernameTF.text == nil || [usernameTF.text length] == 0 ||
         [[usernameTF.text stringByTrimmingCharactersInSet:[NSCharacterSet  whitespaceAndNewlineCharacterSet]] length] == 0 ) {
         
-        [Util showAlertWithString:@"Please enter your username!"];
+        [Util showAlertWithString:@"Please enter your phone number!"];
         
         return;
         

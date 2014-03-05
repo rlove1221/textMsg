@@ -232,7 +232,7 @@
 
 - (IBAction)addfriend_click:(id)sender {
     
-    UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Please Enter Username" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"" message:@"Your friend's phone number" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     [alert1 setAlertViewStyle:UIAlertViewStylePlainTextInput];
     alert1.tag = 100;
     [alert1 show];
@@ -253,7 +253,7 @@
     if (alertView.tag == 100 && buttonIndex == 1) {
         NSString *username = [alertView textFieldAtIndex:0].text;
         if (!username || username.length == 0) {
-            [Util showAlertWithString:@"Please enter your friend's username"];
+            [Util showAlertWithString:@"Please enter your friend's phone number"];
         }
         else
         {
