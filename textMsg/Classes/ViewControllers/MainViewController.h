@@ -22,9 +22,11 @@
     IBOutlet UIButton *passCode;
     IBOutlet UIButton *lockbutton;
     BOOL isLogin;
+    BOOL isShowingMessage;
     
 
 }
+- (IBAction)message_click:(id)sender;
 
 - (IBAction)edit_click:(id)sender;
 - (IBAction)setpass_click:(id)sender;

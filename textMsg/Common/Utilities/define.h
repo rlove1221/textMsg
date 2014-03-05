@@ -7,9 +7,19 @@
 //
 #import "Util.h"
 #import "NetworkActivityIndicator.h"
+#import "SVProgressHUD.h"
 
 #define kServer_Post_RegistUser @"http://richiemorena.com/grouplock/apis.php?api=regist&content="
 #define kServer_Post_Login @"http://richiemorena.com/grouplock/apis.php?api=login"
+#define kServer_Post_Logout @"http://richiemorena.com/grouplock/apis.php?api=logout"
+#define kServer_Post_UpdateStatus @"http://richiemorena.com/grouplock/apis.php?api=update_status"
+#define kServer_Post_sendMessage @"http://richiemorena.com/grouplock/apis.php?api=send_message"
+#define kServer_Post_Addfriend @"http://richiemorena.com/grouplock/apis.php?api=add_friend"
+#define kServer_Post_Getfriend @"http://richiemorena.com/grouplock/apis.php?api=get_friends"
+#define kServer_Post_GetMessages @"http://richiemorena.com/grouplock/apis.php?api=get_messages"
+#define kServer_Post_sendMessage @"http://richiemorena.com/grouplock/apis.php?api=send_message"
+#define kServer_Post_GetGroup @"http://richiemorena.com/grouplock/apis.php?api=get_groups"
+
 
 #define mainAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
@@ -38,4 +48,6 @@
 #define IS_OS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
 #define IS_OS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define kUser_Info @"UserInfo"
-
+#define kFriends_Info @"kFriends_Info"
+#define kGroups_Info @"kGroups_Info"
+#define kDeviceToken @"kDeviceToken"
