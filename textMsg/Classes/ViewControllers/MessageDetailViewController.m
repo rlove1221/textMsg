@@ -62,6 +62,75 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(timerTask) userInfo:nil repeats:YES];
+}
+
+- (void)timerTask
+{
+    [self performSelectorInBackground:@selector(reloadDataInBackground) withObject:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    if (timer.isValid) {
+        [timer invalidate];
+    }
+    timer = nil;
+}
+
+- (void)reloadDataInBackground
+{
+    if([ServiceManager getMessageforUser_id:[userInfo objectForKey:@"user_id"] andFriend_id:[selectedGroup objectForKey:@"friend_id"]])
+    {
+        NSString *friendId = [selectedGroup objectForKey:@"user_id1"];
+        if ([friendId isEqualToString:[userInfo objectForKey:@"user_id"]]) {
+            friendId = [selectedGroup objectForKey:@"user_id2"];
+        }
+        //[SVProgressHUD dismiss];
+        NSArray * messageArray = [[NSUserDefaults standardUserDefaults] objectForKey:kGroups_Info];
+        NSArray *tempArray = [messageArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"friend_id = %@",friendId]];
+        
+        if ([tempArray count] >0) {
+            selectedGroup = [tempArray objectAtIndex:0];
+        }
+       NSMutableArray  *tempmessageList = [[selectedGroup objectForKey:@"messages"] mutableCopy];
+        [tempmessageList removeObjectsInArray:messageList];
+        if ([tempmessageList count] > 0) {
+            messageList = [[selectedGroup objectForKey:@"messages"] mutableCopy];
+            [self generateMessageData];
+        }
+        
+        NSArray * friendArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFriends_Info];
+        tempArray = [friendArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"user_id = %@",[selectedGroup objectForKey:@"friend_id"]]];
+        if ([tempArray count] >0) {
+            name.text = [[tempArray objectAtIndex:0] objectForKey:@"fullname"];
+            NSString *user_status =[[tempArray objectAtIndex:0] objectForKey:@"user_status"];
+            
+            switch ([user_status intValue]) {
+                case 0:
+                    statusLB.text = @"Offline";
+                    break;
+                case 1:
+                    statusLB.text = @"Available";
+                    break;
+                case 2:
+                    statusLB.text = @"Moving";
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+        // Do any additional setup after loading the view.
+        
+        
+        
+        
+    }
+}
+
 - (void)generateMessageData
 {
     messageDataList = [[NSMutableArray alloc] initWithCapacity:0];

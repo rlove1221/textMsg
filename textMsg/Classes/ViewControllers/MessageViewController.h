@@ -14,14 +14,15 @@
     IBOutlet UILabel *nameLB;
     IBOutlet UILabel *statusLB;
     NSDictionary *userInfo;
-    IBOutlet UISegmentedControl *segmentControl;
     NSArray *friendArray;
     NSArray *messageArray;
+    int viewIndex;
+    NSTimer *timer;
 }
 @property (strong, nonatomic) IBOutlet UITableView *messageTableView;
 - (IBAction)home_click:(id)sender;
 - (IBAction)signout_click:(id)sender;
 - (IBAction)addfriend_click:(id)sender;
-- (IBAction)segment_changed:(UISegmentedControl *)sender;
+- (IBAction)list_Click:(UIButton *)sender;
 
 @end

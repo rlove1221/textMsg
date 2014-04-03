@@ -48,22 +48,62 @@
     }
     friendArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFriends_Info];
     messageArray = [[NSUserDefaults standardUserDefaults] objectForKey:kGroups_Info];
+    
 	// Do any additional setup after loading the view.
+}
+
+- (void)timerTask
+{
+    [self performSelectorInBackground:@selector(reloadDataInBackground) withObject:nil];
+}
+
+- (void)reloadDataInBackground
+{
+    if (viewIndex == 1) {
+        //[self performSelectorInBackground:@selector(showProcess:) withObject:@"Loading"];
+        
+        if([ServiceManager getFriendsforUser_id:[userInfo objectForKey:@"user_id"]])
+        {
+            //[SVProgressHUD dismiss];
+            
+        }
+        else
+        {
+            //[SVProgressHUD dismiss];
+            
+        }
+        
+    }
+    else
+    {
+        //[self performSelectorInBackground:@selector(showProcess:) withObject:@"Loading"];
+        
+        if([ServiceManager getGroupsforUser_id:[userInfo objectForKey:@"user_id"]])
+        {
+            //[SVProgressHUD dismiss];
+            
+        }
+        else
+        {
+            //[SVProgressHUD dismiss];
+            
+        }
+    }
+    friendArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFriends_Info];
+    messageArray = [[NSUserDefaults standardUserDefaults] objectForKey:kGroups_Info];
+    [self.messageTableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBarHidden = YES;
+    timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(timerTask) userInfo:nil repeats:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self reloadData];
-}
-
-- (void)reloadData
-{
-    if (segmentControl.selectedSegmentIndex == 1) {
+    
+    if (viewIndex == 1) {
         [self performSelectorInBackground:@selector(showProcess:) withObject:@"Loading"];
         
         if([ServiceManager getFriendsforUser_id:[userInfo objectForKey:@"user_id"]])
@@ -96,7 +136,18 @@
     friendArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFriends_Info];
     messageArray = [[NSUserDefaults standardUserDefaults] objectForKey:kGroups_Info];
     [self.messageTableView reloadData];
+    //[self reloadData];
 }
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    if (timer.isValid) {
+        [timer invalidate];
+    }
+     timer = nil;
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -111,7 +162,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (segmentControl.selectedSegmentIndex == 1)
+    if (viewIndex == 1)
     {
         return [friendArray count];
     }
@@ -121,7 +172,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
-    if (segmentControl.selectedSegmentIndex == 1)
+    if (viewIndex == 1)
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"FriendCell"];
         NSDictionary *friends = [friendArray objectAtIndex:indexPath.row];
@@ -167,7 +218,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (segmentControl.selectedSegmentIndex == 1)
+    [tableView cellForRowAtIndexPath:indexPath].selected = NO;
+    if (viewIndex == 1)
     {
         NSDictionary *friends = [friendArray objectAtIndex:indexPath.row];
         NSString *friend_id = [friends objectForKey:@"user_id"];
@@ -240,10 +292,7 @@
     
 }
 
-- (IBAction)segment_changed:(UISegmentedControl *)sender {
-    NSLog(@"%i",sender.selectedSegmentIndex);
-    [self reloadData];
-}
+
 
 
 
@@ -277,5 +326,41 @@
 - (void)showProcess:(NSString *)message
 {
     [SVProgressHUD showWithStatus:message];
+}
+- (IBAction)list_Click:(UIButton *)sender {
+    viewIndex = sender.tag - 1;
+    if (viewIndex == 1) {
+        [self performSelectorInBackground:@selector(showProcess:) withObject:@"Loading"];
+        
+        if([ServiceManager getFriendsforUser_id:[userInfo objectForKey:@"user_id"]])
+        {
+            [SVProgressHUD dismiss];
+            
+        }
+        else
+        {
+            [SVProgressHUD dismiss];
+            
+        }
+        
+    }
+    else
+    {
+        [self performSelectorInBackground:@selector(showProcess:) withObject:@"Loading"];
+        
+        if([ServiceManager getGroupsforUser_id:[userInfo objectForKey:@"user_id"]])
+        {
+            [SVProgressHUD dismiss];
+            
+        }
+        else
+        {
+            [SVProgressHUD dismiss];
+            
+        }
+    }
+    friendArray = [[NSUserDefaults standardUserDefaults] objectForKey:kFriends_Info];
+    messageArray = [[NSUserDefaults standardUserDefaults] objectForKey:kGroups_Info];
+    [self.messageTableView reloadData];
 }
 @end

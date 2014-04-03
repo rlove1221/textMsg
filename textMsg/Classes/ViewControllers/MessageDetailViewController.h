@@ -17,6 +17,7 @@
     IBOutlet UIView *textInputView;
     IBOutlet UITextField *textField;
     IBOutlet UILabel *statusLB;
+    NSTimer *timer;
 }
 
 @property (strong, nonatomic) IBOutlet UIBubbleTableView *messageTableView;
