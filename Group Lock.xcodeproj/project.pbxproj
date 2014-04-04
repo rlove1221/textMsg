@@ -129,6 +129,7 @@
 		A37B22C517E65C33002572A6 /* contactsGroup3.png in Resources */ = {isa = PBXBuildFile; fileRef = A37B22C417E65C33002572A6 /* contactsGroup3.png */; };
 		A3AAED4F182B2B800084F052 /* lockUnselected1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3AAED4E182B2B800084F052 /* lockUnselected1@2x.png */; };
 		A3AAED53182B2F9E0084F052 /* lockUn.png in Resources */ = {isa = PBXBuildFile; fileRef = A3AAED52182B2F9E0084F052 /* lockUn.png */; };
+		A3C5F0BA18EE5F6D000F9214 /* Chat.png in Resources */ = {isa = PBXBuildFile; fileRef = A3C5F0B918EE5F6D000F9214 /* Chat.png */; };
 		A3CC0A3C17EF6662005E2BE2 /* goldView.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A3B17EF6662005E2BE2 /* goldView.png */; };
 		A3CC0A3E17EF6851005E2BE2 /* gold.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A3D17EF6851005E2BE2 /* gold.png */; };
 		A3CC0A4017EF87D3005E2BE2 /* gold3.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CC0A3F17EF87D3005E2BE2 /* gold3.png */; };
@@ -370,6 +371,7 @@
 		A37B22C417E65C33002572A6 /* contactsGroup3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsGroup3.png; sourceTree = "<group>"; };
 		A3AAED4E182B2B800084F052 /* lockUnselected1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lockUnselected1@2x.png"; sourceTree = "<group>"; };
 		A3AAED52182B2F9E0084F052 /* lockUn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockUn.png; sourceTree = "<group>"; };
+		A3C5F0B918EE5F6D000F9214 /* Chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chat.png; sourceTree = "<group>"; };
 		A3CC0A3B17EF6662005E2BE2 /* goldView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldView.png; sourceTree = "<group>"; };
 		A3CC0A3D17EF6851005E2BE2 /* gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold.png; sourceTree = "<group>"; };
 		A3CC0A3F17EF87D3005E2BE2 /* gold3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold3.png; sourceTree = "<group>"; };
@@ -762,6 +764,7 @@
 		A30EF61017D231380089D859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A3C5F0B918EE5F6D000F9214 /* Chat.png */,
 				A324B8D41854F1230031608D /* addTop.png */,
 				A324B8A9184EE1C00031608D /* unLock.png */,
 				A324B8B3185025970031608D /* pssCde1.png */,
@@ -979,6 +982,7 @@
 				A338C5FE17E78F7200FE9D1E /* contactsHideGroup8.png in Resources */,
 				A37B22C517E65C33002572A6 /* contactsGroup3.png in Resources */,
 				A3CC0A5017EFB8B1005E2BE2 /* newGreen.png in Resources */,
+				A3C5F0BA18EE5F6D000F9214 /* Chat.png in Resources */,
 				A324B8C5185187220031608D /* AppIcon50x50.png in Resources */,
 				A3EF69B41831B0F300798F23 /* lockUn1.png in Resources */,
 				A3EF69B81831B0FF00798F23 /* topAdd.png in Resources */,
@@ -1252,7 +1256,7 @@
 				INFOPLIST_FILE = "textMsg/Group Lock-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Group Lock";
-				PROVISIONING_PROFILE = "E562A229-30F1-4CDA-8749-358B01F4D593";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1269,7 +1273,7 @@
 				INFOPLIST_FILE = "textMsg/Group Lock-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Group Lock";
-				PROVISIONING_PROFILE = "E562A229-30F1-4CDA-8749-358B01F4D593";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
