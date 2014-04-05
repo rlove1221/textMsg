@@ -15,4 +15,5 @@
     
 }
 - (IBAction)login_click:(id)sender;
+- (IBAction)back_Click:(id)sender;
 @end

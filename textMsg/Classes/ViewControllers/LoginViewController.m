@@ -69,6 +69,10 @@
     }
 }
 
+- (IBAction)back_Click:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)showProcess
 {
     [SVProgressHUD showWithStatus:@"Loading"];

@@ -23,6 +23,8 @@
 #import "CBAutoScrollLabel.h"
 #import "LoginViewController.h"
 #import "MessageViewController.h"
+#import "UIViewController+RESideMenu.h"
+
 
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 @interface MainViewController ()< WYPopoverControllerDelegate>
@@ -239,6 +241,7 @@
         MessageViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"MessageViewController"];
         [self.navigationController pushViewController:controller animated:YES];
     }
+    [self presentLeftMenuViewController:nil];
 }
 
 
