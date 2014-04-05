@@ -70,6 +70,7 @@
 }
 
 - (IBAction)back_Click:(id)sender {
+    self.mainController.isShowingMessage = NO;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

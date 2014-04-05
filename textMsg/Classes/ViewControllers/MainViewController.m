@@ -42,7 +42,7 @@
 @end
 
 @implementation MainViewController
-
+@synthesize isShowingMessage;
 
 - (void)viewDidLoad
 {
@@ -241,7 +241,11 @@
         MessageViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"MessageViewController"];
         [self.navigationController pushViewController:controller animated:YES];
     }
-    [self presentLeftMenuViewController:nil];
+    if (!isViewDidLoad) {
+        [self presentLeftMenuViewController:nil];
+        isViewDidLoad = YES;
+    }
+    
 }
 
 
@@ -406,6 +410,7 @@
 - (IBAction)message_click:(id)sender {
     if (![[NSUserDefaults standardUserDefaults] objectForKey:kUser_Info]) {
         LoginViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        controller.mainController = self;
         [self presentViewController:controller animated:NO completion:nil];
         isLogin = NO;
         isShowingMessage = YES;

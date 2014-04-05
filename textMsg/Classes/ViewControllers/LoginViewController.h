@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MainViewController.h"
 @interface LoginViewController : UIViewController
 {
     IBOutlet UITextField *username;
     IBOutlet UITextField *password;
     
 }
+@property (strong,nonatomic) MainViewController *mainController;
 - (IBAction)login_click:(id)sender;
 - (IBAction)back_Click:(id)sender;
 @end
